@@ -1,20 +1,20 @@
 <?php
 
-require_once './global.php';
-require_once './dao/pdo.php';
+require_once "./global.php";
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case '/':
         echo "Hello GROUP7";
         break;
-    case 'quanly':
-        require_once $ADMIN_URL."/dashboard.php";
+    case 'admin':
+        require_once $ADMIN_URL."dashboard.php";
         break;
-    case 'nhanvien':
+    case 'staff':
         require_once $NHANVIEN_URL."/desk/desk.php";
+        index();
         break;
-    case 'bep':
+    case 'chef':
         require_once $BEP_URL."/dashboard.php" ;
         break;
     default:

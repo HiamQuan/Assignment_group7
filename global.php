@@ -2,11 +2,10 @@
 
 // tạo đường dẫn truy cập vào website
 session_start();
-$ROOT_URL = "/Assignment_group7";
-$ADMIN_URL = $ROOT_URL . "/quanly";
-$NHANVIEN_URL = $ROOT_URL . "/nhanvien";
-$BEP_URL = $ROOT_URL . "/bep";
-$IMAGE_URL = $ROOT_URL . "/images";
+$ADMIN_URL = "./quanly";
+$NHANVIEN_URL = "./nhanvien";
+$BEP_URL = "./bep";
+$IMAGE_URL = "./images";
 
 
 // đường dẫn để upload ảnh
