@@ -12,7 +12,6 @@ switch ($url) {
         break;
     case 'staff':
         require_once $NHANVIEN_URL."/desk/desk.php";
-        index();
         break;
     case 'chef':
         require_once $BEP_URL."/dashboard.php" ;
