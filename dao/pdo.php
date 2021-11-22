@@ -7,7 +7,7 @@
 
 function pdo_get_connection()
 {
-    $connection = new PDO("mysql:host= sql301.byethost14.com; dbname=b14_29770114_group7; charset=utf8", "b14_29770114", "songmai96");
+    $connection = new PDO("mysql:host= 127.0.0.1; dbname=group7; charset=utf8", "root", "");
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $connection;
 }
