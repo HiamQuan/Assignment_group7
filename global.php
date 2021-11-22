@@ -2,11 +2,12 @@
 
 // tạo đường dẫn truy cập vào website
 session_start();
-$ADMIN_URL = "./quanly";
-$NHANVIEN_URL = "./nhanvien";
-$BEP_URL = "./bep";
-$IMAGE_URL = "./images";
 
+const BUSINESS_URL = "./business/";
+const CSS_URL = "./css/";
+const IMAGE_URL = "./images/";
+const DAO_URL = "./dao/";
+const VIEWS_URL= "./views/";
 
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . $IMAGE_URL;
@@ -18,10 +19,11 @@ $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . $IMAGE_URL;
  * @return tên file upload
  */
 
- function save_file($file,$dir_path){
-     $file_upload = $_FILES[$file];
-     $file_name = $file_upload['name'];
-     $dir_file_path = $dir_path . $file_name;
-     move_uploaded_file($file_upload['tmp_name'], $dir_file_path);
-     return $file_name;
- }
+function save_file($file, $dir_path)
+{
+    $file_upload = $_FILES[$file];
+    $file_name = $file_upload['name'];
+    $dir_file_path = $dir_path . $file_name;
+    move_uploaded_file($file_upload['tmp_name'], $dir_file_path);
+    return $file_name;
+}
