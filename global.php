@@ -3,11 +3,13 @@
 // tạo đường dẫn truy cập vào website
 session_start();
 
-const BUSINESS_URL = "./business/";
-const CSS_URL = "./css/";
-const IMAGE_URL = "./images/";
-const DAO_URL = "./dao/";
-const VIEWS_URL= "./views/";
+const NHANVIEN_URL = "./business/nhanvien";
+const QUANLY_URL = "./business/quanly";
+const BEP_URL = "./business/bep";
+const CSS_URL = "./css";
+const IMAGE_URL = "./images";
+const DAO_URL = "./dao";
+const VIEWS_URL= "./views";
 
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . $IMAGE_URL;
