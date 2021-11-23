@@ -3,7 +3,7 @@
 // tạo đường dẫn truy cập vào website
 session_start();
 
-const BASE_URL = "http://127.0.0.1/Assignment_group7/";
+const BASE_URL = "http://localhost:81/Assignment_group7/";
 
 
 const ADMIN_URL = "http://127.0.0.1/Assignment_group7/admin/";
@@ -11,7 +11,7 @@ const STAFF_URL = "http://127.0.0.1/Assignment_group7/staff/";
 const CHEF_URL = "http://127.0.0.1/Assignment_group7/chef/";
 const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
 const PUBLIC_ASSETS = "http://127.0.0.1/Assignment_group7/public/";
-const IMAGE_URL = BASE_URL . 'public/upload/';
+const IMAGE_URL = BASE_URL . "public/upload/";
 const CSS_URL= BASE_URL . 'public/customize/css/';
 
 
