@@ -8,13 +8,13 @@ switch ($url) {
         echo "Hello GROUP7";
         break;
     case 'admin':
-        require_once QUANLY_URL."/dashboard.php";
+        require_once QUANLY_URL."dashboard.php";
         break;
     case 'staff':
-        require_once NHANVIEN_URL."/desk/desk.php";
+        require_once NHANVIEN_URL."desk/desk.php";
         break;
     case 'chef':
-        require_once BEP_URL."/dashboard.php" ;
+        require BEP_URL."dashboard.php" ;
         break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";

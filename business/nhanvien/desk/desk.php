@@ -1,6 +1,6 @@
 <?php
-require_once './global.php';
 
+<<<<<<< Updated upstream
 
 function loadall_desk(){
     $sql= "select * from desk where 1 order by desk_id asc limit 0,9";
@@ -12,5 +12,9 @@ function index(){
     echo "Hello";
 }
 $VIEW_PAGE = NHANVIEN_URL . "/desk/desk_ui.php";
+=======
+>>>>>>> Stashed changes
 
-include_once  './layout.php';
+$VIEW_PAGE =  VIEWS_URL . "desk_ui.php";
+
+include_once './views/layout/nhanvien/layout.php';
