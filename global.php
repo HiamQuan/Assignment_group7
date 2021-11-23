@@ -3,9 +3,16 @@
 // tạo đường dẫn truy cập vào website
 session_start();
 $ADMIN_URL = "./quanly";
-$NHANVIEN_URL = "./nhanvien";
+$NHANVIEN_URL = "./nhanvien/";
 $BEP_URL = "./bep";
 $IMAGE_URL = "./images";
+
+ function admin_render($viewpath, $data =[]) {
+     global $NHANVIEN_URL;
+    extract($data);
+    $VIEW_PAGE = $NHANVIEN_URL . $viewpath;
+    include_once  './nhanvien/layout.php';
+ }
 
 
 // đường dẫn để upload ảnh

@@ -11,7 +11,11 @@ switch ($url) {
         require_once $ADMIN_URL."dashboard.php";
         break;
     case 'staff':
-        require_once $NHANVIEN_URL."/desk/desk.php";
+        require_once $NHANVIEN_URL."desk/desk.php";
+        break;
+    case 'staff/order':
+        // admin_render('desk/desk_ui.php');
+        require_once $NHANVIEN_URL."order/order.php";
         break;
     case 'chef':
         require_once $BEP_URL."/dashboard.php" ;
