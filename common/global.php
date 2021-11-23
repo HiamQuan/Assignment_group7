@@ -5,13 +5,15 @@ session_start();
 
 const BASE_URL = "http://127.0.0.1/Assignment_group7/";
 
-const NHANVIEN_URL =  "./business/nhanvien/";
-const QUANLY_URL = "./business/quanly/";
-const BEP_URL = "./business/bep/";
-const CSS_URL = BASE_URL . "css/";
-const IMAGE_URL = BASE_URL . "images/";
-const DAO_URL = "./dao/";
-const VIEWS_URL =  "./views/";
+
+const ADMIN_URL = "http://127.0.0.1/Assignment_group7/admin/";
+const STAFF_URL = "http://127.0.0.1/Assignment_group7/staff/";
+const CHEF_URL = "http://127.0.0.1/Assignment_group7/chef/";
+const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
+const PUBLIC_ASSETS = "http://127.0.0.1/Assignment_group7/public/";
+const IMAGE_URL = BASE_URL . 'public/upload/';
+const CSS_URL= BASE_URL . 'public/customize/css/';
+
 
 
 // đường dẫn để upload ảnh
