@@ -3,7 +3,7 @@
                 $listdesk = loadall_desk();
                foreach($listdesk as $d ):
                 ?><?php
-                if($status=="có"){
+                if($d['status']=="có"){
                     echo'<div class="box-desk-2">';
                 }else{
                     echo'<div class="box-desk">';
