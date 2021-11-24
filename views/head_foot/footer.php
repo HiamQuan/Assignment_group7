@@ -1,5 +1,5 @@
 <footer class="row">
-    <section>
+    <section class="footer">
         <aside class="box-footer wow zoomIn">
             <img class="mb-4" src="<?=IMAGE_URL?>footer/grandrestaurant_logo.png" alt="">
         </aside>

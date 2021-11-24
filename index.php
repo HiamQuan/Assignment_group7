@@ -1,6 +1,7 @@
 <?php
 
 require_once "./common/global.php";
+require_once "./dao/pdo.php";
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
@@ -10,8 +11,20 @@ switch ($url) {
     case 'admin':
         require_once "./business/quanly/dashboard.php";
         break;
-    case 'staff':
+    case 'cp-nhanvien':
         require_once "./business/nhanvien/desk/desk.php";
+        break;
+    case 'cp-nhanvien/order':
+        require_once "./business/nhanvien/order/order.php";
+        menu_render();
+        break;
+    case 'cp-nhanvien/order/addtocart':
+        require_once "./business/nhanvien/order/order.php";
+        add_food();
+        break;
+    case 'cp-nhanvien/order/delete':
+        require_once "./business/nhanvien/order/order.php";
+        remove_order_food();
         break;
     case 'chef':
         require "./business/bep/dashboard.php" ;
