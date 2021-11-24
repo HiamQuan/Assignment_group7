@@ -1,6 +1,9 @@
 <?php
 
 require_once "./common/global.php";
+require_once "./common/helpesr.php";
+require_once "./dao/pdo.php";
+
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
@@ -9,6 +12,7 @@ switch ($url) {
         break;
     case 'admin':
         require_once "./business/quanly/dashboard.php";
+        food_index();
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
