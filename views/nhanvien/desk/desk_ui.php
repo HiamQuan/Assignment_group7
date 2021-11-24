@@ -1,1 +1,1 @@
-<h2>Hi hi ha ha</h2>
+<a href="<?=STAFF_URL . 'order?table-id=1'?>">Ban so 1</a>

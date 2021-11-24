@@ -7,7 +7,7 @@ const BASE_URL = "http://localhost:81/Assignment_group7/";
 
 
 const ADMIN_URL = "http://localhost:81/Assignment_group7/admin/";
-const STAFF_URL = "http://localhost:81/Assignment_group7/staff/";
+const STAFF_URL = "http://localhost:81/Assignment_group7/cp-nhanvien/";
 const CHEF_URL = "http://localhost:81/Assignment_group7/chef/";
 const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
 const PUBLIC_ASSETS = "http://localhost:81/Assignment_group7/public/";
@@ -15,7 +15,11 @@ const IMAGE_URL = BASE_URL . "public/upload/";
 const CSS_URL= BASE_URL . 'public/customize/css/';
 
 
-
+function nhanvien_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/nhanvien/'.$viewpath;
+    include_once './views/nhanvien/layout/main.php';
+}
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . IMAGE_URL;
 
