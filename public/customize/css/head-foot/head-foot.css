@@ -14,7 +14,10 @@ header {
 footer {
     background: black;
 }
+.footer {
+    color: white;
 
+}
 section {
     max-width: 1200px;
     margin: 0 auto;

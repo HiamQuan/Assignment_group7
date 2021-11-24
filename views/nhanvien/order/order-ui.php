@@ -67,8 +67,6 @@
                                 }
                             }
                             // session_unset();
-                            // echo "<pre>";
-                            // var_dump($_SESSION["order"][$table_id]);
                         ?>
                         
                     </tbody>
@@ -76,7 +74,7 @@
                         <tr>
                             <td>Số lượng: <?= $sl?></td>
                             <td colspan='2'>Tạm tính: <?= $tongtien?></td>
-                            <td><a href="<?= STAFF_URL."order/delete?table-id=$table_id"?>">Hủy</a></td>
+                            <td><a href="<?=STAFF_URL.'order/delete?table-id='.$table_id?>">Hủy</a></td>
                             <td colspan='2'><a href="#">Đặt món</a></td>
                         </tr>
                     </tfoot>

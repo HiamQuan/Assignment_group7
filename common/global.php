@@ -14,12 +14,12 @@ const PUBLIC_ASSETS = "http://localhost:81/Assignment_group7/public/";
 const IMAGE_URL = BASE_URL . "public/upload/";
 const CSS_URL= BASE_URL . 'public/customize/css/';
 
-function nhanvien_render($viewpath, $data = [] , $files =[]) {
-    extract($data);
-    $VIEW_PAGE = "./views/nhanvien/" . $viewpath;
-    include_once './views/nhanvien/layout/main.php'; 
-}
 
+function nhanvien_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/nhanvien/'.$viewpath;
+    include_once './views/nhanvien/layout/main.php';
+}
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . IMAGE_URL;
 
