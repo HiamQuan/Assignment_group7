@@ -1,5 +1,6 @@
 <div  class="list-desk">
                 <?php 
+                $listdesk = loadall_desk();
                foreach($listdesk as $d ):
                 ?><?php
                 if($status=="có"){
@@ -13,6 +14,5 @@
                     <p>Tầng  <?=$d['location']?> </p>
                     </div>
                 <?php endforeach ?>
-                
            </div>
 </div> 
