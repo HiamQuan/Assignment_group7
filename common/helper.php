@@ -1,5 +1,5 @@
 <?php
-function admin_render($viewpath, $data = [], $jsFiles = []){
+function admin_render($viewpath, $data = []){
 
     extract($data);
     $businessView = "./views/nhanvien/" . $viewpath;
