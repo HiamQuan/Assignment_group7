@@ -1,7 +1,6 @@
 <div class="location">
     <?php
-    foreach ($location as $l):
+    foreach ($location as $l)
+    echo"<button><a href=\" STAFF_URL . 'nhanvien/desk?location=' . {$l['location']} \">Tầng {$l['location']}</a></button>";
     ?>
-    <button><a href="<?= STAFF_URL . 'nhanvien/desk?location=' . $l['location'] ?>">Tầng <?=$l['location']?></a></button>
-    <?php endforeach ?>
 </div>

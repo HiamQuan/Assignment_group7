@@ -10,8 +10,14 @@ function loadall_desk(){
             );
 }
 function load_location(){
-    $sql = "select * from desk order by location asc";
+    $sql = "select * from desk group by location";
     $location = pdo_query($sql);
-    $VIEW_PAGE =  "./views/nhanvien/desk/location.php";
-    include_once './views/nhanvien/layout/main.php';
+    admin_render('desk/location.php',
+    [
+        'location' => $location,
+    ]
+    );
 }
+
+
+

@@ -16,7 +16,7 @@
     <main class="container-fluid">
     <?php include_once './views/nhanvien/desk/location.php' ?>
     <?php include_once $businessView; ?>
-    <?php require_once $VIEW_PAGE ?>
+  
     </main>
     <?php include './views/head_foot/footer.php' ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
