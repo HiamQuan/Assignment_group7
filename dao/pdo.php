@@ -117,10 +117,3 @@ function executeQuery($sql, $getAll = true){
         }
     }
 }
-executeQuery($sql,false);
- $data= $stmt->fetch();
- $data['productName'];
- $sql= " select * from cthoadon where bil_id like ";
- $stmt-> $connect->prepare($sql);
- $stmt->excute();
- $data= $stmt->fetchAll();
