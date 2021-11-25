@@ -1,7 +1,6 @@
 <div  class="list-desk">
                 <?php 
-                $listdesk = loadall_desk();
-               foreach($listdesk as $d ):
+               foreach($dsBan as $d ):
                 ?><?php
                 if($d['status']=="có"){
                     echo'<div class="box-desk-2">';
