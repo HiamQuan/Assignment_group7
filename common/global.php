@@ -40,3 +40,4 @@ function admin_render($viewpath, $data = [], $jsFiles = []){
     $businessView = "./views/admin/" . $viewpath;
     include_once './views/admin/layouts/main.php';
 }
+
