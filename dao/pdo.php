@@ -102,3 +102,25 @@ function pdo_query_value($sql)
         unset($connection);
     }
 }
+
+
+function executeQuery($sql, $getAll = true){
+    $connect = pdo_get_connection();
+    $stmt = $connect->prepare($sql);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    if($getAll){
+        return $data;
+    }else{
+        if(count($data) > 0){
+            return $data[0];
+        }
+    }
+}
+executeQuery($sql,false);
+ $data= $stmt->fetch();
+ $data['productName'];
+ $sql= " select * from cthoadon where bil_id like ";
+ $stmt-> $connect->prepare($sql);
+ $stmt->excute();
+ $data= $stmt->fetchAll();
