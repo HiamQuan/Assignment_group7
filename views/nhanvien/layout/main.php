@@ -14,7 +14,7 @@
 <body>
     <?php include './views/head_foot/header.php' ?>
     <main class="container-fluid">
-    <?php include_once './views/nhanvien/desk/location.php' ?>
+    
     <?php include_once $businessView; ?>
   
     </main>
