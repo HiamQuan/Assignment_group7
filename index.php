@@ -1,5 +1,5 @@
 <?php
-
+require_once "./common/helper.php";
 require_once "./common/global.php";
 require_once "./dao/pdo.php";
 
@@ -15,6 +15,10 @@ switch ($url) {
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
         break;
+    case 'staff/nhanvien/desk':
+        require_once "./business/nhanvien/desk/desk.php";
+        load_location();
+        break;    
     case 'chef':
         require "./business/bep/dashboard.php" ;
         break;

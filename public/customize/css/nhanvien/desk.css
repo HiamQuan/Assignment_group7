@@ -1,3 +1,4 @@
+/*desk*/
 .list-desk{
     display: grid;
     grid-template-columns:1fr 1fr 1fr ;
@@ -12,9 +13,19 @@
       text-align: center;
   }
   .box-desk a{
-      margin-top: 100px;
+      text-decoration: none;
       font-size: 40px;
   }
+  .box-desk-2 a{
+      margin-top: 150px;
+    text-decoration: none;
+    font-size: 40px;
+}
   .box-desk-2{
+    width: 500px; 
+    height: 300px;
+    border: 1px solid #222;
+    margin-bottom: 40px;
+    text-align: center;
     background-color: #00FF00;
   }
