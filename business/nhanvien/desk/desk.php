@@ -1,5 +1,4 @@
 <?php
-include_once "./dao/pdo.php";
 function loadall_desk(){
     $sql = "select * from desk group by location";
     $location = pdo_query($sql);

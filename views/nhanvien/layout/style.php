@@ -19,6 +19,6 @@
 <link rel="stylesheet" href="<?= ADMIN_ASSETS ?>plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= ADMIN_ASSETS ?>plugins/summernote/summernote-bs4.min.css">
-<link rel="stylesheet" href="<?= CSS_URL ?>head_foot/head_foot.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>head-foot/head-foot.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/desk.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/order.css">

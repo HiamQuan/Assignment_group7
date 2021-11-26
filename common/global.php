@@ -34,10 +34,3 @@ function save_file($file, $dir_path)
     move_uploaded_file($file_upload['tmp_name'], $dir_file_path);
     return $file_name;
 }
-function admin_render($viewpath, $data = [], $jsFiles = []){
-
-    extract($data);
-    $businessView = "./views/admin/" . $viewpath;
-    include_once './views/admin/layouts/main.php';
-}
-
