@@ -15,6 +15,10 @@ switch ($url) {
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
         break;
+    case 'staff/nhanvien/desk':
+        require_once "./business/nhanvien/desk/desk.php";
+        load_location();
+        break;    
     case 'chef':
         require "./business/bep/dashboard.php" ;
         break;

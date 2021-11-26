@@ -11,6 +11,19 @@ function loadall_desk(){
     ]
     );
 }
+function load_location(){
+    $sql = "select * from desk group by location";
+    $location = pdo_query($sql);
+    $location_desk = $_GET['location'];
+    $sql = "select * from desk where location =$location_desk";
+    $location_desk = pdo_query($sql);
+    admin_render('desk/desk_location.php',
+    [
+        'location' => $location,
+        'dsBan' => $location_desk,
+    ]
+    );
+}
 
 
 
