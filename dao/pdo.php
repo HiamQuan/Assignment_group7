@@ -32,6 +32,20 @@ function pdo_execute($sql)
         unset($connection);
     }
 }
+function pdo_execute_return_lastInsertId($sql)
+{
+    $args = array_slice(func_get_args(), 1);
+    try {
+        $connection = pdo_get_connection();
+        $stmt = $connection->prepare($sql);
+        $stmt->execute($args);
+        return $connection->lastInsertId();
+    } catch (PDOException $e) {
+        echo "có lỗi xảy ra: " . $e->getMessage();
+    } finally {
+        unset($connection);
+    }
+}
 
 /**
  * hàm thực hiện câu lệnh truy vấn SELECT để lấy ra nhiều bản ghi
