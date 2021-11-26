@@ -7,7 +7,7 @@
 
 function pdo_get_connection()
 {
-    $connection = new PDO("mysql:host=127.0.0.1; dbname=group7; charset=utf8", "root", "");
+    $connection = new PDO("mysql:host=127.0.0.1;dbname=group7;charset=utf8", "root", "");
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $connection;
 }
@@ -100,5 +100,20 @@ function pdo_query_value($sql)
         echo "có lỗi xảy ra" . $e->getMessage();
     } finally {
         unset($connection);
+    }
+}
+
+
+function executeQuery($sql, $getAll = true){
+    $connect = pdo_get_connection();
+    $stmt = $connect->prepare($sql);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    if($getAll){
+        return $data;
+    }else{
+        if(count($data) > 0){
+            return $data[0];
+        }
     }
 }

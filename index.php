@@ -1,9 +1,6 @@
 <?php
-
 require_once "./common/global.php";
-require_once "./common/helpesr.php";
 require_once "./dao/pdo.php";
-
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
@@ -16,7 +13,12 @@ switch ($url) {
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
+        loadall_desk();
         break;
+    case 'staff/nhanvien/desk':
+        require_once "./business/nhanvien/desk/desk.php";
+        load_location();
+        break;    
     case 'chef':
         require "./business/bep/dashboard.php" ;
         break;

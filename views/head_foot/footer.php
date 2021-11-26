@@ -1,4 +1,4 @@
-<footer class="">
+<footer>
     <section>
         <aside class="box-footer wow zoomIn col-xs-sm-3">
             <img class="mb-4" src="<?=IMAGE_URL?>footer/grandrestaurant_logo.png" alt="" width="70%">
