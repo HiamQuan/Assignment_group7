@@ -9,36 +9,40 @@ switch ($url) {
     case 'admin':
         require_once "./business/quanly/dashboard.php";
         break;
-    case 'cp-nhanvien':
+    case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
         break;
-    case 'cp-nhanvien/order':
+    case 'staff/nhanvien/desk':
+        require_once "./business/nhanvien/desk/desk.php";
+        load_location();
+        break;
+    case 'staff/order':
         require_once "./business/nhanvien/order/order.php";
         menu_render();
         break;
-    case 'cp-nhanvien/order/addtocart':
+    case 'staff/order/addtocart':
         require_once "./business/nhanvien/order/order.php";
         add_food();
         break;
-    case 'cp-nhanvien/order/delete':
+    case 'staff/order/delete':
         require_once "./business/nhanvien/order/order.php";
         remove_order_food();
         break;
-    case 'cp-nhanvien/order/add-bill':
+    case 'staff/order/add-bill':
         require_once "./business/nhanvien/bill/bill.php";
         add_bill();
         break;
-    case 'cp-nhanvien/order/bill':
+    case 'staff/order/bill':
         require_once "./business/nhanvien/bill/bill.php";
         get_bill();
         break;
-    case 'cp-nhanvien/order/done-bill':
+    case 'staff/order/done-bill':
         require_once "./business/nhanvien/bill/bill.php";
         done_bill();
         break;
     case 'chef':
-        require "./business/bep/dashboard.php" ;
+        require "./business/bep/dashboard.php";
         break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";

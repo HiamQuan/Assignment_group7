@@ -7,7 +7,7 @@ const BASE_URL = "http://localhost:81/Assignment_group7/";
 
 
 const ADMIN_URL = "http://localhost:81/Assignment_group7/admin/";
-const STAFF_URL = "http://localhost:81/Assignment_group7/cp-nhanvien/";
+const STAFF_URL = "http://localhost:81/Assignment_group7/staff/";
 const CHEF_URL = "http://localhost:81/Assignment_group7/chef/";
 const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
 const PUBLIC_ASSETS = "http://localhost:81/Assignment_group7/public/";

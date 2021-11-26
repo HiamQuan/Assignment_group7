@@ -30,6 +30,6 @@
         $sql = "update bill set status='Đã thanh toán' where bill_id=$bill_id";
         pdo_execute($sql);
         $_SESSION['order'][$desk_id] = [];
-        header("location:". BASE_URL . 'cp-nhanvien');
+        header("location:". BASE_URL . 'staff');
     }
 ?>
