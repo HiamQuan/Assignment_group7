@@ -7,11 +7,6 @@ function loadall_desk()
     $VIEW_PAGE =  "./views/nhanvien/desk/desk_ui.php";
     include_once './views/nhanvien/layout/main.php';
 }
-function admin_render($viewpath, $data = [], $jsFiles = []){
 
-    extract($data);
-    $businessView = "./views/admin/" . $viewpath;
-    include_once './views/admin/layouts/main.php';
-}
 
     
