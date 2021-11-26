@@ -1,8 +1,6 @@
 <?php
-
 require_once "./common/global.php";
 require_once "./dao/pdo.php";
-$_SESSION['user'] = 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case '/':
@@ -13,6 +11,7 @@ switch ($url) {
         break;
     case 'cp-nhanvien':
         require_once "./business/nhanvien/desk/desk.php";
+        loadall_desk();
         break;
     case 'cp-nhanvien/order':
         require_once "./business/nhanvien/order/order.php";
