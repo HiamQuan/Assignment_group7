@@ -90,5 +90,5 @@
             </table>
         </div>
     </div>
-    <a href="<?=BASE_URL."cp-nhanvien"?>">Quay lại..</a>
+    <a href="<?=BASE_URL."staff"?>">Quay lại..</a>
 </section>
