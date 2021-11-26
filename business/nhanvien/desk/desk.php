@@ -4,7 +4,7 @@ function loadall_desk(){
     $location = pdo_query($sql);
     $sql= "select * from desk where 1 order by desk_id asc";
     $listdesk = pdo_query($sql);
-    admin_render('desk/desk_ui.php',
+    staff_render('desk/desk_ui.php',
     [
         'location' => $location,
         'dsBan' => $listdesk,
@@ -17,7 +17,7 @@ function load_location(){
     $location_desk = $_GET['location'];
     $sql = "select * from desk where location =$location_desk";
     $location_desk = pdo_query($sql);
-    admin_render('desk/desk_location.php',
+    staff_render('desk/desk_location.php',
     [
         'location' => $location,
         'dsBan' => $location_desk,
