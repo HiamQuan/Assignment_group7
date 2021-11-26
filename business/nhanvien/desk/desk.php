@@ -18,7 +18,7 @@ function load_location(){
     $location_desk = $_GET['location'];
     $sql = "select * from desk where location =$location_desk";
     $location_desk = pdo_query($sql);
-    admin_render('desk/desk_ui.php',
+    staff_render('desk/desk_ui.php',
     [
         'location' => $location,
         'dsBan' => $location_desk,

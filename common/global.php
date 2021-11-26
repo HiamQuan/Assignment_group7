@@ -34,3 +34,9 @@ function save_file($file, $dir_path)
     move_uploaded_file($file_upload['tmp_name'], $dir_file_path);
     return $file_name;
 }
+function staff_render($viewpath, $data = []){
+
+    extract($data);
+    $VIEW_PAGE = "./views/nhanvien/" . $viewpath;
+    include_once './views/nhanvien/layout/main.php';
+}
