@@ -34,7 +34,9 @@
     function remove_order_food() {
         $table_id = $_GET['table-id'];
         if (isset($_GET['id'])) {
-            array_splice($_SESSION['order'][$table_id], $_GET['id'],1);
+            // array_splice($_SESSION['order'][$table_id], $_GET['id'],1);
+            unset($_SESSION['order'][$table_id][$_GET['id']]);
+
         }else{
             $_SESSION['order'][$table_id] = [];
         }

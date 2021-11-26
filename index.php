@@ -2,7 +2,7 @@
 
 require_once "./common/global.php";
 require_once "./dao/pdo.php";
-
+$_SESSION['user'] = 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case '/':
@@ -25,6 +25,18 @@ switch ($url) {
     case 'cp-nhanvien/order/delete':
         require_once "./business/nhanvien/order/order.php";
         remove_order_food();
+        break;
+    case 'cp-nhanvien/order/add-bill':
+        require_once "./business/nhanvien/bill/bill.php";
+        add_bill();
+        break;
+    case 'cp-nhanvien/order/bill':
+        require_once "./business/nhanvien/bill/bill.php";
+        get_bill();
+        break;
+    case 'cp-nhanvien/order/done-bill':
+        require_once "./business/nhanvien/bill/bill.php";
+        done_bill();
         break;
     case 'chef':
         require "./business/bep/dashboard.php" ;
