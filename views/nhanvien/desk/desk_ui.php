@@ -1,22 +1,22 @@
 <div class="location">
     <?php
     foreach ($location as $l) : ?>
-        <button><a href="<?= STAFF_URL . 'nhanvien/desk?location=' . $l['location'] ?>">Tầng <?= $l['location'] ?></a></button>
+        <button class="btn btn-primary"><a href="<?= STAFF_URL . 'nhanvien/desk?location=' . $l['location'] ?>">Tầng <?= $l['location'] ?></a></button>
     <?php endforeach ?>
 </div>
 
-<div class="list-desk">
+<div class="list-desk " >
     <?php
     foreach ($dsBan as $d) :
     ?>
         <?php
         if ($d['status'] == "có") {
-            echo '<div class="box-desk-2">';
+            echo '<div class="box-desk-2 card text-center" style="width: 18rem;">';
         } else {
-            echo '<div class="box-desk">';
+            echo '<div class="box-desk card text-center" style="width: 18rem;">';
         }
         ?>
-        <a href="<?= STAFF_URL . 'nhanvien/order?id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;--
+        <a href="<?= STAFF_URL . 'nhanvien/order?id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;
 
 </div>
 <?php endforeach ?>
