@@ -1,13 +1,13 @@
 <?php
     function add_bill() {
         // if (isset($_POST['btn-order'])) {
-            $date = date("d/m/Y");
+            
             $amount = $_GET['amount'];
             $desk_id = $_GET['desk-id'];
             $user_id = 1;
             $status = 'Chưa thanh toán';
             $sql = "insert into bill (date,amount,status,desk_id,user_id) values
-                    ('$date','$amount','$status','$desk_id','$user_id')";
+                    (now(),'$amount','$status','$desk_id','$user_id')";
             $last_ID = pdo_execute_return_lastInsertId($sql);
             foreach($_SESSION['order'][$desk_id] as $order) {
                 extract($order);
