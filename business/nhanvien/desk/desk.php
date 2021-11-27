@@ -10,7 +10,7 @@ function loadall_desk(){
 //         'dsBan' => $listdesk,
 //     ]
 //     );
-    header ("location:".STAFF_URL."nhanvien/desk?location=1");
+    header ("location:".STAFF_URL."desk?location=1");
 }
 function load_location(){
     $sql = "select * from desk group by location";
