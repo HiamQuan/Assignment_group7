@@ -1,70 +1,67 @@
 /*desk*/
-.list-desk{
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr ;
-    margin-top: 100px;
-    margin-left: 200px;
-     text-align: center;
-     
-  }
-  .box-desk{
-      
-      height: 300px;
-      border: 1px solid #baffba;
-      margin-bottom: 40px;
-      text-align: center;
-      border-radius: 5px;
-      
-  }
-  .box-desk a{
-    margin-top: 100px;
-      text-decoration: none;
-      font-size: 40px;
-  }
-  .box-desk-2 a{
-    margin-top: 100px;
-    text-decoration: none;
-    font-size: 40px;
+.list-desk {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 100px;
+  margin-left: 200px;
+  text-align: center;
 }
-  .box-desk-2{
-     
-    height: 300px;
-    border: 1px solid #baffba;
-    border-radius: 5px;
-    margin-bottom: 40px;
-    text-align: center;
-    background-color: #baffba;
-  }
-  .box-desk-3 a{
-    margin-top: 100px;
-    text-decoration: none;
-    font-size: 40px;
+.box-desk {
+  height: 300px;
+  border: 1px solid #baffba;
+  margin-bottom: 40px;
+  text-align: center;
+  border-radius: 5px;
 }
-.box-desk-3{  
-    height: 300px;
-    border: 1px solid #baffba;
-    border-radius: 5px;
-    margin-bottom: 40px;
-    text-align: center;
-    background-color: #2bcff8;}
-  .box-desk-4 a{
-    margin-top: 100px;
-    text-decoration: none;
-    font-size: 40px;
+.box-desk a {
+  margin-top: 100px;
+  text-decoration: none;
+  font-size: 40px;
 }
-  .box-desk-4{ 
-    height: 300px;
-    border: 1px solid #baffba;
-    border-radius: 5px;
-    margin-bottom: 40px;
-    text-align: center;
-    background-color: #ffadad;
-  }  
+.box-desk-2 a {
+  margin-top: 100px;
+  text-decoration: none;
+  font-size: 40px;
+}
+.box-desk-2 {
+  height: 300px;
+  border: 1px solid #baffba;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  text-align: center;
+  background-color: #baffba;
+}
+.box-desk-3 a {
+  margin-top: 100px;
+  text-decoration: none;
+  font-size: 40px;
+}
+.box-desk-3 {
+  height: 300px;
+  border: 1px solid #baffba;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  text-align: center;
+  background-color: #2bcff8;
+}
+.box-desk-4 a {
+  margin-top: 100px;
+  text-decoration: none;
+  font-size: 40px;
+}
+.box-desk-4 {
+  height: 300px;
+  border: 1px solid #baffba;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  text-align: center;
+  background-color: #ffadad;
+}
 /*Location*/
-.location{
+.location {
   margin-top: 50px;
   margin-left: 50px;
 }
-.location button a{
+.location button a {
   color: aliceblue;
-}  
+}
