@@ -16,7 +16,7 @@
             echo '<div class="box-desk">';
         }
         ?>
-        <a href="<?= STAFF_URL . 'order?table-id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;--
+        <a href="<?= STAFF_URL . 'nhanvien/order?id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;--
 
 </div>
 <?php endforeach ?>
