@@ -44,3 +44,11 @@ function staff_render($viewpath, $data = []){
     $VIEW_PAGE = "./views/nhanvien/" . $viewpath;
     include_once './views/nhanvien/layout/main.php';
 }
+
+
+function admin_render($viewpath, $data = [], $jsFiles = []){
+
+    extract($data);
+    $businessView = "./views/quanly/" . $viewpath;
+    include_once './views/quanly/layouts/main.php';
+}
