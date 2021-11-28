@@ -15,7 +15,7 @@
     }
     function add_food() {
         if(isset($_POST['btn-addtocart'])) {
-            $category_id=$_GET['category-id'];
+          
             $food_id = $_POST['food_id'];
             $table_id = $_POST['table_id'];
             $food_name = $_POST['food_name'];
@@ -33,10 +33,10 @@
             }else{
                 $_SESSION["order"][$table_id][$food_id]['soluong']+=1;
             }
-            header("location:". STAFF_URL . 'order?table-id=' . $table_id);
+            
         }
         // session_unset();
-        
+        // header("location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id);
         
     }
     function remove_order_food() {

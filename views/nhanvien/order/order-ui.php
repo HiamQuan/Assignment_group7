@@ -14,6 +14,7 @@
                     <input type="hidden" name="food_name" value="<?= $x['food_name'] ?>">
                     <input type="hidden" name="price" value="<?= $x['price'] ?>">
                     <input type="hidden" name="image" value="<?= $x['image'] ?>">
+                    <input type="hidden" name="category_id" value="<?= $category_id?>">
                     <button type="submit" name="btn-addtocart">Thêm</button>
                 </form>
             </div>

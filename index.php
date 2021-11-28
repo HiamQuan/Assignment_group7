@@ -13,7 +13,7 @@ switch ($url) {
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
         break;
-    case 'staff/nhanvien/desk':
+    case 'staff/desk':
         require_once "./business/nhanvien/desk/desk.php";
         load_location();
         break;
