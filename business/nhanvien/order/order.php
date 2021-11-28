@@ -1,14 +1,21 @@
 <?php 
     function menu_render() {
-        $sql = "select * from food";
-        $list_foods = pdo_query($sql); 
-        
+        $table_id=$_GET['table-id'];
+        $sql= "select * from category";
+        $category= pdo_query($sql);
+        $category_id=$_GET['category-id']??1;
+        $sql = "select * from food where category_id=$category_id";
+        $list_foods = pdo_query($sql);  
         nhanvien_render('order/order-ui.php', [
-            'list_foods' => $list_foods
+            'list_foods' => $list_foods,
+            'category'=> $category ,
+            'table_id'=>$table_id,
+            'category_id'=>$category_id
         ]);
     }
     function add_food() {
         if(isset($_POST['btn-addtocart'])) {
+            $category_id=$_GET['category-id'];
             $food_id = $_POST['food_id'];
             $table_id = $_POST['table_id'];
             $food_name = $_POST['food_name'];
@@ -26,9 +33,10 @@
             }else{
                 $_SESSION["order"][$table_id][$food_id]['soluong']+=1;
             }
+            header("location:". STAFF_URL . 'order?table-id=' . $table_id);
         }
         // session_unset();
-        header("location:". STAFF_URL . 'order?table-id=' . $table_id);
+        
         
     }
     function remove_order_food() {
@@ -42,4 +50,3 @@
         }
         header("location:". STAFF_URL . 'order?table-id=' . $table_id);
     }
-?>
