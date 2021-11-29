@@ -25,6 +25,3 @@ function load_location(){
     ]
     );
 }
-
-
-
