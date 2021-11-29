@@ -16,7 +16,7 @@
         if($d['status'] == "trống") {
             echo '<div class="box-desk card text-center" style="width: 18rem;">';
         }
-        if ($d['status'] == "đang chờ") {
+        if ($d['status'] == "chưa đặt") {
             echo '<div class="box-desk-2 card text-center" style="width: 18rem;">';
         }
         if ($d['status'] == "chưa dọn") {

@@ -35,7 +35,7 @@
         $info_bill = pdo_query_one($sql);
         $sql = "select food.food_name, detail_bill.quantity, food.price from detail_bill 
         INNER JOIN food ON food.food_id=detail_bill.food_id where bill_id=$bill_id";
-        echo $sql;
+        // echo $sql;
         $info_bills = pdo_query($sql);
 
         nhanvien_render('bill/bill.php', [
