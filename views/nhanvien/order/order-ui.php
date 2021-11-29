@@ -30,7 +30,7 @@
         </ul>
     </div>
     <div class="order-bill">
-        <div class="table">
+        <div class="">
             <h3>Tầng 1 - Bàn số: <?=$table_id = $_GET['table-id']?></h3>
             <table>
                 <thead>
@@ -46,7 +46,6 @@
                         $table_id = $_GET['table-id'];
                         $tongtien = 0;
                         $sl = 0;
-                        $i=0;
                         if(isset($_SESSION["order"][$table_id])) {
                             
                             foreach ($_SESSION["order"][$table_id] as $cart) {
@@ -54,7 +53,6 @@
                                 $sl += $soluong;
                                 $thanhtien = $soluong * $price;
                                 $tongtien += $thanhtien;
-                                extract($cart);
                                 echo '<tr>
                                         <td><img src="'.IMAGE_URL.'food/'.$image.'" alt="" width="100px"></td>
                                         <td>'.$food_name.'</td>
@@ -63,7 +61,6 @@
                                         <td></td>
                                         <td><a href="'.STAFF_URL.'order/delete?id='.$food_id .'&table-id='.$table_id .'" class="btn btn-sm btn-danger">Delete</a></td>
                                     </tr>';
-                                $i+=1;
                             }
                         }
                         // session_unset();
@@ -73,18 +70,36 @@
                 <tfoot>
                     <tr>
                         <td>Số lượng: <?= $sl?></td>
-                        <td colspan='2'>Tạm tính: <?= $tongtien?></td>
-                        <td>
-                            <a href="<?=STAFF_URL.'order/delete?table-id='.$table_id?>"><button>Hủy</button></a>
-                        </td>
-                        <td colspan='2'>
-                            <a href="<?=STAFF_URL."order/add-bill?desk-id=$table_id&amount=$tongtien"?>"><button>Đặt bàn</button></a>
-                            <!-- <form action="<?= STAFF_URL . "order/add-bill"?>">
-                                <input type="hidden" name="desk_id" value="<?=$table_id?>">
-                                <input type="hidden" name="amount" value="<?=$tongtien?>">
-                                <button type="submit" name="btn-order">Đặt hàng</button>
-                            </form> -->
-                        </td>
+                        <td colspan='2'>Tạm tính: <?= $tongtien = $tongtien + $tongtien/10?></td>
+                        <?php 
+                            if (isset($table_status['status']) && $table_status['status'] == 'đã đặt') {
+                                $bill_id = isset($_GET['bill-id']) ? $_GET['bill-id'] : "";
+                                echo '
+                                    <td>
+                                        <a href="'.STAFF_URL.'order/delete?table-id='.$table_id.'"><button>Đặt thêm</button></a>
+                                    </td>
+                                    <td colspan="2">
+                                        <a href="'.STAFF_URL.'order/bill?table-id='.$table_id.'&bill-id='.$bill_id.'"><button>Thanh toán</button></a>
+                                    </td>
+                                ';
+                            }else if ($table_status['status'] == 'chưa dọn'){
+                                echo '
+                                    <td colspan="3">
+                                    <a href="'.STAFF_URL.'order/delete?table-id='.$table_id.'"><button>Dọn xong</button></a>
+                                    </td>
+                                ';
+                            }else{
+                                echo '
+                                    <td>
+                                        <a href="'.STAFF_URL.'order/delete?table-id='.$table_id.'"><button>Hủy</button></a>
+                                    </td>
+                                    <td colspan="2">
+                                        <a href="'.STAFF_URL.'order/add-bill?desk-id='.$table_id.'&amount='.$tongtien.'"><button>Đặt bàn</button></a>
+                                    </td>
+                                ';
+                            }
+                        ?>
+                        
                     </tr>
                 </tfoot>
             </table>
