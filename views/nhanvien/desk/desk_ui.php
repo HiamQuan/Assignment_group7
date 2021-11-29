@@ -23,7 +23,7 @@
             echo '<div class="box-desk-4 card text-center" style="width: 18rem;">';
         }
         ?>
-        <a href="<?= STAFF_URL . 'nhanvien/order?id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_name'] ?></a> &nbsp;
+        <a href="<?= STAFF_URL . 'order?table-id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_name'] ?></a> &nbsp;
 
 </div>
 <?php endforeach ?>
