@@ -14,7 +14,7 @@
                     <input type="hidden" name="food_name" value="<?= $x['food_name'] ?>">
                     <input type="hidden" name="price" value="<?= $x['price'] ?>">
                     <input type="hidden" name="image" value="<?= $x['image'] ?>">
-                    <input type="hidden" name="category_id" value="<?= $category_id?>">
+                    <input type="hidden" name="category-id" value="<?=$_GET['category-id']??1 ?>">
                     <button type="submit" name="btn-addtocart">Thêm</button>
                 </form>
             </div>
@@ -26,7 +26,7 @@
         </div>
         <ul>
             <?php foreach ($category as $cate) : ?>
-                <a href="<?= STAFF_URL."order?table-id=$table_id&category-id=".$cate['category_id']?>">
+                <a href="<?= STAFF_URL."order?table-id=".$table_id."&category-id=".$cate['category_id']?>">
                     <li><?= $cate['category_name'] ?></li>
                 </a>
             <?php endforeach ?>
@@ -64,7 +64,7 @@
                                         <td>' . $soluong . '</td>
                                         <td>' . $price . '</td>
                                         <td></td>
-                                        <td><a href="' . STAFF_URL . 'order/delete?id=' . $food_id . '&table-id=' . $table_id .'&category_id='.$category_id .'" class="btn btn-sm btn-danger">Delete</a></td>
+                                        <td><a href="' . STAFF_URL . 'order/delete?id=' . $food_id . '&table-id=' . $table_id .'&category-id='.$category_id .'" class="btn btn-sm btn-danger">Delete</a></td>
                                     </tr>';
                             $i += 1;
                         }
@@ -81,6 +81,9 @@
                             <a href="<?= STAFF_URL . 'order/delete?table-id=' . $table_id ?>"><button>Hủy</button></a>
                         </td>
                         <td colspan='2'>
+                            <!-- <form action="<?= STAFF_URL . "order/add-bill?desk-id=$table_id&amount=$tongtien" ?>" method="post">
+                        <input type="submit" name="btn-order" value="Đặt bàn">
+                        </form> -->
                             <a href="<?= STAFF_URL . "order/add-bill?desk-id=$table_id&amount=$tongtien" ?>"><button>Đặt bàn</button></a>
                             <!-- <form action="<?= STAFF_URL . "order/add-bill" ?>">
                                 <input type="hidden" name="desk_id" value="<?= $table_id ?>">

@@ -9,6 +9,8 @@
             $sql = "insert into bill (date,amount,status,desk_id,user_id) values
                     (now(),'$amount','$status','$desk_id','$user_id')";
             $last_ID = pdo_execute_return_lastInsertId($sql);
+            $sql="update desk set status='đã đặt' where desk_id='$desk_id'";
+            pdo_execute($sql);
             foreach($_SESSION['order'][$desk_id] as $order) {
                 extract($order);
                 $sql = "insert into detail_bill (quantity,bill_id,food_id) values

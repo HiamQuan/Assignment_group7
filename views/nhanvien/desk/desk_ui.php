@@ -16,7 +16,7 @@
         if($d['status'] == "trống") {
             echo '<div class="box-desk card text-center" style="width: 18rem;">';
         }
-        if ($d['status'] == "chưa đặt") {
+        if ($d['status'] == "đang chờ") {
             echo '<div class="box-desk-2 card text-center" style="width: 18rem;">';
         }
         if ($d['status'] == "chưa dọn") {
@@ -24,7 +24,6 @@
         }
         ?>
         <a href="<?= STAFF_URL . 'order?table-id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;
-
 </div>
 <?php endforeach ?>
 </div>
