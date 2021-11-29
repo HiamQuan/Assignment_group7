@@ -15,7 +15,11 @@ const IMAGE_URL = BASE_URL . "public/upload/";
 const CSS_URL= BASE_URL . 'public/customize/css/';
 
 
-
+function nhanvien_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/nhanvien/'.$viewpath;
+    include_once './views/nhanvien/layout/main.php';
+}
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . IMAGE_URL;
 
@@ -33,4 +37,15 @@ function save_file($file, $dir_path)
     $dir_file_path = $dir_path . $file_name;
     move_uploaded_file($file_upload['tmp_name'], $dir_file_path);
     return $file_name;
+}
+function staff_render($viewpath, $data = []){
+
+    extract($data);
+    $VIEW_PAGE = "./views/nhanvien/" . $viewpath;
+    include_once './views/nhanvien/layout/main.php';
+}function chef_render($viewpath, $data = []){
+
+    extract($data);
+    $VIEW_PAGE = "./views/bep/" . $viewpath;
+    include_once './views/bep/chef_ui.php';
 }
