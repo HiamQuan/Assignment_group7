@@ -6,9 +6,9 @@ session_start();
 const BASE_URL = "http://localhost:81/Assignment_group7/";
 
 
-const ADMIN_URL = "http://localhost:81/Assignment_group7/admin/";
-const STAFF_URL = "http://localhost:81/Assignment_group7/staff/";
-const CHEF_URL = "http://localhost:81/Assignment_group7/chef/";
+const ADMIN_URL = BASE_URL. "admin/";
+const STAFF_URL = BASE_URL. "staff/";
+const CHEF_URL = BASE_URL. "chef/";
 const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
 const PUBLIC_ASSETS = "http://localhost:81/Assignment_group7/public/";
 const IMAGE_URL = BASE_URL . "public/upload/";
