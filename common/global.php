@@ -10,7 +10,7 @@ const ADMIN_URL = BASE_URL. "admin/";
 const STAFF_URL = BASE_URL. "staff/";
 const CHEF_URL = BASE_URL. "chef/";
 const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
-const PUBLIC_ASSETS = "http://localhost:81/Assignment_group7/public/";
+const PUBLIC_ASSETS = BASE_URL."public/";
 const IMAGE_URL = BASE_URL . "public/upload/";
 const CSS_URL= BASE_URL . 'public/customize/css/';
 

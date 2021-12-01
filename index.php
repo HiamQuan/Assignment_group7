@@ -4,10 +4,10 @@ require_once "./dao/pdo.php";
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case '/':
-        echo "Hello GROUP7";
+        require_once "./business/login.php";
         break;
     case 'admin':
-        require_once "./business/quanly/dashboard.php";
+        require_once "./business/quanly/result/index.php";
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
@@ -42,7 +42,10 @@ switch ($url) {
         done_bill();
         break;
     case 'chef':
-        require "./business/bep/dashboard.php";
+        require_once "./business/bep/undone.php";
+        break;
+    case 'chef/done':
+        require_once "./business/bep/done.php";
         break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";
