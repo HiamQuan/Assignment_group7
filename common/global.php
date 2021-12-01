@@ -6,11 +6,11 @@ session_start();
 const BASE_URL = "http://localhost:81/Assignment_group7/";
 
 
-const ADMIN_URL = "http://localhost:81/Assignment_group7/admin/";
-const STAFF_URL = "http://localhost:81/Assignment_group7/staff/";
-const CHEF_URL = "http://localhost:81/Assignment_group7/chef/";
+const ADMIN_URL = BASE_URL. "admin/";
+const STAFF_URL = BASE_URL. "staff/";
+const CHEF_URL = BASE_URL. "chef/";
 const ADMIN_ASSETS = BASE_URL . 'public/adminlte/';
-const PUBLIC_ASSETS = "http://localhost:81/Assignment_group7/public/";
+const PUBLIC_ASSETS = BASE_URL."public/";
 const IMAGE_URL = BASE_URL . "public/upload/";
 const CSS_URL= BASE_URL . 'public/customize/css/';
 
@@ -19,6 +19,18 @@ function nhanvien_render($viewpath, $data = [], $files = []) {
     extract($data);
     $VIEW_PAGE = './views/nhanvien/'.$viewpath;
     include_once './views/nhanvien/layout/main.php';
+}
+
+function admin_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/quanly/'.$viewpath;
+    include_once './views/quanly/layout/main.php';
+}
+
+function chef_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/bep/'.$viewpath;
+    include_once './views/bep/layout/main.php';
 }
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . IMAGE_URL;
