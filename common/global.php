@@ -55,9 +55,4 @@ function staff_render($viewpath, $data = []){
     extract($data);
     $VIEW_PAGE = "./views/nhanvien/" . $viewpath;
     include_once './views/nhanvien/layout/main.php';
-}function chef_render($viewpath, $data = []){
-
-    extract($data);
-    $VIEW_PAGE = "./views/bep/" . $viewpath;
-    include_once './views/bep/chef_ui.php';
 }
