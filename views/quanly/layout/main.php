@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
-  <?php include_once "./views/admin/layouts/style.php" ?>
+  <?php include_once "./views/quanly/layout/style.php" ?>
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -16,11 +16,11 @@
   </div>
 
   <!-- Navbar -->
-  <?php include_once "./views/admin/layouts/header.php" ?>
+  <?php include_once "./views/head_foot/header.php" ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <?php include_once "./views/admin/layouts/sidebar.php" ?>
+  <?php include_once "./views/quanly/layout/sidebar.php" ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -68,7 +68,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<?php include_once "./views/admin/layouts/script.php" ?>
+<?php include_once "./views/admin/layout/script.php" ?>
 <?php if(count($jsFiles) > 0):?>
   <?php foreach ($jsFiles as $jsFile): ?>
     <script src="<?= PUBLIC_ASSETS ."customize/js/". $jsFile?>" type="text/javascript"></script>

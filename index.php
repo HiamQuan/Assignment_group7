@@ -7,7 +7,8 @@ switch ($url) {
         require_once "./business/login.php";
         break;
     case 'admin':
-        require_once "./business/quanly/result/index.php";
+        require_once "./business/quanly/result.php";
+        index();
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
