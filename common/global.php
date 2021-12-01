@@ -20,6 +20,18 @@ function nhanvien_render($viewpath, $data = [], $files = []) {
     $VIEW_PAGE = './views/nhanvien/'.$viewpath;
     include_once './views/nhanvien/layout/main.php';
 }
+
+function admin_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/quanly/'.$viewpath;
+    include_once './views/quanly/layout/main.php';
+}
+
+function chef_render($viewpath, $data = [], $files = []) {
+    extract($data);
+    $VIEW_PAGE = './views/bep/'.$viewpath;
+    include_once './views/bep/layout/main.php';
+}
 // đường dẫn để upload ảnh
 $PATH_IMAGE = $_SERVER['DOCUMENT_ROOT'] . IMAGE_URL;
 

@@ -20,5 +20,11 @@
 <!-- summernote -->
 <link rel="stylesheet" href="<?= ADMIN_ASSETS ?>plugins/summernote/summernote-bs4.min.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>head-foot/head-foot.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>quanly/food.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>quanly/category.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>quanly/result.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>quanly/desk.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>quanly/bill.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>quanly/account.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/desk.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/order.css">
