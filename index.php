@@ -45,6 +45,18 @@ switch ($url) {
     case 'chef':
         require "./business/bep/dashboard.php";
         break;
+    case  'login':
+        require_once "./business/login/login.php";
+        login();
+        break;
+    case  'login/submit':
+        require_once "./business/login/login.php";
+        submit_login();
+        break;
+     case  'logout/submit':
+        require_once "./business/login/login.php";
+        submit_logout();
+        break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";
         break;
