@@ -68,10 +68,10 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<?php include_once "./views/admin/layout/script.php" ?>
-<?php if(count($jsFiles) > 0):?>
-  <?php foreach ($jsFiles as $jsFile): ?>
-    <script src="<?= PUBLIC_ASSETS ."customize/js/". $jsFile?>" type="text/javascript"></script>
+<?php include_once "./views/quanly/layout/script.php" ?>
+<?php if(count($files) > 0):?>
+  <?php foreach ($files as $files): ?>
+    <script src="<?= PUBLIC_ASSETS ."customize/js/". $files?>" type="text/javascript"></script>
   <?php endforeach ?>
 <?php endif?>
 
