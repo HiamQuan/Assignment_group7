@@ -57,7 +57,7 @@
         if (isset($_GET['id'])) {
             // array_splice($_SESSION['order'][$table_id], $_GET['id'],1);
             unset($_SESSION['order'][$table_id][$_GET['id']]);
-            header("location:". STAFF_URL . 'order?table-id=' . $table_id);
+            header("location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id);
         }else{
             $_SESSION['order'][$table_id] = [];
             $sql = "update desk set status='trống' where desk_id=$table_id";
@@ -65,11 +65,8 @@
             header("location:".BASE_URL."staff");
 
         }
-        header("location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id);
+        
+        // header("location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id);
     }
 
-// Update trạng thái "đang chờ"
-    function update_desk($desk_id){
-        $sql= "update desk set status='đang chờ' where desk_id=$desk_id";
-        pdo_execute($sql);
-    }
+ 

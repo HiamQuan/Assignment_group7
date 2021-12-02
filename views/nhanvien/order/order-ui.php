@@ -80,7 +80,7 @@
                                 $bill_id = isset($_GET['bill-id']) ? $_GET['bill-id'] : "";
                                 echo '
                                     <td>
-                                        <a href="'.STAFF_URL.'order/delete?table-id='.$table_id.'"><button>Đặt thêm</button></a>
+                                        <a href="'.STAFF_URL.'order/delete?table-id='.$table_id.'&category-id='.$category_id.'"><button>Đặt thêm</button></a>
                                     </td>
                                     <td colspan="2">
                                         <a href="'.STAFF_URL.'order/bill?table-id='.$table_id.'&bill-id='.$bill_id.'"><button>Thanh toán</button></a>
@@ -98,7 +98,7 @@
                                         <a href="'.STAFF_URL.'order/delete?table-id='.$table_id.'"><button>Hủy</button></a>
                                     </td>
                                     <td colspan="2">
-                                        <a href="'.STAFF_URL.'order/add-bill?desk-id='.$table_id.'&amount='.$tongtien.'"><button>Đặt bàn</button></a>
+                                        <a href="'.STAFF_URL.'order/add-bill?table-id='.$table_id.'&amount='.$tongtien.'&category-id='.$category_id.'"><button>Đặt bàn</button></a>
                                     </td>
                                 ';
                             }
