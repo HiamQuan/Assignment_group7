@@ -32,7 +32,7 @@ function add_bill()
 function get_bill()
 {
     $bill_id = $_GET['bill-id'];
-    $sql = "select user.user_name, bill.bill_id, bill.date, bill.desk_id,bill.amount
+    $sql = "select user.name, bill.bill_id, bill.date, bill.desk_id,bill.amount
                 from user 
                 INNER JOIN bill ON bill.user_id = user.user_id
                 where bill_id=$bill_id";
