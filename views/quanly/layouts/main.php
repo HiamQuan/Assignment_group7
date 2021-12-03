@@ -47,9 +47,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        
-        
-
+        <?php include_once $VIEW_PAGE; ?>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
@@ -71,8 +69,12 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<?php include_once "./views/quanly/layouts/scrip.php"?>
-
+<?php include_once "./views/quanly/layouts/script.php"?>
+<?php if(count($jsFiles) > 0):?>
+  <?php foreach ($jsFiles as $jsFile): ?>
+    <script src="<?= PUBLIC_ASSETS . $jsFile?>" type="text/javascript"></script>
+  <?php endforeach ?>
+<?php endif?>
 
 </body>
 </html>

@@ -49,6 +49,6 @@ function staff_render($viewpath, $data = []){
 function admin_render($viewpath, $data = [], $jsFiles = []){
 
     extract($data);
-    $businessView = "./views/quanly/" . $viewpath;
+    $VIEW_PAGE = "./views/quanly/" . $viewpath;
     include_once './views/quanly/layouts/main.php';
 }

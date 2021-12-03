@@ -8,7 +8,31 @@ switch ($url) {
         break;
     case 'admin':
         require_once "./business/quanly/dashboard.php";
-        food_index();
+        dashboard_index();
+        break;
+    case 'admin/user':
+        require_once "./business/quanly/account.php";
+        user_index();
+        break;
+    case 'admin/user/tao-moi':
+        require_once "./business/quanly/account.php";
+        user_add_form();
+        break;
+    case 'admin/user/luu-tao-moi':
+        require_once "./business/quanly/account.php";
+        user_submit_add();
+        break;
+    case 'admin/user/sua':
+        require_once "./business/quanly/account.php";
+        user_edit_form();
+        break;
+    case 'admin/user/luu-sua':
+        require_once "./business/quanly/account.php";
+        user_save_edit();
+        break;
+    case 'admin/user/xoa':
+        require_once "./business/quanly/account.php";
+        user_remove();
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
