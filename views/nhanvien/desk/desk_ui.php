@@ -5,7 +5,7 @@
     <?php endforeach ?>
 </div>
 
-<div class="list-desk " >
+<div class="list-desk" >
     <?php
     foreach ($dsBan as $d) :
     ?>
@@ -14,7 +14,7 @@
             echo '<div class="box-desk-3 card text-center" style="width: 18rem;">';
         }
         if($d['status'] == "trống") {
-            echo '<div class="box-desk card text-center" style="width: 18rem;">';
+            echo '<div class="box-desk card text-center animate__animated animate__fadeIn animate__slower" style="width: 18rem;">';
         }
         if ($d['status'] == "chưa đặt") {
             echo '<div class="box-desk-2 card text-center" style="width: 18rem;">';

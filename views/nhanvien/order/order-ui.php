@@ -1,7 +1,7 @@
 <section class="menu-order">
     <div class="list-food">
         <?php foreach ($list_foods as $x) : ?>
-            <div class="list-food-item fadeIn">
+            <div class="animate__animated animate__fadeInRight list-food-item">
                 <div class="food-image">
                     <img src="<?= IMAGE_URL . 'food/' . $x['image'] ?>" alt="">
                 </div>
@@ -15,7 +15,7 @@
                     <input type="hidden" name="price" value="<?= $x['price'] ?>">
                     <input type="hidden" name="image" value="<?= $x['image'] ?>">
                     <input type="hidden" name="category-id" value="<?=$_GET['category-id']??1 ?>">
-                    <button type="submit" name="btn-addtocart">Thêm</button>
+                    <button type="submit" name="btn-addtocart" class="btn btn-primary">Thêm</button>
                 </form>
             </div>
         <?php endforeach ?>

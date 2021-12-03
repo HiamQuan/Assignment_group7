@@ -12,6 +12,7 @@
   margin-bottom: 40px;
   text-align: center;
   border-radius: 5px;
+  cursor: pointer;
 }
 .box-desk a {
   margin-top: 100px;
@@ -24,6 +25,7 @@
   font-size: 40px;
 }
 .box-desk-2 {
+  cursor: pointer;
   height: 300px;
   border: 1px solid #baffba;
   border-radius: 5px;
@@ -37,6 +39,7 @@
   font-size: 40px;
 }
 .box-desk-3 {
+  cursor: pointer;
   height: 300px;
   border: 1px solid #baffba;
   border-radius: 5px;
