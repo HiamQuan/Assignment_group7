@@ -6,7 +6,7 @@
                 <label for="floatingInput">Fullname</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="user_name" id="" placeholder="name@example.com" required>
+                <input type="text" class="form-control" name="user_name" id="" placeholder="name@example.com" autocomplete="off" required>
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating mb-3">
