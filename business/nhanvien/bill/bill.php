@@ -4,7 +4,7 @@ function add_bill()
     // if (isset($_POST['btn-order'])) {
     $category_id = $_GET['category-id'];
     $amount = $_GET['amount'];
-    $table_id = $_GET['desk-id'];
+    $table_id = $_GET['table-id'];
     $user_id = 1;
     $status = 'Chưa thanh toán';
     $sql = "insert into bill (date,amount,status,desk_id,user_id) values

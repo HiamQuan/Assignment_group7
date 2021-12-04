@@ -10,6 +10,7 @@
         $sql = "select status from desk where desk_id=$table_id";
         $table_status = pdo_query_one($sql);
         if ($table_status['status'] == "trống") {
+
            $sql = "update desk set status='chưa đặt' where desk_id=$table_id";
             pdo_execute($sql);
         }
@@ -34,7 +35,6 @@
             'category_id'=>$category_id,
             'table_status'=>$table_status
         ]);
-        return $category_id;
     }
     function add_food() {
         if(isset($_POST['btn-addtocart'])) {

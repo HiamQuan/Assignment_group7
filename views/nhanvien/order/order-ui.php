@@ -71,6 +71,7 @@
                         <td colspan="1">
                             <a href="<?= STAFF_URL. "order/bill?table-id=$table_id&bill-id=$bill_id"?>"><button>Thanh toán</button></a>
                         </td>
+                        
                     </tr>
                 </tfoot>
             </table>
