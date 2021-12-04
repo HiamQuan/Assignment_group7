@@ -1,7 +1,7 @@
 <section class="menu-order">
     <div class="list-food">
         <?php foreach ($list_foods as $x) : ?>
-            <div class="animate__animated animate__fadeInRight list-food-item card">
+            <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
                 <div class="food-image">
                     <img src="<?= IMAGE_URL . 'food/' . $x['image'] ?>" alt="">
                 </div>
