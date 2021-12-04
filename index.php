@@ -34,6 +34,10 @@ switch ($url) {
         require_once "./business/nhanvien/bill/bill.php";
         add_bill();
         break;
+    case 'staff/order/add-bill-update':
+        require_once "./business/nhanvien/bill/bill.php";
+        add_bill_update();
+        break;
     case 'staff/order/bill':
         require_once "./business/nhanvien/bill/bill.php";
         get_bill();

@@ -32,13 +32,13 @@
                     if(isset($info_bills)) {
                         foreach ($info_bills as $cart) {
                             extract($cart);
-                            $sl += $quantity;
-                            $thanhtien = $quantity * $price;
+                            // $sl += $quantity;
+                            // $thanhtien = $quantity * $price;
                             echo '<tr>
                                     <td>'.$food_name.'</td>
-                                    <td>'.$quantity.'</td>
+                                    <td></td>
                                     <td>'.$price.'</td>
-                                    <td>'.$thanhtien.'</td>
+                                    <td></td>
                                 </tr>';
                         }
                     }
