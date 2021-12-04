@@ -8,6 +8,8 @@
 <div class="list-desk " >
     <?php
     foreach ($dsBan as $d) :
+    $bill_id = isset($_SESSION['bill-id'][$d['desk_id']])? '&bill-id='.$_SESSION['bill-id'][$d['desk_id']]: NULL;
+
     ?>
         <?php
          if ($d['status'] == "đã đặt") {
@@ -23,7 +25,7 @@
             echo '<div class="box-desk-4 card text-center" style="width: 18rem;">';
         }
         ?>
-        <a href="<?= STAFF_URL . 'order?table-id=' . $d['desk_id'] ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;
+        <a href="<?= STAFF_URL . 'order?table-id=' . $d['desk_id'].$bill_id ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;
 </div>
 <?php endforeach ?>
 </div>
