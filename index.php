@@ -10,27 +10,27 @@ switch ($url) {
         require_once "./business/quanly/result.php";
         index();
         break;
-    case 'admin/user':
+    case 'admin/account':
         require_once "./business/quanly/account.php";
         user_index();
         break;
-    case 'admin/user/tao-moi':
+    case 'admin/account/add-form':
         require_once "./business/quanly/account.php";
         user_add_form();
         break;
-    case 'admin/user/luu-tao-moi':
+    case 'admin/account/add-submit':
         require_once "./business/quanly/account.php";
         user_submit_add();
         break;
-    case 'admin/user/sua':
+    case 'admin/account/edit-form':
         require_once "./business/quanly/account.php";
         user_edit_form();
         break;
-    case 'admin/user/luu-sua':
+    case 'admin/account/edit-submit':
         require_once "./business/quanly/account.php";
         user_save_edit();
         break;
-    case 'admin/user/xoa':
+    case 'admin/account/delete':
         require_once "./business/quanly/account.php";
         user_remove();
         break;
@@ -57,6 +57,10 @@ switch ($url) {
     case 'staff/order/add-bill':
         require_once "./business/nhanvien/bill/bill.php";
         add_bill();
+        break;
+    case 'staff/order/add-bill-update':
+        require_once "./business/nhanvien/bill/bill.php";
+        add_bill_update();
         break;
     case 'staff/order/bill':
         require_once "./business/nhanvien/bill/bill.php";

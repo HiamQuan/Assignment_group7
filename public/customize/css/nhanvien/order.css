@@ -60,16 +60,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    width: 23%;
+    width: 25%;
     margin: 2% 1%;
-    border-radius: 5px;
-    border: 1px solid #acacac;
+    border-radius: 12px;
+    border: 2px groove #acacacbd;
+    padding-bottom: 0.2em;
 }
 .list-food-item .name{
     font-weight: bold;
-    font-size: 23px;
-    padding-left: 5%;
+    font-size: 1.5em;
 }
 .list-food-item .price{
     font-size: 18px;
@@ -79,8 +78,8 @@
     width: 100%;
     background: #EB7676;
     height: 50px;
-    border: none;
-    color: #000;
+    border: 2px outset #EB7676;
+    color: rgba(0, 0, 0, 0.856);
     font-weight: 500;
     font-size: 18px;
 
