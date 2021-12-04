@@ -7,8 +7,32 @@ switch ($url) {
         require_once "./business/login.php";
         break;
     case 'admin':
-        require_once "./business/quanly/result.php";
-        index();
+        require_once "./business/quanly/dashboard.php";
+        dashboard_index();
+        break;
+    case 'admin/user':
+        require_once "./business/quanly/account.php";
+        user_index();
+        break;
+    case 'admin/user/tao-moi':
+        require_once "./business/quanly/account.php";
+        user_add_form();
+        break;
+    case 'admin/user/luu-tao-moi':
+        require_once "./business/quanly/account.php";
+        user_submit_add();
+        break;
+    case 'admin/user/sua':
+        require_once "./business/quanly/account.php";
+        user_edit_form();
+        break;
+    case 'admin/user/luu-sua':
+        require_once "./business/quanly/account.php";
+        user_save_edit();
+        break;
+    case 'admin/user/xoa':
+        require_once "./business/quanly/account.php";
+        user_remove();
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
@@ -51,6 +75,18 @@ switch ($url) {
         break;
     case 'chef/done':
         require_once "./business/bep/done.php";
+        break;
+    case  'login':
+        require_once "./business/login/login.php";
+        login();
+        break;
+    case  'login/submit':
+        require_once "./business/login/login.php";
+        submit_login();
+        break;
+     case  'logout/submit':
+        require_once "./business/login/login.php";
+        submit_logout();
         break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";

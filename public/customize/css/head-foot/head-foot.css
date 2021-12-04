@@ -1,16 +1,19 @@
-*{
-    margin: 0; padding: 0; box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: aliceblue;
 }
-header {
+
+.header {
     background: black;
     display: flex;
     justify-content: space-between;
     color: white;
-    padding: 0 40px;
+    padding: 20px 40px;
 }
 
 footer {
