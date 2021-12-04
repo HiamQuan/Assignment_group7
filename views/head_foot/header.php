@@ -7,7 +7,7 @@
             <div class="navbar-header">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= isset($_SESSION['login']['user_name']);?><b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= ($_SESSION['login']['name'])??'';?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="<?= BASE_URL . 'login'?>">login</a></li>
                             <li><a href="<?= BASE_URL . 'logout/submit'?>">Logout</a></li>
