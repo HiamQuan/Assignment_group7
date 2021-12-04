@@ -4,15 +4,15 @@ function add_bill()
     // if (isset($_POST['btn-order'])) {
     $category_id = $_GET['category-id'];
     $amount = $_GET['amount'];
-    $desk_id = $_GET['desk-id'];
+    $table_id = $_GET['desk-id'];
     $user_id = 1;
     $status = 'Chưa thanh toán';
     $sql = "insert into bill (date,amount,status,desk_id,user_id) values
-                    (now(),'$amount','$status','$desk_id','$user_id')";
+                    (now(),'$amount','$status','$table_id','$user_id')";
     $last_ID = pdo_execute_return_lastInsertId($sql);
-    $sql = "update desk set status='đã đặt' where desk_id='$desk_id'";
+    $sql = "update desk set status='đã đặt' where desk_id='$table_id'";
     pdo_execute($sql);
-    foreach ($_SESSION['order'][$desk_id] as $order) {
+    foreach ($_SESSION['order'][$table_id] as $order) {
         extract($order);
         for ($i = 0; $i < $soluong; $i++) {
             $sql = "insert into detail_bill (bill_id,food_id) values
@@ -21,24 +21,24 @@ function add_bill()
         }
     }
     //Tao session luu lai bill_id cua table
-    $_SESSION['bill-id'][$desk_id] = $last_ID;
-    $_SESSION['order'][$desk_id] = [];
+    $_SESSION['bill-id'][$table_id] = $last_ID;
+    $_SESSION['order'][$table_id] = [];
     //Update status desk
-    $sql = "update desk set status='đã đặt' where desk_id=$desk_id";
+    $sql = "update desk set status='đã đặt' where desk_id=$table_id";
     pdo_execute($sql);
-    header("location:" . STAFF_URL . "order?table-id=$desk_id&bill-id=$last_ID&category-id=$category_id");
-    // header("location:". STAFF_URL . "order/bill?table-id=$desk_id&bill-id=$last_ID");
+    header("location:" . STAFF_URL . "order?table-id=$table_id&bill-id=$last_ID&category-id=$category_id");
+    // header("location:". STAFF_URL . "order/bill?table-id=$table_id&bill-id=$last_ID");
     // }
 }
 function add_bill_update()
 {
     $category_id = $_GET['category-id']??1;
     $amount = $_GET['amount'];
-    $desk_id = $_GET['desk-id'];
-    $bill_id = isset($_SESSION['bill-id'][$desk_id]) ? $_SESSION['bill-id'][$desk_id] : NULL;
+    $table_id = $_GET['desk-id'];
+    $bill_id = isset($_SESSION['bill-id'][$table_id]) ? $_SESSION['bill-id'][$table_id] : NULL;
     $sql = "update bill set amount=amount+$amount where bill_id=$bill_id";
     pdo_execute($sql);
-    foreach ($_SESSION['order'][$desk_id] as $order) {
+    foreach ($_SESSION['order'][$table_id] as $order) {
         extract($order);
         for ($i = 0; $i < $soluong; $i++) {
             $sql = "insert into detail_bill (bill_id,food_id) values
@@ -46,10 +46,10 @@ function add_bill_update()
             pdo_execute($sql);
         }
     }
-    $_SESSION['order'][$desk_id] = [];
+    $_SESSION['order'][$table_id] = [];
     //Update status desk
-    header("location:" . STAFF_URL . "order?table-id=$desk_id&bill-id=$bill_id&category-id=$category_id");
-    // header("location:". STAFF_URL . "order/bill?table-id=$desk_id&bill-id=$last_ID");
+    header("location:" . STAFF_URL . "order?table-id=$table_id&bill-id=$bill_id&category-id=$category_id");
+    // header("location:". STAFF_URL . "order/bill?table-id=$table_id&bill-id=$last_ID");
     // }
 }
 
@@ -72,21 +72,21 @@ function get_bill()
         'info_bills' => $info_bills
     ]);
     // extract($info_bill);
-    // header("location:". STAFF_URL . "order/bill?table-id=$desk_id");
+    // header("location:". STAFF_URL . "order/bill?table-id=$table_id");
 }
 function done_bill()
 {
     $bill_id = $_GET['bill-id'];
-    $desk_id = $_GET['desk-id'];
+    $table_id = $_GET['desk-id'];
     //Update status của bill
     $sql = "update bill set status='Đã thanh toán' where bill_id=$bill_id";
     pdo_execute($sql);
     //Update status của desk
-    $sql = "update desk set status='chưa dọn' where desk_id=$desk_id";
+    $sql = "update desk set status='chưa dọn' where desk_id=$table_id";
     pdo_execute($sql);
-    $_SESSION['order'][$desk_id] = [];
-    unset($_SESSION['bill-id'][$desk_id]);
+    $_SESSION['order'][$table_id] = [];
+    unset($_SESSION['bill-id'][$table_id]);
     //  echo '<pre>';
-    // var_dump($_SESSION['order'][$desk_id]);
+    // var_dump($_SESSION['order'][$table_id]);
     header("location:" . BASE_URL . 'staff');
 }
