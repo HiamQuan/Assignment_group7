@@ -20,5 +20,5 @@
 <!-- summernote -->
 <link rel="stylesheet" href="<?= ADMIN_ASSETS ?>plugins/summernote/summernote-bs4.min.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>head-foot/head-foot.css">
-<link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/desk.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>bep/style.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/order.css">
