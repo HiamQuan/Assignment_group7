@@ -31,7 +31,7 @@ function user_submit_add()
     $image = "";
 
     if ($file['size'] > 0) {
-        $filename = uniqid() . '-' . $file['name'];
+        $filename = $file['name'];
         move_uploaded_file($file['tmp_name'], './public/upload/avatars/' . $filename);
         $image = $filename;
     }
