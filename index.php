@@ -10,6 +10,34 @@ switch ($url) {
         require_once "./business/quanly/result.php";
         index();
         break;
+    case 'admin/account':
+        require_once "./business/quanly/account.php";
+        user_index();
+        break;
+    case 'admin/account/add-form':
+        require_once "./business/quanly/account.php";
+        user_add_form();
+        break;
+    case 'admin/account/add-submit':
+        require_once "./business/quanly/account.php";
+        user_submit_add();
+        break;
+    case 'admin/account/edit-form':
+        require_once "./business/quanly/account.php";
+        user_edit_form();
+        break;
+    case 'admin/account/edit-submit':
+        require_once "./business/quanly/account.php";
+        user_save_edit();
+        break;
+    case 'admin/account/delete':
+        require_once "./business/quanly/account.php";
+        user_remove();
+        break;
+    case 'admin/category':
+        require_once "./business/quanly/category.php";
+        list_category();
+        break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
@@ -34,6 +62,10 @@ switch ($url) {
         require_once "./business/nhanvien/bill/bill.php";
         add_bill();
         break;
+    case 'staff/order/add-bill-update':
+        require_once "./business/nhanvien/bill/bill.php";
+        add_bill_update();
+        break;
     case 'staff/order/bill':
         require_once "./business/nhanvien/bill/bill.php";
         get_bill();
@@ -47,6 +79,18 @@ switch ($url) {
         break;
     case 'chef/done':
         require_once "./business/bep/done.php";
+        break;
+    case  'login':
+        require_once "./business/login/login.php";
+        login();
+        break;
+    case  'login/submit':
+        require_once "./business/login/login.php";
+        submit_login();
+        break;
+    case  'logout/submit':
+        require_once "./business/login/login.php";
+        submit_logout();
         break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";

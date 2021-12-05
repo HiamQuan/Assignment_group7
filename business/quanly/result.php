@@ -1,5 +1,5 @@
 <?php
 function index(){
-    admin_render('result/result.php');
+    admin_render('result/index.php');
 }
 ?>
