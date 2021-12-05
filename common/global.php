@@ -26,7 +26,7 @@ function admin_render($viewpath, $data = [], $jsFiles = []){
     $VIEW_PAGE = "./views/quanly/" . $viewpath;
     include_once './views/quanly/layouts/main.php';
 }
-function chef_render($viewpath, $data = [], $files = []) {
+function chef_render($viewpath, $data = [], $jsfiles = []) {
     extract($data);
     $VIEW_PAGE = './views/bep/'.$viewpath;
     include_once './views/bep/layout/main.php';
