@@ -10,13 +10,12 @@ function user_index()
             'dsuser' => $user,
         ],
         [
-            'customize/js/account/list.js'
+            'account/list.js'
         ]
     );
 }
 function user_add_form()
 {
-
     admin_render('account/add-form.php');
 }
 

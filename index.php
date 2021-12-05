@@ -34,6 +34,10 @@ switch ($url) {
         require_once "./business/quanly/account.php";
         user_remove();
         break;
+    case 'admin/category':
+        require_once "./business/quanly/category.php";
+        list_category();
+        break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
@@ -84,7 +88,7 @@ switch ($url) {
         require_once "./business/login/login.php";
         submit_login();
         break;
-     case  'logout/submit':
+    case  'logout/submit':
         require_once "./business/login/login.php";
         submit_logout();
         break;
@@ -92,4 +96,3 @@ switch ($url) {
         echo " Đường dẫn này chưa được định nghĩa";
         break;
 }
-
