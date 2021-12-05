@@ -82,7 +82,7 @@ switch ($url) {
         break;
     case 'chef/done':
         require "./business/bep/done.php";
-        list_undone();
+        list_done();
         break;    
     case 'chef/food/done':
         require "./business/bep/undone.php";

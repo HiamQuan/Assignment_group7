@@ -1,10 +1,10 @@
 <?php
 function list_undone(){
-    $sql = "select food_name, food.food_id, time, detail_id, detail_bill.status, detail_bill.bill_id, bill.desk_id, desk_name, location ";
+    $sql = "select food_name, food.food_id, TIME(time) as hour, detail_id, detail_bill.status, detail_bill.bill_id, bill.desk_id, desk_name, location ";
     $sql .=" from food join detail_bill on food.food_id = detail_bill.food_id ";
     $sql .=" join bill on detail_bill.bill_id = bill.bill_id "; 
     $sql .=" join desk on bill.desk_id = desk.desk_id ";
-    $sql .=" where detail_bill.status = 'chưa hoàn thành' order by time desc ";
+    $sql .=" where detail_bill.status = 'chưa hoàn thành' order by time asc ";
     $list_bill = pdo_query($sql);
     chef_render('undone/undone.php',
      [
