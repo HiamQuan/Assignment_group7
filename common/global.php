@@ -21,12 +21,12 @@ function nhanvien_render($viewpath, $data = [], $files = []) {
     include_once './views/nhanvien/layout/main.php';
 }
 
-function admin_render($viewpath, $data = [], $jsFiles = []){
+function admin_render($viewpath, $data = [], $files = []){
     extract($data);
     $VIEW_PAGE = "./views/quanly/" . $viewpath;
-    include_once './views/quanly/layouts/main.php';
+    include_once './views/quanly/layout/main.php';
 }
-function chef_render($viewpath, $data = [], $jsfiles = []) {
+function chef_render($viewpath, $data = [], $files = []) {
     extract($data);
     $VIEW_PAGE = './views/bep/'.$viewpath;
     include_once './views/bep/layout/main.php';

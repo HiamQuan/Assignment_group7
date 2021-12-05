@@ -17,7 +17,7 @@
 
   <!-- Navbar -->
   <div class="main-header">
-  <?php include_once "./views/head_foot/header.php" ?>
+  <?php include_once "header.php" ?>
   </div>
   <!-- /.navbar -->
 
