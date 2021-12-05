@@ -1,4 +1,5 @@
-<?php foreach($list_bill as $b):?>
+<button type="button" class="btn btn-info btn_ds"><a class="btn_dsht" href="<?= CHEF_URL.'done'?>">Danh sách hoàn thành</a></button>
+
 <table class="table">
   <thead>
     <tr>
@@ -9,6 +10,7 @@
       <th scope="col">Trạng thái</th>
     </tr>
   </thead>
+  <?php foreach($list_bill as $b):?>
   <tbody>
     <tr>
       <th scope="row"><?=$b['food_name']?></th>
@@ -17,5 +19,6 @@
       <td><?=$b['location']?></td>
       <td><button type="button" class="btn btn-success"><a class="done" href="<?= CHEF_URL . 'food/done?detail_id=' . $b['detail_id'] ?>">Hoàn thành</a></button></td>
     </tr>
+    <?php endforeach ?>
 </table>  
-<?php endforeach ?>  
+  

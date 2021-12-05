@@ -18,6 +18,6 @@ function done_detail_bill(){
     set status = 'hoàn thành'  
     where detail_id = $detail_id";
     pdo_execute($sql);
-    header("location:http://localhost:81/assignment_group7/chef " );
+    header("location:". BASE_URL."chef" );
 }
 ?>

@@ -1,5 +1,5 @@
+<button type="button" class="btn btn-info btn_ds"><a class="btn_dsht" href="<?= BASE_URL . 'chef'?>">Danh sách chưa hoàn thành</a></button>
 
-<?php foreach($list_bill as $b):?>
 <table class="table">
   <thead>
     <tr>
@@ -11,12 +11,14 @@
     </tr>
   </thead>
   <tbody>
+  <?php foreach($list_bill as $b):?>
     <tr>
       <th scope="row"><?=$b['food_name']?></th>
       <td><?=$b['time']?></td>
       <td><?=$b['desk_name']?></td>
       <td><?=$b['location']?></td>
-      <td><button type="button" class="btn btn-success"><a href="<?= CHEF_URL . 'food/undone?id=' . $b['detail_id'] ?>">Hoàn thành</a></button></td>
+      <td><button type="button" class="btn btn-danger"><a class="done" href="<?= CHEF_URL . 'food/undone?detail_id=' . $b['detail_id'] ?>">Chưa hoàn thành</a></button></td>
     </tr>
+    <?php endforeach ?> 
 </table>  
-<?php endforeach ?>  
+ 

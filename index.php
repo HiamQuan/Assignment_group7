@@ -48,10 +48,18 @@ switch ($url) {
         require "./business/bep/undone.php";
         list_undone();
         break;
+    case 'chef/done':
+        require "./business/bep/done.php";
+        list_undone();
+        break;    
     case 'chef/food/done':
         require "./business/bep/undone.php";
         done_detail_bill();
-        break;        
+        break;
+    case 'chef/food/undone':
+        require "./business/bep/done.php";
+        undone_detail_bill();
+        break;            
     default:
         echo " Đường dẫn này chưa được định nghĩa";
         break;
