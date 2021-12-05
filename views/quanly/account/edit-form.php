@@ -2,19 +2,19 @@
     <div class="row">
         <div class="col-6 offset-3">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="name" value="<?= $user['name'] ?>" id="" placeholder="name@example.com" required>
+                <input type="text" class="form-control" name="name" value="<?= $user['name'] ?>" id="" placeholder="name@example.com" required autocomplete="off">
                 <label for="floatingInput">Name</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="user_name" value="<?= $user['user_name'] ?>" id="" placeholder="name@example.com" required>
+                <input type="text" class="form-control" name="user_name" value="<?= $user['user_name'] ?>" id="" placeholder="name@example.com" required autocomplete="off">
                 <label for="floatingInput">User name</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="phone" value="<?= $user['phone'] ?>" id="" placeholder="name@example.com" required>
+                <input type="text" class="form-control" name="phone" value="<?= $user['phone'] ?>" id="" placeholder="name@example.com" required autocomplete="off">
                 <label for="floatingInput">Phone</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="role" value="<?= $user['role'] ?>" id="" placeholder="name@example.com" required>
+                <input type="text" class="form-control" name="role" value="<?= $user['role'] ?>" id="" placeholder="name@example.com" required autocomplete="off">
                 <label for="floatingInput">Role</label>
             </div>
             <div class="form-floating mb-3">
