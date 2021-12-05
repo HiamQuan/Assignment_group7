@@ -1,1 +1,3 @@
-<h2>echo Hello</h2>
+<?php 
+echo "Mệt vãi lồn";
+?>

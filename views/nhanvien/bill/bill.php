@@ -8,7 +8,7 @@
     </div>
     <div class="row pt-2">
         <div class="col-6">
-            <h6>Thu ngân: <?=$info_bill['user_name']?></h6>
+            <h6>Thu ngân: <?=$info_bill['name']?></h6>
         </div>
         <div class="col-6 text-right">
             <h6>Mã hóa đơn:  <?=$info_bill['bill_id']?></h6>
@@ -32,13 +32,13 @@
                     if(isset($info_bills)) {
                         foreach ($info_bills as $cart) {
                             extract($cart);
-                            $sl += $quantity;
-                            $thanhtien = $quantity * $price;
+                            // $sl += $quantity;
+                            // $thanhtien = $quantity * $price;
                             echo '<tr>
                                     <td>'.$food_name.'</td>
-                                    <td>'.$quantity.'</td>
+                                    <td></td>
                                     <td>'.$price.'</td>
-                                    <td>'.$thanhtien.'</td>
+                                    <td></td>
                                 </tr>';
                         }
                     }
