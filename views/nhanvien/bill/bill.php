@@ -8,7 +8,7 @@
     </div>
     <div class="row pt-2">
         <div class="col-6">
-            <h6>Thu ngân: <?=$info_bill['name']?></h6>
+            <h6>Thu ngân: <?=$info_bill['user_name']?></h6>
         </div>
         <div class="col-6 text-right">
             <h6>Mã hóa đơn:  <?=$info_bill['bill_id']?></h6>
@@ -32,13 +32,13 @@
                     if(isset($info_bills)) {
                         foreach ($info_bills as $cart) {
                             extract($cart);
-                            // $sl += $quantity;
-                            // $thanhtien = $quantity * $price;
+                            $sl += $soluong;
+                            $thanhtien = $soluong * $price;
                             echo '<tr>
                                     <td>'.$food_name.'</td>
-                                    <td></td>
+                                    <td>'.$soluong.'</td>
                                     <td>'.$price.'</td>
-                                    <td></td>
+                                    <td>'.$thanhtien.'</td>
                                 </tr>';
                         }
                     }
@@ -62,7 +62,7 @@
         </table>
         <hr>
         <div class="row p-2">
-                Hóa đơn đã bao gồm thuế giá trị gia tăng. Vui lòng kiểm tra hóa đơn trước khi thanh toán.
+                Hóa đơn đã bao gồm 10% thuế giá trị gia tăng. Vui lòng kiểm tra hóa đơn trước khi thanh toán.
                 <br>
                 Chúc quý khách vủi vẻ, hẹn gặp lại!
             </div>

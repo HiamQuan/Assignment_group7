@@ -44,7 +44,7 @@
                     <thead>
                         <th>Hình ảnh </th>
                         <th>Tên món</th>
-                        <!-- <th>SL</th> -->
+                        <th>SL</th>
                         <th>Đơn giá</th>
                     </thead>
                     <tbody>
@@ -53,11 +53,13 @@
                         $sl = 0;
                         foreach ($list_fooded as $cart) {
                             extract($cart);
-                            // $thanhtien = $quantity * $price;
-                            // $tongtien += $thanhtien;
+                            $sl += $soluong;
+                            $thanhtien = $soluong * $price;
+                            $tongtien += $thanhtien;
                             echo '<tr>
                                         <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px"></td>
                                         <td>' . $food_name . '</td>
+                                        <td>' . $soluong . '</td>
                                         <td>' . $price . '</td>
                                     </tr>';
                         }
@@ -68,7 +70,7 @@
                         <tr>
                             <td>Số lượng: <?= $sl ?></td>
                             <td colspan='1'>Tạm tính: <?= $tongtien = $tongtien + $tongtien / 10 ?></td>
-                            <td colspan="1">
+                            <td colspan="2">
                                 <a href="<?= STAFF_URL . "order/bill?table-id=$table_id&bill-id=$bill_id" ?>"><button>Thanh toán</button></a>
                             </td>
 
@@ -104,7 +106,17 @@
                             echo '<tr>
                                         <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px"></td>
                                         <td>' . $food_name . '</td>
-                                        <td>' . $soluong . '</td>
+                                        <td>
+                                           <div class="d-flex justify-content-center">
+                                               <form action="' . STAFF_URL . 'order/update-session' . '" method="post">
+                                                    <input type="hidden" name="food_id" value="' . $food_id . '">
+                                                    <input type="hidden" name="desk_id" value="'. $table_id .'">
+                                                    <button type="submit" name="reduce" class="btn btn-secondary">-</button>
+                                                    <button class="btn">'. $soluong .'</button>
+                                                    <button type="submit" name="add" class="btn btn-secondary">+</button>
+                                                </form>
+                                           </div>
+                                        </td>
                                         <td>' . $price . '</td>
                                         <td></td>
                                         <td><a href="' . STAFF_URL . 'order/delete?id=' . $food_id . '&table-id=' . $table_id . '&category-id=' . $category_id . $bill_id . '" class="btn btn-sm btn-danger">Delete</a></td>
@@ -114,7 +126,7 @@
 
                     // session_unset();
                     ?>
-
+                    <a href=""></a>
                 </tbody>
                 <tfoot>
                     <tr>

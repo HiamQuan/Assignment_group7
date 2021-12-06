@@ -17,24 +17,26 @@
         $sql = "select status from desk where desk_id=$table_id";
         $table_status = pdo_query_one($sql); 
         if ($bill_id !="") {
-            $sql = "select food.food_id, food.food_name, food.image, food.price, bill.amount 
-                    from food INNER JOIN detail_bill ON food.food_id = detail_bill.food_id 
-                    INNER JOIN bill ON detail_bill.bill_id = bill.bill_id where bill.bill_id =$bill_id";
+            $sql = "select food.food_name, food.price, food.image, count(detail_bill.food_id) as 'soluong' from detail_bill
+                    INNER JOIN food ON food.food_id=detail_bill.food_id where bill_id=$bill_id group by detail_bill.food_id";
             $list_fooded = pdo_query($sql);
         }else{
             $list_fooded = NULL;
         }
-        
-        // echo "<pre>";
-        // var_dump($list_fooded);
-        nhanvien_render('order/order-ui.php', [
+        nhanvien_render('order/order-ui.php', 
+        [
             'list_foods' => $list_foods,
             'list_fooded' => $list_fooded,
             'category'=> $category ,
             'table_id'=>$table_id,
             'category_id'=>$category_id,
             'table_status'=>$table_status
-        ]);
+        ],
+        [
+            'order/order.js'
+        ]
+    
+    );
     }
     function add_food() {
         if(isset($_POST['btn-addtocart'])) {
@@ -62,11 +64,22 @@
             
         }
         $bill_id = isset($_SESSION['bill-id'][$table_id])? '&bill-id='.$_SESSION['bill-id'][$table_id]: NULL;
-
-        // echo "location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id.''.$bill_id;
-        // session_unset();
         header("location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id.$bill_id);
         
+    }
+    function update_session() {
+        $desk_id = $_POST['desk_id'];
+        $food_id = $_POST['food_id'];
+        if(isset($_POST['add'])) {
+            $_SESSION["order"][$desk_id][$food_id]['soluong']+=1;
+
+        }
+        if(isset($_POST['reduce'])) {
+            $_SESSION["order"][$desk_id][$food_id]['soluong']-=1;
+
+        }
+        $bill_id = isset($_SESSION['bill-id'][$desk_id])? '&bill-id='.$_SESSION['bill-id'][$desk_id]: NULL;
+        header("location:". STAFF_URL . 'order?table-id=' . $desk_id.$bill_id);
     }
     function remove_order_food() {
         $table_id = $_GET['table-id'];

@@ -126,9 +126,17 @@
 .order-bill table th{
     border: 1px solid #acacac;
     padding: 15px 20px;
+    text-align: center;
+
 }
 .order-bill table th{
     text-align: center;
+}
+.order-bill table tbody td:nth-child(2){
+    text-align: left;
+}
+.order-bill table tbody td:nth-child(3){
+    width: 15%;
 }
 .order-bill table tfoot td{
     border: 1px solid #acacac;

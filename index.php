@@ -34,6 +34,14 @@ switch ($url) {
         require_once "./business/quanly/account.php";
         user_remove();
         break;
+    case 'admin/bill':
+        require_once "./business/quanly/bill.php";
+        bill_index();
+        break;
+    case 'admin/bill/update-bill':
+        require_once "./business/quanly/bill.php";
+        update_bill();
+        break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
@@ -53,6 +61,10 @@ switch ($url) {
     case 'staff/order/delete':
         require_once "./business/nhanvien/order/order.php";
         remove_order_food();
+        break;
+    case 'staff/order/update-session':
+        require_once "./business/nhanvien/order/order.php";
+        update_session();
         break;
     case 'staff/order/add-bill':
         require_once "./business/nhanvien/bill/bill.php";

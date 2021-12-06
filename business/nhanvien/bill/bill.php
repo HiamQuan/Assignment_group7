@@ -56,23 +56,21 @@ function add_bill_update()
 function get_bill()
 {
     $bill_id = $_GET['bill-id'];
-    $sql = "select user.name, bill.bill_id, bill.date, bill.desk_id,bill.amount
+    $sql = "select user.user_name, bill.bill_id, bill.date, bill.desk_id,bill.amount
                 from user 
                 INNER JOIN bill ON bill.user_id = user.user_id
                 where bill_id=$bill_id";
-    // echo $sql;
     $info_bill = pdo_query_one($sql);
-    $sql = "select food.food_name, food.price from detail_bill 
-        INNER JOIN food ON food.food_id=detail_bill.food_id where bill_id=$bill_id";
-    // echo $sql;
+    $sql = "select food.food_name, food.price, count(detail_bill.food_id) as 'soluong' from detail_bill
+        INNER JOIN food ON food.food_id=detail_bill.food_id where bill_id=$bill_id group by detail_bill.food_id";
     $info_bills = pdo_query($sql);
 
     nhanvien_render('bill/bill.php', [
         'info_bill' => $info_bill,
         'info_bills' => $info_bills
     ]);
-    // extract($info_bill);
-    // header("location:". STAFF_URL . "order/bill?table-id=$table_id");
+    extract($info_bill);
+    header("location:". STAFF_URL . "order/bill?table-id=$table_id");
 }
 function done_bill()
 {
