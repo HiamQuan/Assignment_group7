@@ -22,7 +22,7 @@ function load_location()
     $location_desk = pdo_query($sql);
     $sql = "select * from category";
     $category = pdo_query($sql);
-    staff_render(
+    nhanvien_render(
         'desk/desk_ui.php',
         [
             'location' => $location,

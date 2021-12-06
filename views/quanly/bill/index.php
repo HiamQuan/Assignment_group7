@@ -6,7 +6,7 @@
             <th scope="col">Ngày tạo đơn</th>
             <th scope="col">Tổng tiền</th>
             <th scope="col">Số bàn</th>
-            <th scope="col">Người thanh toán</th>
+            <th scope="col">Thu ngân</th>
             <th scope="col">Trạng thái</th>
             <!-- <th>
                 <a href="<?= ADMIN_URL . 'account/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>

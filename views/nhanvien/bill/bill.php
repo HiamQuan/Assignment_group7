@@ -8,7 +8,7 @@
     </div>
     <div class="row pt-2">
         <div class="col-6">
-            <h6>Thu ngân: <?=$info_bill['user_name']?></h6>
+            <h6>Thu ngân: <?=$info_bill['name']?></h6>
         </div>
         <div class="col-6 text-right">
             <h6>Mã hóa đơn:  <?=$info_bill['bill_id']?></h6>
