@@ -55,10 +55,7 @@ function desk_save_edit()
     $desk_name = $_POST['desk_name'];
     $capacity = $_POST['capacity'];
     $location = $_POST['location'];
-    $sql = "update desk set desk_name = '$desk_name',
-    capacity = $capacity,
-    location = $location,
-    where desk_id = $desk_id";
+    $sql = "update desk set desk_name = '$desk_name', capacity = '$capacity', location = '$location' where desk_id = $desk_id ";
     pdo_execute($sql);
     header("location:" . ADMIN_URL . 'desk');
 }
