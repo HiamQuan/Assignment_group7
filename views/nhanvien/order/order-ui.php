@@ -30,7 +30,7 @@
         <?php $bill_id = isset($_SESSION['bill-id'][$table_id])? '&bill-id='.$_SESSION['bill-id'][$table_id]: NULL;?>
         <form action="<?= STAFF_URL . 'order?table-id='.$_GET['table-id'].$bill_id ?>" class="d-flex" method="POST">
             <input type="hidden" name="desk_id" value="<?= $_GET['table-id'] ?>">
-            <input class="form-control me-2" name="key" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+            <input class="form-control me-2" name="key" type="search" placeholder="Search" aria-label="Search" autocomplete="off" required>
             <button class="btn btn-outline-success" name="search" type="submit">Search</button>
         </form>
         <ul>
