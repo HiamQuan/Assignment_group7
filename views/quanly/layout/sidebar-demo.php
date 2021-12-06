@@ -12,14 +12,35 @@
                 <a class="" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <!-- RESULT -->
-            <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'result' ?>" class="nav-link">
+            <li class="nav-item menu-open">
+                <a href="<?= ADMIN_URL . 'result' ?>" class="nav-link active">
                     <i class="fas fa-chart-area"></i>
                     <p>
-                        Statistics
+                        Statistic
                     </p>
                 </a>
-                <!-- BILL -->
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?= ADMIN_URL . 'result-month' ?>" class="nav-link active">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Month</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= ADMIN_URL . 'result' ?>" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Week</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= ADMIN_URL . 'result-hour' ?>" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Hour</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- BILL -->
             <li class="nav-item">
                 <a href="<?= ADMIN_URL . 'bill' ?>" class="nav-link">
                     <i class="fas fa-money-bill-wave-alt"></i>

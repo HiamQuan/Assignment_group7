@@ -4,7 +4,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: listTitle,
         datasets: [{
-            label: 'Week',
+            label: 'Month',
             data: listData,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

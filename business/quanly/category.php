@@ -5,7 +5,7 @@ function list_category()
     $list_category = pdo_query($sql);
     admin_render('category/index.php', [
         'list_category' => $list_category
-    ], 'category.js');
+    ], ['category.js']);
 }
 
 function add_form()

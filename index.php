@@ -10,7 +10,19 @@ switch ($url) {
         break;
     case 'admin':
         require_once "./business/quanly/result.php";
-        index();
+        week();
+        break;
+    case 'admin/result':
+        require_once "./business/quanly/result.php";
+        week();
+        break;
+    case 'admin/result-month':
+        require_once "./business/quanly/result.php";
+        month();
+        break;
+    case 'admin/result-hour':
+        require_once "./business/quanly/result.php";
+        hour();
         break;
         //admin desk       
     case 'admin/desk':
