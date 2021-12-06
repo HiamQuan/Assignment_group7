@@ -1,10 +1,12 @@
 <?php
 require_once "./common/global.php";
 require_once "./dao/pdo.php";
+
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case '/':
-        require_once "./business/login.php";
+        require_once "./business/login/login.php";
+        login();
         break;
     case 'admin':
         require_once "./business/quanly/result.php";
@@ -37,6 +39,50 @@ switch ($url) {
     case 'admin/category':
         require_once "./business/quanly/category.php";
         list_category();
+        break;
+    case 'admin/category/add-form':
+        require_once "./business/quanly/category.php";
+        add_form();
+        break;
+    case 'admin/category/add-submit':
+        require_once "./business/quanly/category.php";
+        category_submit_add();
+        break;
+    case 'admin/category/edit-form':
+        require_once "./business/quanly/category.php";
+        category_edit_form();
+        break;
+    case 'admin/category/edit-submit':
+        require_once "./business/quanly/category.php";
+        category_save_edit();
+        break;
+    case 'admin/category/delete':
+        require_once "./business/quanly/category.php";
+        category_remove();
+        break;
+    case 'admin/food':
+        require_once "./business/quanly/food.php";
+        list_food();
+        break;
+    case 'admin/food/add-form':
+        require_once "./business/quanly/food.php";
+        add_form();
+        break;
+    case 'admin/food/add-submit':
+        require_once "./business/quanly/food.php";
+        food_submit_add();
+        break;
+    case 'admin/food/edit-form':
+        require_once "./business/quanly/food.php";
+        food_edit_form();
+        break;
+    case 'admin/food/edit-submit':
+        require_once "./business/quanly/food.php";
+        food_save_edit();
+        break;
+    case 'admin/food/delete':
+        require_once "./business/quanly/food.php";
+        food_remove();
         break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
