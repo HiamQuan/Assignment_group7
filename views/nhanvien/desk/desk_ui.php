@@ -26,6 +26,8 @@
         }
         ?>
         <a href="<?= STAFF_URL . 'order?table-id=' . $d['desk_id'].$bill_id ?>">Bàn số <?= $d['desk_id'] ?></a> &nbsp;
+
 </div>
 <?php endforeach ?>
+
 </div>
