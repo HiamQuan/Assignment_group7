@@ -87,5 +87,14 @@
         
         // header("location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id);
     }
+    function search(){
+        $desk_id = $_POST['desk_id'];
+        $key = $_POST['key'];
+        $sql = "select food_id from food where food_name like '%$key%'";
+        $key1 = pdo_query($sql);
+        $_SESSION['food_name'] = $key1;
+        $bill_id = isset($_SESSION['bill-id'][$desk_id])? '&bill-id='.$_SESSION['bill-id'][$desk_id]: NULL;
+        header("location:". STAFF_URL . 'order?table-id=' . $desk_id.$bill_id);
+    }
 
  

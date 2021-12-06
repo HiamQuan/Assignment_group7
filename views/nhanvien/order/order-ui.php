@@ -1,30 +1,37 @@
 <section class="menu-order">
     <div class="list-food">
-        <?php foreach ($list_foods as $x) : ?>
-            <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
-                <div class="food-image">
-                    <img src="<?= IMAGE_URL . 'food/' . $x['image'] ?>" alt="">
+        <?php if (isset($_SESSION['food_name'])) :; ?>
+            <?php foreach ($list_foods as $x) : ?>
+                <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="food-image">
+                        <img src="<?= IMAGE_URL . 'food/' . $x['image'] ?>" alt="">
+                    </div>
+                    <label class="name"><?= $x['food_name'] ?></label>
+                    <br>
+                    <label class="price"><?= $x['price'] ?> VND</label>
+                    <form action="<?= STAFF_URL . 'order/addtocart' ?>" method="post">
+                        <input type="hidden" name="food_id" value="<?= $x['food_id'] ?>">
+                        <input type="hidden" name="table_id" value="<?= $_GET['table-id'] ?>">
+                        <input type="hidden" name="bill_id" value="<?php isset($_GET['bill-id']) ? $_GET['bill-id']  : "" ?>">
+                        <input type="hidden" name="food_name" value="<?= $x['food_name'] ?>">
+                        <input type="hidden" name="price" value="<?= $x['price'] ?>">
+                        <input type="hidden" name="image" value="<?= $x['image'] ?>">
+                        <input type="hidden" name="category-id" value="<?= $_GET['category-id'] ?? 1 ?>">
+                        <button type="submit" name="btn-addtocart" class="btn btn-primary">Thêm</button>
+                    </form>
                 </div>
-                <label class="name"><?= $x['food_name'] ?></label>
-                <br>
-                <label class="price"><?= $x['price'] ?> VND</label>
-                <form action="<?= STAFF_URL . 'order/addtocart' ?>" method="post">
-                    <input type="hidden" name="food_id" value="<?= $x['food_id'] ?>">
-                    <input type="hidden" name="table_id" value="<?= $_GET['table-id'] ?>">
-                    <input type="hidden" name="bill_id" value="<?php isset($_GET['bill-id']) ? $_GET['bill-id']  : "" ?>">
-                    <input type="hidden" name="food_name" value="<?= $x['food_name'] ?>">
-                    <input type="hidden" name="price" value="<?= $x['price'] ?>">
-                    <input type="hidden" name="image" value="<?= $x['image'] ?>">
-                    <input type="hidden" name="category-id" value="<?= $_GET['category-id'] ?? 1 ?>">
-                    <button type="submit" name="btn-addtocart" class="btn btn-primary">Thêm</button>
-                </form>
-            </div>
-        <?php endforeach ?>
+            <?php endforeach ?>
+        <?php endif ?>
     </div>
     <div class="list_categorys">
         <div class="title">
             <h1>Danh mục</h1>
         </div>
+        <form action="<?= STAFF_URL . 'order/search' ?>" class="d-flex" method="POST">
+            <input type="hidden" name="desk_id" value="<?= $_GET['table-id'] ?>">
+            <input class="form-control me-2" name="key" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         <ul>
             <?php
             $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
