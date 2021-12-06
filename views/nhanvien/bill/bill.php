@@ -8,7 +8,7 @@
     </div>
     <div class="row pt-2">
         <div class="col-6">
-            <h6>Thu ngân: <?=$info_bill['user_name']?></h6>
+            <h6>Thu ngân: <?=$info_bill['name']?></h6>
         </div>
         <div class="col-6 text-right">
             <h6>Mã hóa đơn:  <?=$info_bill['bill_id']?></h6>
@@ -54,7 +54,13 @@
                         <a href="<?=STAFF_URL.'order/delete?table-id='.$table_id?>"><button>Hủy</button></a>
                     </td> -->
                     <td colspan='2'>
-                        <a href="<?=STAFF_URL."order/done-bill?&bill-id=".$_GET['bill-id']."&desk-id=$table_id"?>"><button>Thanh toán</button></a>
+                    <button  class="">
+                        <a href="javascript:;" 
+                            data-url="<?=STAFF_URL."order/done-bill?&bill-id=".$_GET['bill-id']."&desk-id=$table_id"?>" 
+                            class="to_pay">
+                            <button>Thanh toán</button>
+                        </a>
+                    </button>
                     </td>
                 </tr>
             </tfoot>
@@ -68,3 +74,9 @@
             </div>
         </div>
 </div>
+<form action="<?=STAFF_URL.'redesk?location=1'?>" method="post">
+    <input type="hidden" name="desk_id" value="<?=$table_id?>">
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Chuyển bàn
+    </button>
+</form>

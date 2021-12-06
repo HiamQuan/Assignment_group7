@@ -78,6 +78,14 @@ switch ($url) {
         require_once "./business/nhanvien/bill/bill.php";
         get_bill();
         break;
+    case 'staff/redesk':
+        require_once "./business/nhanvien/desk/desk.php";
+        load_relocation();
+        break;
+    case 'staff/redesk-save':
+        require_once "./business/nhanvien/desk/desk.php";
+        save_relocation();
+        break;
     case 'staff/order/done-bill':
         require_once "./business/nhanvien/bill/bill.php";
         done_bill();

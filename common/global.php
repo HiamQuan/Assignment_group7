@@ -32,7 +32,7 @@ function chef_render($viewpath, $data = [], $files = []) {
     $VIEW_PAGE = './views/bep/'.$viewpath;
     include_once './views/bep/layout/main.php';
 }
-function staff_render($viewpath, $data = []){
+function staff_render($viewpath, $data = [], $files = []){
 
     extract($data);
     $VIEW_PAGE = "./views/nhanvien/" . $viewpath;

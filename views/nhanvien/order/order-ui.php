@@ -57,7 +57,7 @@
                             $thanhtien = $soluong * $price;
                             $tongtien += $thanhtien;
                             echo '<tr>
-                                        <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px"></td>
+                                        <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px" height="100px"></td>
                                         <td>' . $food_name . '</td>
                                         <td>' . $soluong . '</td>
                                         <td>' . $price . '</td>
@@ -119,7 +119,13 @@
                                         </td>
                                         <td>' . $price . '</td>
                                         <td></td>
-                                        <td><a href="' . STAFF_URL . 'order/delete?id=' . $food_id . '&table-id=' . $table_id . '&category-id=' . $category_id . $bill_id . '" class="btn btn-sm btn-danger">Delete</a></td>
+                                        <td>
+                                            <a href="javascript:;" 
+                                                data-url="' . STAFF_URL . 'order/delete?id=' . $food_id . '&table-id=' . $table_id . '&category-id=' . $category_id . $bill_id . '" 
+                                                class="btn btn-sm btn-danger xoa">
+                                                Delete
+                                            </a>
+                                        </td>
                                     </tr>';
                         }
                     }
@@ -137,25 +143,45 @@
                             $bill_id = isset($_GET['bill-id']) ? $_GET['bill-id'] : "";
                             echo '
                                     <td>
-                                        <a href="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '&category-id=' . $category_id . '"><button>Hủy</button></a>
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '&category-id=' . $category_id . '" 
+                                            class="huy">
+                                            <button>Hủy</button>
+                                        </a>
                                     </td>
                                     <td colspan="2">
-                                        <a href="' . STAFF_URL . 'order/add-bill-update?desk-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '"><button>Đặt Thêm</button></a>
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/add-bill-update?desk-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
+                                            class="dat_mon">
+                                            <button>Đặt thêm</button>
+                                        </a>
                                     </td>
                                 ';
                         } else if ($table_status['status'] == 'chưa dọn') {
                             echo '
                                     <td colspan="3">
-                                    <a href="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '"><button>Dọn xong</button></a>
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
+                                            class="done">
+                                            <button>Đặt thêm</button>
+                                        </a>
                                     </td>
                                 ';
                         } else {
                             echo '
                                     <td>
-                                        <a href="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '"><button>Hủy</button></a>
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
+                                            class="huy">
+                                            <button>Hủy</button>
+                                        </a>
                                     </td>
                                     <td colspan="2">
-                                        <a href="' . STAFF_URL . 'order/add-bill?table-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '"><button>Đặt bàn</button></a>
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/add-bill?table-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
+                                            class="dat_mon">
+                                            <button>Đặt bàn</button>
+                                        </a>
                                     </td>
                                 ';
                         }

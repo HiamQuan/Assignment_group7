@@ -54,9 +54,9 @@ function add_bill_update()
 }
 
 function get_bill()
-{
+{   
     $bill_id = $_GET['bill-id'];
-    $sql = "select user.user_name, bill.bill_id, bill.date, bill.desk_id,bill.amount
+    $sql = "select user.name, bill.bill_id, bill.date, bill.desk_id,bill.amount
                 from user 
                 INNER JOIN bill ON bill.user_id = user.user_id
                 where bill_id=$bill_id";
@@ -68,9 +68,9 @@ function get_bill()
     nhanvien_render('bill/bill.php', [
         'info_bill' => $info_bill,
         'info_bills' => $info_bills
-    ]);
-    extract($info_bill);
-    header("location:". STAFF_URL . "order/bill?table-id=$table_id");
+        ],
+        ['bill/bill.js']
+    );
 }
 function done_bill()
 {
@@ -86,5 +86,5 @@ function done_bill()
     unset($_SESSION['bill-id'][$table_id]);
     //  echo '<pre>';
     // var_dump($_SESSION['order'][$table_id]);
-    header("location:" . BASE_URL . 'staff');
+    // header("location:" . BASE_URL . 'staff');
 }
