@@ -1,7 +1,7 @@
 <div class="location">
     <?php
     foreach ($location as $l) : ?>
-        <button class="btn btn-primary"><a href="<?= STAFF_URL . 'redesk?location=' . $l['location'] ?>">Tầng <?= $l['location'] ?></a></button>
+        <button class="btn btn-primary"><a href="<?= STAFF_URL . 'redesk?location=' . $l['location'] . '&redesk-id='.$_GET['redesk-id'] ?>">Tầng <?= $l['location'] ?></a></button>
     <?php endforeach ?>
 </div>
 
@@ -25,7 +25,7 @@
         ?>
         <a href="javascript:;" 
             data-url="<?= STAFF_URL . 'redesk-save?table-id=' . $d['desk_id']. '&redesk-id='.$redesk_id ?>" 
-            data-name="<?= $d['desk_id'] ?>"
+            data-name="<?= $d['desk_id']?>"
             class="btn-redesk">
             Bàn số <?= $d['desk_id'] ?>
         </a>

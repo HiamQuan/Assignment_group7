@@ -33,7 +33,7 @@ function load_location()
 }
 function load_relocation()
 {   
-    $redesk_id = $_POST['desk_id'];
+    $redesk_id = $_GET['redesk-id'];
     $sql = "select * from desk group by location";
     $location = pdo_query($sql);
     $location_desk = $_GET['location'];

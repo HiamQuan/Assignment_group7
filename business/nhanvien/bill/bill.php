@@ -86,5 +86,5 @@ function done_bill()
     unset($_SESSION['bill-id'][$table_id]);
     //  echo '<pre>';
     // var_dump($_SESSION['order'][$table_id]);
-    // header("location:" . BASE_URL . 'staff');
+    header("location:" . BASE_URL . 'staff');
 }

@@ -74,8 +74,7 @@
             </div>
         </div>
 </div>
-<form action="<?=STAFF_URL.'redesk?location=1'?>" method="post">
-    <input type="hidden" name="desk_id" value="<?=$table_id?>">
+<form action="<?=STAFF_URL.'redesk?location=1&redesk-id='.$table_id?>" method="post">
     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Chuyển bàn
     </button>
