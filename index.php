@@ -9,9 +9,32 @@ switch ($url) {
     case 'admin':
         require_once "./business/quanly/dashboard.php";
         break;
+ //admin desk       
     case 'admin/desk':
         require_once "./business/quanly/desk.php";
-        break;    
+        desk_index();
+        break;
+    case 'admin/desk/add-form':
+        require_once "./business/quanly/desk.php";
+        desk_add_form();        
+        break;
+    case 'admin/desk/add-submit':
+        require_once "./business/quanly/desk.php";
+        desk_submit_add();
+        break  ;
+    case 'admin/desk/delete':
+        require_once "./business/quanly/desk.php";
+        desk_remove();
+        break;
+    case 'admin/desk/edit-form':
+        require_once "./business/quanly/desk.php";
+        desk_edit_form();
+        break;
+    case 'admin/desk/edit-submit':
+        require_once "./business/quanly/desk.php";
+        desk_save_edit();
+        break; 
+// admin desk                
     case 'admin/account':
         require_once "./business/quanly/account.php";
         user_index();
