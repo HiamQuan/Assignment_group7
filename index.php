@@ -9,7 +9,8 @@ switch ($url) {
         login();
         break;
     case 'admin':
-        require_once "./business/quanly/dashboard.php";
+        require_once "./business/quanly/result.php";
+        index();
         break;
         //admin desk       
     case 'admin/desk':
@@ -120,7 +121,7 @@ switch ($url) {
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
         break;
-    case 'staff/nhanvien/desk':
+    case 'staff/desk':
         require_once "./business/nhanvien/desk/desk.php";
         load_location();
         break;
