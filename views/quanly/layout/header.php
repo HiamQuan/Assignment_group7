@@ -8,7 +8,7 @@
       <a href="<?= BASE_URL . 'admin' ?>" class="nav-link">Home</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="<?= BASE_URL . 'STAFF' ?>" class="nav-link">Order Screen</a>
+      <a href="<?= BASE_URL . 'staff' ?>" class="nav-link">Order Screen</a>
     </li>
   </ul>
 
