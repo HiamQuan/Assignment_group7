@@ -1,21 +1,69 @@
+<?php if(empty($_SESSION['login'])||$_SESSION['login']['role']!='admin')
+{
+    header ("Location:".BASE_URL);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?=CSS_URL?>bep/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css ">
-    <?php include_once "./views/bep/layout/style.php" ?>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grandrestaurant | Dashboard</title>
+  <?php include_once "./views/quanly/layout/style.php" ?>
+  
 </head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
-<body>
-    <?php include_once './views/head_foot/header.php' ?>
-    <main class="container-fluid"><?php require_once $VIEW_PAGE ?></main>
-    <?php include_once './views/head_foot/footer.php' ?>
-    <?php include_once "./views/bep/layout/script.php" ?>
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center dark-mode">
+    <img class="animation__shake" src="<?= IMAGE_URL ?>header/grandrestaurant_logo.png" alt="GrandRestaurantLogo" height="80" width="200">
+  </div>
+
+  <!-- Navbar -->
+  
+  </div>
+  <!-- /.navbar -->
+  <?php include_once "header.php" ?>
+  <!-- Main Sidebar Container -->
+  <?php include_once "./views/quanly/layout/sidebar-demo.php" ?>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <?php include_once $VIEW_PAGE; ?>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-brown">
+    <?php include_once "./views/profile/profile.php"?>
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+<?php include_once "./views/quanly/layout/script.php" ?>
+<?php if(count($files) > 0):?>
+  <?php foreach ($files as $files): ?>
+    <script src="<?= PUBLIC_ASSETS ."customize/js/". $files?>" type="text/javascript"></script>
+  <?php endforeach ?>
+<?php endif?>
+
 </body>
-
 </html>

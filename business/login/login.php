@@ -1,7 +1,22 @@
 <?php
+
 function login()
 {
-    include_once "./views/login/form-login.php";
+    $currentUser= $_SESSION['login']['role']??'';
+    switch ($currentUser) {
+        case 'admin':
+            header('location: ' . BASE_URL . "admin");
+            break;
+        case 'staff':
+            header('location: ' . BASE_URL . "staff");
+            break;
+        case 'chef':
+            header('location: ' . BASE_URL . "chef");
+            break;
+        default:
+            include_once "./views/login/form-login.php";
+            break;
+    }
 }
 
 function submit_login()
@@ -17,14 +32,7 @@ function submit_login()
         $user = pdo_query_one($sql);
         if ($user) {
             $_SESSION['login'] = $user;
-
-            if ($user['role'] == 'admin') {
-                header('location: ' . BASE_URL . "admin");
-            } elseif ($user['role'] == 'staff') {
-                header('location:' . BASE_URL . "staff");
-            } else {
-                header('location:' . BASE_URL . "chef");
-            }
+            header('location: ' . BASE_URL . "login");
         } else {
             header('location: ' . BASE_URL . "login?err");
         }

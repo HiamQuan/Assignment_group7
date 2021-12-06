@@ -34,7 +34,7 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <!-- RESULT -->
-        <li class="nav-item menu-open">
+        <li class="nav-item">
           <a href="<?= ADMIN_URL . 'result' ?>" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>

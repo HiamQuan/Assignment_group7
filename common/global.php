@@ -55,4 +55,14 @@ function save_file($file, $dir_path)
     move_uploaded_file($file_upload['tmp_name'], $dir_file_path);
     return $file_name;
 }
+function dd(){
+    echo "<pre>";
+    $args = func_get_args();
+    foreach($args as $item){
+        var_dump($item);
+    }
+    
+    echo "</pre>";
+    die;
+}
 
