@@ -28,6 +28,9 @@
     font-size: 35px;
 }
   .box-desk-2{
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
     height: 200px;
     border: 1px solid #baffba;
     border-radius: 5px;
@@ -40,6 +43,9 @@
     font-size: 35px;
 }
 .box-desk-3{  
+  display: flex;
+      flex-direction: column;
+      justify-content: center;
     height: 200px;
     border: 1px solid #baffba;
     border-radius: 5px;
@@ -51,6 +57,9 @@
     font-size: 35px;
 }
   .box-desk-4{
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
     height: 200px;
     border: 1px solid #baffba;
     border-radius: 5px;
