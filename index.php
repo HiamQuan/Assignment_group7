@@ -137,11 +137,7 @@ switch ($url) {
     case  'logout/submit':
         require_once "./business/login/login.php";
         submit_logout();
-        break;
-    case 'staff/order/search':
-        require_once "./business/nhanvien/order/order.php";
-        search();
-        break;   
+        break;  
     default:
         echo " Đường dẫn này chưa được định nghĩa";
         break;
