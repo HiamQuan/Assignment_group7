@@ -11,19 +11,19 @@ switch ($url) {
     case 'admin':
         require_once "./business/quanly/dashboard.php";
         break;
- //admin desk       
+        //admin desk       
     case 'admin/desk':
         require_once "./business/quanly/desk.php";
         desk_index();
         break;
     case 'admin/desk/add-form':
         require_once "./business/quanly/desk.php";
-        desk_add_form();        
+        desk_add_form();
         break;
     case 'admin/desk/add-submit':
         require_once "./business/quanly/desk.php";
         desk_submit_add();
-        break  ;
+        break;
     case 'admin/desk/delete':
         require_once "./business/quanly/desk.php";
         desk_remove();
@@ -35,8 +35,8 @@ switch ($url) {
     case 'admin/desk/edit-submit':
         require_once "./business/quanly/desk.php";
         desk_save_edit();
-        break; 
-// admin desk                
+        break;
+        // admin desk                
     case 'admin/account':
         require_once "./business/quanly/account.php";
         user_index();
@@ -109,6 +109,13 @@ switch ($url) {
         require_once "./business/quanly/food.php";
         food_remove();
         break;
+    case 'admin/bill':
+        require_once "./business/quanly/bill.php";
+        bill_index();
+        break;
+    case 'admin/bill/update-bill':
+        require_once "./business/quanly/bill.php";
+        update_bill();
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
@@ -128,6 +135,10 @@ switch ($url) {
     case 'staff/order/delete':
         require_once "./business/nhanvien/order/order.php";
         remove_order_food();
+        break;
+    case 'staff/order/update-session':
+        require_once "./business/nhanvien/order/order.php";
+        update_session();
         break;
     case 'staff/order/add-bill':
         require_once "./business/nhanvien/bill/bill.php";
@@ -152,7 +163,7 @@ switch ($url) {
     case 'chef/done':
         require "./business/bep/done.php";
         list_done();
-        break;    
+        break;
     case 'chef/food/done':
         require "./business/bep/undone.php";
         done_detail_bill();
@@ -160,7 +171,7 @@ switch ($url) {
     case 'chef/food/undone':
         require "./business/bep/done.php";
         undone_detail_bill();
-        break;            
+        break;
     case  'login':
         require_once "./business/login/login.php";
         login();

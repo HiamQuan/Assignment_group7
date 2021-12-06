@@ -16,4 +16,9 @@
     <?php include_once "./views/nhanvien/layout/script.php" ?>
 </body>
 
+<?php if(count($files) > 0):?>
+  <?php foreach ($files as $file): ?>
+    <script src="<?= PUBLIC_ASSETS . 'customize/js/' . $file?>" type="text/javascript"></script>
+  <?php endforeach ?>
+<?php endif?>
 </html>
