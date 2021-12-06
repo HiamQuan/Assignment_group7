@@ -30,4 +30,5 @@
 <link rel="stylesheet" href="<?= CSS_URL ?>quanly/account.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/desk.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>nhanvien/order.css">
+<link rel="stylesheet" href="<?= CSS_URL ?>bep/style.css">
 <link rel="stylesheet" href="<?= CSS_URL ?>sidebar.css">

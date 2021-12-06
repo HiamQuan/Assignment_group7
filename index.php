@@ -9,9 +9,34 @@ switch ($url) {
         login();
         break;
     case 'admin':
-        require_once "./business/quanly/result.php";
-        index();
+        require_once "./business/quanly/dashboard.php";
         break;
+ //admin desk       
+    case 'admin/desk':
+        require_once "./business/quanly/desk.php";
+        desk_index();
+        break;
+    case 'admin/desk/add-form':
+        require_once "./business/quanly/desk.php";
+        desk_add_form();        
+        break;
+    case 'admin/desk/add-submit':
+        require_once "./business/quanly/desk.php";
+        desk_submit_add();
+        break  ;
+    case 'admin/desk/delete':
+        require_once "./business/quanly/desk.php";
+        desk_remove();
+        break;
+    case 'admin/desk/edit-form':
+        require_once "./business/quanly/desk.php";
+        desk_edit_form();
+        break;
+    case 'admin/desk/edit-submit':
+        require_once "./business/quanly/desk.php";
+        desk_save_edit();
+        break; 
+// admin desk                
     case 'admin/account':
         require_once "./business/quanly/account.php";
         user_index();
@@ -88,7 +113,7 @@ switch ($url) {
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
         break;
-    case 'staff/desk':
+    case 'staff/nhanvien/desk':
         require_once "./business/nhanvien/desk/desk.php";
         load_location();
         break;
@@ -121,11 +146,21 @@ switch ($url) {
         done_bill();
         break;
     case 'chef':
-        require_once "./business/bep/undone.php";
+        require "./business/bep/undone.php";
+        list_undone();
         break;
     case 'chef/done':
-        require_once "./business/bep/done.php";
+        require "./business/bep/done.php";
+        list_done();
+        break;    
+    case 'chef/food/done':
+        require "./business/bep/undone.php";
+        done_detail_bill();
         break;
+    case 'chef/food/undone':
+        require "./business/bep/done.php";
+        undone_detail_bill();
+        break;            
     case  'login':
         require_once "./business/login/login.php";
         login();
