@@ -1,9 +1,15 @@
+<?php if(empty($_SESSION['login'])||$_SESSION['login']['role']!='admin')
+{
+    header ("Location:".BASE_URL);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Grandrestaurant | Dashboard</title>
   <?php include_once "./views/quanly/layout/style.php" ?>
   
 </head>
@@ -12,17 +18,16 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center dark-mode">
-    <img class="animation__shake" src="<?= IMAGE_URL ?>header/grandrestaurant_logo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="<?= IMAGE_URL ?>header/grandrestaurant_logo.png" alt="GrandRestaurantLogo" height="80" width="200">
   </div>
 
   <!-- Navbar -->
-  <div class="main-header">
-  <?php include_once "header.php" ?>
+  
   </div>
   <!-- /.navbar -->
-
+  <?php include_once "header.php" ?>
   <!-- Main Sidebar Container -->
-  <?php include_once "./views/quanly/layout/sidebar.php" ?>
+  <?php include_once "./views/quanly/layout/sidebar-demo.php" ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -46,7 +51,8 @@
   </footer>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+  <aside class="control-sidebar control-sidebar-brown">
+    <?php include_once "./views/profile/profile.php"?>
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
