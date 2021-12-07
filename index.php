@@ -149,6 +149,10 @@ switch ($url) {
         require_once "./business/nhanvien/order/order.php";
         remove_order_food();
         break;
+    case 'staff/order/update-session':
+        require_once "./business/nhanvien/order/order.php";
+        update_session();
+        break;
     case 'staff/order/add-bill':
         require_once "./business/nhanvien/bill/bill.php";
         add_bill();
