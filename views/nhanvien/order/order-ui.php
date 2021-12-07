@@ -1,6 +1,5 @@
 <section class="menu-order">
     <div class="list-food">
-        <?php if (isset($_SESSION['food_name'])) :; ?>
             <?php foreach ($list_foods as $x) : ?>
                 <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
                     <div class="food-image">
@@ -21,20 +20,12 @@
                     </form>
                 </div>
             <?php endforeach ?>
-        <?php endif ?>
     </div>
     <div class="list_categorys">
         <div class="title">
             <h1>Danh mục</h1>
         </div>
         <ul class="category-css">
-        <?php $bill_id = isset($_SESSION['bill-id'][$table_id])? '&bill-id='.$_SESSION['bill-id'][$table_id]: NULL;?>
-        <form action="<?= STAFF_URL . 'order?table-id='.$_GET['table-id'].$bill_id ?>" class="d-flex" method="POST">
-            <input type="hidden" name="desk_id" value="<?= $_GET['table-id'] ?>">
-            <input class="form-control me-2" name="key" type="search" placeholder="Search" aria-label="Search" autocomplete="off" required>
-            <button class="btn btn-outline-success" name="search" type="submit">Search</button>
-        </form>
-        <ul>
             <?php
             $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
             ?>
