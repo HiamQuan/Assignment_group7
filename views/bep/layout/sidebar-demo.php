@@ -13,7 +13,7 @@
             </li>
             <!-- RESULT -->
             <li class="nav-item">
-                <a href="<?= CHEF_URL.'done'?>" class="nav-link">
+                <a href="<?= BASE_URL.'chef'?>" class="nav-link">
                     <i class="fas fa-pizza-slice"></i>
                     <p>
                         Chưa hoàn thành
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?= BASE_URL . 'chef'?>" class="nav-link">
+                <a href="<?= CHEF_URL . 'done'?>" class="nav-link">
                     <i class="fas fa-couch"></i>
                     <p>
                         Đã hoàn thành
