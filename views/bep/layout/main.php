@@ -1,4 +1,4 @@
-<?php if(empty($_SESSION['login'])||$_SESSION['login']['role']!='admin')
+<?php if(empty($_SESSION['login'])||$_SESSION['login']['role']=='staff')
 {
     header ("Location:".BASE_URL);
 }
