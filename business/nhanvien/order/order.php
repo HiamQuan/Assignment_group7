@@ -44,6 +44,19 @@ function menu_render()
         'table_status' => $table_status
     ]);
 }
+function update_session()
+{
+    $desk_id = $_POST['desk_id'];
+    $food_id = $_POST['food_id'];
+    if (isset($_POST['add'])) {
+        $_SESSION["order"][$desk_id][$food_id]['soluong'] += 1;
+    }
+    if (isset($_POST['reduce'])) {
+        $_SESSION["order"][$desk_id][$food_id]['soluong'] -= 1;
+    }
+    $bill_id = isset($_SESSION['bill-id'][$desk_id]) ? '&bill-id=' . $_SESSION['bill-id'][$desk_id] : NULL;
+    header("location:" . STAFF_URL . 'order?table-id=' . $desk_id . $bill_id);
+}
 function add_food()
 {
     if (isset($_POST['btn-addtocart'])) {
