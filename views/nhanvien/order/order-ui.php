@@ -25,7 +25,7 @@
         <div class="title">
             <h1>Danh mục</h1>
         </div>
-        <ul>
+        <ul class="category-css">
             <?php
             $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
             ?>
@@ -57,7 +57,7 @@
                             $thanhtien = $soluong * $price;
                             $tongtien += $thanhtien;
                             echo '<tr>
-                                        <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px" height="100px"></td>
+                                        <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px" height="100px" class"img-fluid"></td>
                                         <td>' . $food_name . '</td>
                                         <td>' . $soluong . '</td>
                                         <td>' . $price . '</td>
@@ -163,7 +163,7 @@
                                         <a href="javascript:;" 
                                             data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
                                             class="done">
-                                            <button>Đặt thêm</button>
+                                            <button>Dọn</button>
                                         </a>
                                     </td>
                                 ';

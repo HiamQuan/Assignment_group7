@@ -31,7 +31,7 @@
             'table_id'=>$table_id,
             'category_id'=>$category_id,
             'table_status'=>$table_status
-        ]);
+        ],['order/order.js']);
     }
     function add_food() {
         if(isset($_POST['btn-addtocart'])) {
