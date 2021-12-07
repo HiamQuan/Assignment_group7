@@ -25,9 +25,9 @@ function menu_render()
     $sql = "select status from desk where desk_id=$table_id";
     $table_status = pdo_query_one($sql);
     if ($bill_id != "") {
-        $sql = "select food.food_id, food.food_name, food.image, food.price, bill.amount 
+        $sql = "select food.food_id, food.food_name, food.image,count(detail_bill.food_id) as 'soluong', food.price, bill.amount 
                     from food INNER JOIN detail_bill ON food.food_id = detail_bill.food_id 
-                    INNER JOIN bill ON detail_bill.bill_id = bill.bill_id where bill.bill_id =$bill_id";
+                    INNER JOIN bill ON detail_bill.bill_id = bill.bill_id where bill.bill_id =$bill_id group by detail_bill.food_id" ;
         $list_fooded = pdo_query($sql);
     } else {
         $list_fooded = NULL;
@@ -42,7 +42,7 @@ function menu_render()
         'table_id' => $table_id,
         'category_id' => $category_id,
         'table_status' => $table_status
-    ]);
+    ],['order/order.js']);
 }
 function update_session()
 {
