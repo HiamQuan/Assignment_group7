@@ -1,6 +1,5 @@
 <section class="menu-order">
     <div class="list-food">
-        <?php if (isset($_SESSION['food_name'])) :; ?>
             <?php foreach ($list_foods as $x) : ?>
                 <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
                     <div class="food-image">
@@ -21,7 +20,6 @@
                     </form>
                 </div>
             <?php endforeach ?>
-        <?php endif ?>
     </div>
     <div class="list_categorys">
         <div class="title">
