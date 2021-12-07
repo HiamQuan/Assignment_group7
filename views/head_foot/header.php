@@ -8,6 +8,7 @@
                 <?= ($_SESSION['login']['name']) ?? ''; ?>
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="<?= BASE_URL . 'admin' ?>">Admin</a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL . 'logout/submit' ?>">Logout</a></li>
             </ul>
         </div>

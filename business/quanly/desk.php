@@ -26,9 +26,9 @@ function desk_submit_add(){
 
     
     $sql = "insert into desk 
-                (desk_name, capacity, location) 
+                (desk_name, capacity, location,status) 
             values 
-                ('$desk_name', '$capacity', '$location')";
+                ('$desk_name', '$capacity', '$location','trống')";
     // Thực thi câu sql với db
     pdo_execute($sql);
     header("location: " . ADMIN_URL . 'desk');

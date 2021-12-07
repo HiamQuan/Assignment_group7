@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    background: black;
+    background: brown;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -17,7 +17,7 @@ body {
 }
 
 footer {
-    background: black;
+    background: brown;
 }
 
 .footer {

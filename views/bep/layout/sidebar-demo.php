@@ -13,48 +13,18 @@
             </li>
             <!-- RESULT -->
             <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'result' ?>" class="nav-link">
-                    <i class="fas fa-chart-area"></i>
-                    <p>
-                        Statistics
-                    </p>
-                </a>
-                <!-- BILL -->
-            <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'bill' ?>" class="nav-link">
-                    <i class="fas fa-money-bill-wave-alt"></i>
-                    <p>Bill</p>
-                </a>
-            </li>
-            <!-- ACCOUNT -->
-            <li class="nav-item toggle">
-                <a href="<?= ADMIN_URL . 'account' ?>" class="nav-link">
-                    <i class="fas fa-users"></i>
-                    <p>Account</p>
-                </a>
-            </li>
-            <!-- CATEGORY -->
-            <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'category' ?>" class="nav-link">
-                    <i class="fas fa-list-ul"></i>
-                    <p>Categories</p>
-                </a>
-            </li>
-            <!-- FOOD -->
-            </li>
-            <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'food' ?>" class="nav-link">
+                <a href="<?= CHEF_URL.'done'?>" class="nav-link">
                     <i class="fas fa-pizza-slice"></i>
                     <p>
-                        Food
+                        Chưa hoàn thành
                     </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'desk' ?>" class="nav-link">
+                <a href="<?= BASE_URL . 'chef'?>" class="nav-link">
                     <i class="fas fa-couch"></i>
                     <p>
-                        Desk
+                        Đã hoàn thành
                     </p>
                 </a>
             </li>

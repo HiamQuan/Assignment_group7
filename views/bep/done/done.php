@@ -1,4 +1,3 @@
-<button type="button" class="btn btn-info btn_ds"><a class="btn_dsht" href="<?= BASE_URL . 'chef'?>">Danh sách chưa hoàn thành</a></button>
 <div class="table_undone table-responsive-md">
 <table class="table table-striped">
   <thead>

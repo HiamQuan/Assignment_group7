@@ -2,10 +2,10 @@
 <table class="table table-stripped">
     <thead>
         <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Category</th>
-        <th>Image</th>
+        <th>Tên món</th>
+        <th>Giá tiền</th>
+        <th>Danh mục</th>
+        <th>Hình ảnh</th>
         <th>
             <a href="<?= ADMIN_URL . 'food/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>
         </th>

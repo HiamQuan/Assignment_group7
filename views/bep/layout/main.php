@@ -27,7 +27,7 @@
   <!-- /.navbar -->
   <?php include_once "header.php" ?>
   <!-- Main Sidebar Container -->
-  <?php include_once "./views/quanly/layout/sidebar-demo.php" ?>
+  <?php include_once "./views/bep/layout/sidebar-demo.php" ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
