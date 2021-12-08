@@ -89,7 +89,7 @@
                                 ?>
                             </select>
                             <input type="hidden" name="bill_id" value="<?= $u['bill_id']?>">
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" name="btn-update-bill" class="btn btn-primary">Save</button>
                         </form>
 
                     </td>
