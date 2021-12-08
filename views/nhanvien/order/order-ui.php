@@ -1,37 +1,37 @@
-<section class="menu-order">
+<section class="menu-order mt-3">
     <div class="list-food">
-            <?php foreach ($list_foods as $x) : ?>
-                <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
-                    <div class="food-image">
-                        <img src="<?= IMAGE_URL . 'food/' . $x['image'] ?>" alt="">
-                    </div>
-                    <label class="name"><?= $x['food_name'] ?></label>
-                    <br>
-                    <label class="price"><?= $x['price'] ?> VND</label>
-                    <form action="<?= STAFF_URL . 'order/addtocart' ?>" method="post">
-                        <input type="hidden" name="food_id" value="<?= $x['food_id'] ?>">
-                        <input type="hidden" name="table_id" value="<?= $_GET['table-id'] ?>">
-                        <input type="hidden" name="bill_id" value="<?php isset($_GET['bill-id']) ? $_GET['bill-id']  : "" ?>">
-                        <input type="hidden" name="food_name" value="<?= $x['food_name'] ?>">
-                        <input type="hidden" name="price" value="<?= $x['price'] ?>">
-                        <input type="hidden" name="image" value="<?= $x['image'] ?>">
-                        <input type="hidden" name="category-id" value="<?= $_GET['category-id'] ?? 1 ?>">
-                        <button type="submit" name="btn-addtocart" class="btn btn-primary">Thêm</button>
-                    </form>
+        <?php foreach ($list_foods as $x) : ?>
+            <div class="animate__animated animate__fadeInRight list-food-item card shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="food-image">
+                    <img src="<?= IMAGE_URL . 'food/' . $x['image'] ?>" alt="">
                 </div>
-            <?php endforeach ?>
+                <label class="name"><?= $x['food_name'] ?></label>
+                <br>
+                <label class="price"><?= $x['price'] ?> VND</label>
+                <form action="<?= STAFF_URL . 'order/addtocart' ?>" method="post">
+                    <input type="hidden" name="food_id" value="<?= $x['food_id'] ?>">
+                    <input type="hidden" name="table_id" value="<?= $_GET['table-id'] ?>">
+                    <input type="hidden" name="bill_id" value="<?php isset($_GET['bill-id']) ? $_GET['bill-id']  : "" ?>">
+                    <input type="hidden" name="food_name" value="<?= $x['food_name'] ?>">
+                    <input type="hidden" name="price" value="<?= $x['price'] ?>">
+                    <input type="hidden" name="image" value="<?= $x['image'] ?>">
+                    <input type="hidden" name="category-id" value="<?= $_GET['category-id'] ?? 1 ?>">
+                    <button type="submit" name="btn-addtocart" class="btn btn-primary">Thêm</button>
+                </form>
+            </div>
+        <?php endforeach ?>
     </div>
     <div class="list_categorys">
         <div class="title">
             <h1>Danh mục</h1>
         </div>
-        <ul class="category-css">
+        <ul>
             <?php
             $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
             ?>
             <?php foreach ($category as $cate) : ?>
                 <a href="<?= STAFF_URL . "order?table-id=" . $table_id . "&category-id=" . $cate['category_id'] . $bill_id ?>">
-                    <li><img src="<?= IMAGE_URL.'icon/'.$cate['icon']?>" class="img-fluid" width="20%" alt=""><?= $cate['category_name'] ?></li>
+                    <li><?= $cate['category_name'] ?></li>
                 </a>
             <?php endforeach ?>
         </ul>
@@ -44,7 +44,7 @@
                     <thead>
                         <th>Hình ảnh </th>
                         <th>Tên món</th>
-                        <th>SL</th>
+                        <th>Process</th>
                         <th>Đơn giá</th>
                     </thead>
                     <tbody>
@@ -57,10 +57,13 @@
                             $thanhtien = $soluong * $price;
                             $tongtien += $thanhtien;
                             echo '<tr>
-                                        <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px" height="100px" class"img-fluid"></td>
+                                        <td>
+                                            <div class="food-image-item"><img src="' . IMAGE_URL . 'food/' . $image . '" alt=""></div>
+                                        </td>
                                         <td>' . $food_name . '</td>
-                                        <td>' . $soluong . '</td>
-                                        <td>' . $price . '</td>
+                                        <td>' . $process .'/'. $soluong . '</td>
+                                        <td>'. $price . '</td>
+                                        
                                     </tr>';
                         }
                         ?>
@@ -71,7 +74,7 @@
                             <td>Số lượng: <?= $sl ?></td>
                             <td colspan='1'>Tạm tính: <?= $tongtien = $tongtien + $tongtien / 10 ?></td>
                             <td colspan="2">
-                                <a href="<?= STAFF_URL . "order/bill?table-id=$table_id&bill-id=$bill_id" ?>"><button>Thanh toán</button></a>
+                                <a href="<?= STAFF_URL . "order/bill?table-id=$table_id&bill-id=$bill_id" ?>"><button class="btn-danger">Thanh toán</button></a>
                             </td>
 
                         </tr>
@@ -104,7 +107,9 @@
                             $thanhtien = $soluong * $price;
                             $tongtien += $thanhtien;
                             echo '<tr>
-                                        <td><img src="' . IMAGE_URL . 'food/' . $image . '" alt="" width="100px"></td>
+                                        <td>
+                                            <div class="food-image-item"><img src="' . IMAGE_URL . 'food/' . $image . '" alt=""></div>
+                                        </td>
                                         <td>' . $food_name . '</td>
                                         <td>
                                            <div class="d-flex justify-content-center">
@@ -143,45 +148,55 @@
                             $bill_id = isset($_GET['bill-id']) ? $_GET['bill-id'] : "";
                             echo '
                                     <td>
-                                        <a href="javascript:;" 
-                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '&category-id=' . $category_id . '" 
-                                            class="huy">
-                                            <button>Hủy</button>
-                                        </a>
+                                        <button class="btn-danger">
+                                            <a href="javascript:;" 
+                                                data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '&category-id=' . $category_id . '" 
+                                                class="huy">
+                                                Hủy
+                                            </a>
+                                        </button>
                                     </td>
                                     <td colspan="2">
-                                        <a href="javascript:;" 
-                                            data-url="' . STAFF_URL . 'order/add-bill-update?desk-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
-                                            class="dat_mon">
-                                            <button>Đặt thêm</button>
-                                        </a>
+                                        <button class="btn-success">
+                                            <a href="javascript:;" 
+                                                data-url="' . STAFF_URL . 'order/add-bill-update?desk-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
+                                                class="dat_mon">
+                                                Đặt thêm
+                                            </a>
+                                        </button>
                                     </td>
                                 ';
                         } else if ($table_status['status'] == 'chưa dọn') {
                             echo '
                                     <td colspan="3">
-                                        <a href="javascript:;" 
-                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
-                                            class="done">
-                                            <button>Dọn</button>
-                                        </a>
+                                        <button class="btn-success">
+                                            <a href="javascript:;" 
+                                                data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
+                                                class="done">
+                                                Dọn xong
+                                            </a>
+                                        </button>
                                     </td>
                                 ';
                         } else {
                             echo '
                                     <td>
-                                        <a href="javascript:;" 
-                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
-                                            class="huy">
-                                            <button>Hủy</button>
-                                        </a>
+                                        <button class="btn-danger">
+                                            <a href="javascript:;" 
+                                                data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
+                                                class="huy">
+                                                Hủy
+                                            </a>
+                                        </button>
                                     </td>
                                     <td colspan="2">
-                                        <a href="javascript:;" 
+                                        <button class="btn-success">
+                                            <a href="javascript:;" 
                                             data-url="' . STAFF_URL . 'order/add-bill?table-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
                                             class="dat_mon">
-                                            <button>Đặt bàn</button>
-                                        </a>
+                                            Đặt bàn
+                                            </a>
+                                        </button>
                                     </td>
                                 ';
                         }
@@ -192,5 +207,5 @@
             </table>
         </div>
     </div>
-    <a href="<?= BASE_URL . "staff" ?>">Quay lại..</a>
+    <button class="btn btn-primary quaylai mt-2"><a href="<?= BASE_URL . "staff" ?>">Quay lại..</a></button>
 </section>

@@ -54,11 +54,11 @@
                         <a href="<?=STAFF_URL.'order/delete?table-id='.$table_id?>"><button>Hủy</button></a>
                     </td> -->
                     <td colspan='2'>
-                    <button  class="">
+                    <button  class="btn-danger">
                         <a href="javascript:;" 
                             data-url="<?=STAFF_URL."order/done-bill?&bill-id=".$_GET['bill-id']."&desk-id=$table_id"?>" 
                             class="to_pay">
-                            <button>Thanh toán</button>
+                            Thanh toán
                         </a>
                     </button>
                     </td>
