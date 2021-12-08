@@ -44,10 +44,12 @@
 
     }
     function update_bill() {
-        $bill_id = $_POST['bill_id'];
-        $status = $_POST['status'];
-        $sql = "update bill set status='$status' where bill_id=$bill_id"; 
-        pdo_execute($sql);
-        header("location:". ADMIN_URL . 'bill');
+        if (isset($_POST['btn-update-bill'])) {
+            $bill_id = $_POST['bill_id'];
+            $status = $_POST['status'];
+            $sql = "update bill set status='$status' where bill_id=$bill_id"; 
+            pdo_execute($sql);
+            header("location:". ADMIN_URL . 'bill');
+        }
     }
 ?>
