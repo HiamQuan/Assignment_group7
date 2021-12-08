@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-6 offset-3">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="name" value="<?= $food['name'] ?>" id="" placeholder="name@example.com" required autocomplete="off">
+                <input type="text" class="form-control" name="name" value="<?= $food['food_name'] ?>" id="" placeholder="name@example.com" required autocomplete="off">
                 <label for="floatingInput">Name</label>
             </div>
             <div class="form-floating mb-3">

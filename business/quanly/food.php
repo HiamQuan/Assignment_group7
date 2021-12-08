@@ -17,8 +17,8 @@ function list_food()
 // Hàm trả về category_name dựa vào id
 function category_food($id)
 {
-    $sql="select category_name from category where category_id=$id";
-    $category_name= pdo_query_value($sql);
+    $sql = "select category_name from category where category_id=$id";
+    $category_name = pdo_query_value($sql);
     return $category_name;
 }
 // ======================================================
@@ -90,7 +90,8 @@ function food_save_edit()
 function food_remove()
 {
     $id = $_GET['id'];
-    $sql = "delete from food where food_id = $id";
-    executeQuery($sql);
+    $sql = "delete from `detail_bill` where `food_id`='$id';
+            DELETE FROM `food` WHERE `food_id` ='$id'";
+    pdo_execute($sql);
     header("location: " . ADMIN_URL . 'food');
 }
