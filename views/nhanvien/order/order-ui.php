@@ -29,6 +29,18 @@
             <?php
             $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
             ?>
+            <form action="<?= STAFF_URL . 'order?table-id='.$_GET['table-id'].$bill_id ?>" class="d-flex" method="POST">
+                <input type="hidden" name="desk_id" value="<?= $_GET['table-id'] ?>">
+                <div class="input-group">
+                    <!-- <input class="form-control me-2"  type="search" placeholder="Search" > -->
+                    <input type="search" name="key" class="form-control form-control-lg" placeholder="Search" aria-label="Search" autocomplete="off" required>
+                    <div class="input-group-append">
+                        <button type="submit" name="search" class="btn btn-lg btn-default btn-success">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
             <?php foreach ($category as $cate) : ?>
                 <a href="<?= STAFF_URL . "order?table-id=" . $table_id . "&category-id=" . $cate['category_id'] . $bill_id ?>">
                     <li><?= $cate['category_name'] ?></li>
