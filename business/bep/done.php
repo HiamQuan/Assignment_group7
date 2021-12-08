@@ -15,7 +15,7 @@ function list_done(){
 function undone_detail_bill(){
     $detail_id = $_GET['detail_id'];
     $sql = "update detail_bill
-    set status = 'chưa hoàn thành'  
+    set status = 'chưa hoàn thành'  , process=NULL
     where detail_id = $detail_id";
     pdo_execute($sql);
     header("location:". CHEF_URL."done" );
