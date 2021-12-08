@@ -33,3 +33,23 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+$(function() {
+    $('input[name="startdate"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true,
+      minYear: 2000,
+      maxYear: parseInt(moment().format('d-m-y'),10),
+    });
+  });
+  $(function() {
+    $('input[name="enddate"]').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true,
+      minYear: 2000,
+      maxYear: parseInt(moment().format('YYYY'),10)
+    });
+  });
+  $('#reservationdate').datetimepicker({
+    format: 'L'
+});
