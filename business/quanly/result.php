@@ -24,7 +24,7 @@ function week()
         }
         $listMoney[] = $totalMoneyByDay;
     }
-    admin_render('result/index.php', compact('listDays','listMoney'), ['result/result.js']);
+    admin_render('result/index.php', compact('listDays','listMoney'), ['result/result.js','result/datepicker.js']);
 }
 function month()
 {
@@ -51,7 +51,7 @@ function month()
         }
         $listMoney[] = $totalMoneyByDay;
     }
-    admin_render('result/index.php', compact('listDays','listMoney'), ['result/result-month.js']);
+    admin_render('result/index.php', compact('listDays','listMoney'), ['result/result.js','result/datepicker.js']);
 }
 
 function hour()
@@ -79,5 +79,5 @@ function hour()
         }
         $listMoney[] = $totalMoneyByDay;
     }
-    admin_render('result/index.php', compact('listDays','listMoney'), ['result/result-hour.js']);
+    admin_render('result/index.php', compact('listDays','listMoney'), ['result/result.js','result/datepicker.js']);
 }
