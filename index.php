@@ -129,6 +129,7 @@ switch ($url) {
     case 'admin/bill/update-bill':
         require_once "./business/quanly/bill.php";
         update_bill();
+        break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();

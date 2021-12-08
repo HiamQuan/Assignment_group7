@@ -9,12 +9,12 @@
                     </span>
                     <form action="<?= ADMIN_URL . 'bill'?>" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control form-control-lg" name="daterange" value="<?= date('d-m-Y') - date('d-m-Y')?>">
+                            <input type="text" class="form-control form-control-ml" name="daterange" value="<?= date('d-m-Y') - date('d-m-Y')?>">
                             <input type="text" id="startDate" name="startDate" value="<?= date('Y-m-d')?>" hidden>
                             <input type="text" id="endDate" name="endDate" value="<?= date('Y-m-d')?>" hidden>
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-lg btn-default" name="btn-select-date">
-                                    <i class="fa fa-search"></i>
+                                <button type="submit" class="btn btn-ml btn-default" name="btn-select-date">
+                                    <i class="fa fa-search " style="border: none; background-color: transparent;"></i>
                                 </button>
                             </div>
                         </div>
