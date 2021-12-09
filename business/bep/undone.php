@@ -4,7 +4,7 @@ function list_undone(){
     $sql .=" from food join detail_bill on food.food_id = detail_bill.food_id ";
     $sql .=" join bill on detail_bill.bill_id = bill.bill_id "; 
     $sql .=" join desk on bill.desk_id = desk.desk_id ";
-    $sql .=" where detail_bill.status = 'chưa hoàn thành' order by time asc ";
+    $sql .=" where detail_bill.status = 'chưa hoàn thành' order by time asc  ";
     $list_bill = pdo_query($sql);
     chef_render('undone/undone.php',
      [
