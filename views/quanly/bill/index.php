@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12">
         <div class="form-group input-daterange">
             <label>Date range:</label>
             <div class="input-group d-inline align-items-center">
@@ -9,36 +9,49 @@
                     </span>
                     <form action="<?= ADMIN_URL . 'bill'?>" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control form-control-ml" name="daterange" value="<?= date('d-m-Y') - date('d-m-Y')?>">
-                            <input type="text" id="startDate" name="startDate" value="<?= date('Y-m-d')?>" hidden>
-                            <input type="text" id="endDate" name="endDate" value="<?= date('Y-m-d')?>" hidden>
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-ml btn-default" name="btn-select-date">
-                                    <i class="fa fa-search " style="border: none; background-color: transparent;"></i>
-                                </button>
-                            </div>
+                            <input type="text" class="form-control form-control-ml" name="daterange" value="">
+                            <input type="text" id="startDate" name="startDate" value="" hidden>
+                            <input type="text" id="endDate" name="endDate" value="" hidden>
                         </div>
-                    </form>
                 </div>
             </div>
             <!-- /.input group -->
         </div>
     </div>
     <!-- /.col -->
-    <div class="col-md-4 col-sm-6 col-12">
-    <div class="info-box">
-        <span class="info-box-icon bg-info"><i class="fas fa-dollar-sign"></i></span>
-
-        <div class="info-box-content">
-        <span class="info-box-text">Doanh thu ngày</span>
-        <span class="info-box-number"><?= $totalMoneyByDay?></span>
-        </div>
-        <!-- /.info-box-content -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <label>Trạng thái:</label>
+            <div class="input-group">
+                <select name="status" class="form-control">
+                    <option value="" selected>Tất cả</option>
+                    <?php
+                        foreach(status as $key => $value) {
+                            echo '<option value="'.$key.'">'.$value.'</option>';
+                        }
+                    ?>
+                </select>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-ml btn-default" name="btn-filter">
+                        <i class="fa fa-search " style="border: none; background-color: transparent;"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    <!-- /.info-box -->
     </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-info"><i class="fas fa-dollar-sign"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Doanh thu ngày</span>
+                <span class="info-box-number"><?= $totalMoneyByDay?></span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
     <!-- /.info-box -->
     </div>
     <!-- /.col -->
-    <div class="col-md-4 col-sm-6 col-12">
+    <div class="col-md-3 col-sm-6 col-12">
     <div class="info-box">
         <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
 
@@ -62,6 +75,7 @@
             <th scope="col">Số bàn</th>
             <th scope="col">Thu ngân</th>
             <th scope="col">Trạng thái</th>
+            <th scope="col">Chi tiết</th>
             <!-- <th>
                 <a href="<?= ADMIN_URL . 'account/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>
             </th> -->
@@ -92,6 +106,69 @@
                             <button type="submit" name="btn-update-bill" class="btn btn-primary">Save</button>
                         </form>
 
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" onclick="open_modal()" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                        Xem
+                        </button>
+
+                        <!-- Modal -->
+                        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"> -->
+
+                        <div class="modal-details" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Chi tiết hóa đơn</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="order-bill border border-danger">
+                                        <div class="text-center">
+                                            <h1>GRAND Restaurant</h1>
+                                            <p>Đ/C: Số 147 Phùng Hưng,Đồng Xuân,Hoàn Kiếm,Hà Nội</p>
+                                            <hr>
+                                            <h2 class="text-danger">Phiếu thanh toán</h2>
+                                        </div>
+                                    <div class="row pt-2">
+                                        <div class="col-6">
+                                            <h6>Thu ngân: <?=$u['name']?></h6>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <h6>Mã hóa đơn:  <?= $u['bill_id']?></h6>
+                                            <h6>Ngày: <?=$u['date']?></h6>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <h5>Tầng 1 - Bàn số: <?=$u['desk_id']?></h5>
+                                        <table>
+                                            <thead>
+                                                <th>Tên món</th>
+                                                <th>SL</th>
+                                                <th>Đơn giá</th>
+                                                <th>Thành tiền</th>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                                                   get_bill($u['bill_id']);
+                                                ?>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan='4'>Tổng tiền: <?= $u['amount']?></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ends modal -->
                     </td>
                 </tr>
             <?php endforeach ?>

@@ -30,6 +30,7 @@ $('.btn-redesk').on('click', function() {
     })
   })
 
+
   $(function() {
     $('input[name="daterange"]').daterangepicker({
     //   opens: 'left'
@@ -37,5 +38,17 @@ $('.btn-redesk').on('click', function() {
       console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
       document.getElementById('startDate').value = start.format('YYYY-MM-DD');
       document.getElementById('endDate').value = end.format('YYYY-MM-DD');
+      document.getElementById('daterange').value = start.format('YYYY-MM-DD') + ' - ' + start.format('YYYY-MM-DD');
+
     });
   });
+
+  $('.myModal').on('shown.bs.modal', function () {
+    $('.myInput').trigger('focus')
+  })
+  var model = document.querySelectorAll('.modal-details');
+  model.style.display = "none";
+  
+  function open_modal() {
+    model.style.display = "block";
+  }
