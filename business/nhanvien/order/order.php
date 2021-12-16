@@ -54,7 +54,10 @@ function update_session()
     if (isset($_POST['reduce'])) {
         $_SESSION["order"][$desk_id][$food_id]['soluong'] -= 1;
     }
-    $bill_id = isset($_SESSION['bill-id'][$desk_id]) ? '&bill-id=' . $_SESSION['bill-id'][$desk_id] : NULL;
+
+    $sql = "select bill_session from desk where desk_id=$desk_id";
+    $bill_session = pdo_query_one($sql);
+    $bill_id = isset($bill_session['bill_session']) ? '&bill-id=' . $bill_session['bill_session'] : NULL;
     header("location:" . STAFF_URL . 'order?table-id=' . $desk_id . $bill_id);
 }
 function add_food()
@@ -81,7 +84,9 @@ function add_food()
             $_SESSION["order"][$table_id][$food_id]['soluong'] += 1;
         }
     }
-    $bill_id = isset($_SESSION['bill-id'][$table_id]) ? '&bill-id=' . $_SESSION['bill-id'][$table_id] : NULL;
+    $sql = "select bill_session from desk where desk_id=$table_id";
+    $bill_session = pdo_query_one($sql);
+    $bill_id = isset($bill_session['bill_session']) ? '&bill-id=' . $bill_session['bill_session'] : NULL;
 
     // echo "location:". STAFF_URL . 'order?table-id=' . $table_id.'&category-id='.$category_id.''.$bill_id;
     // session_unset();

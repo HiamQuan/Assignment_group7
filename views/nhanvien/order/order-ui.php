@@ -27,7 +27,11 @@
         </div>
         <ul>
             <?php
-            $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
+            // 
+            $sql = "select bill_session from desk where desk_id=".$_GET['table-id'];
+            $bill_session = pdo_query_one($sql);
+            $bill_id = isset($bill_session['bill_session']) ? '&bill-id=' . $bill_session['bill_session'] : NULL;
+            // $bill_id = isset($_SESSION['bill-id'][$_GET['table-id']]) ? '&bill-id=' . $_SESSION['bill-id'][$_GET['table-id']] : NULL;
             ?>
             <form action="<?= STAFF_URL . 'order?table-id='.$_GET['table-id'].$bill_id ?>" class="d-flex" method="POST">
                 <input type="hidden" name="desk_id" value="<?= $_GET['table-id'] ?>">

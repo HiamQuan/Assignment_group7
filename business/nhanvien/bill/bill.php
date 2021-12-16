@@ -20,8 +20,10 @@ function add_bill()
             pdo_execute($sql);
         }
     }
-    //Tao session luu lai bill_id cua table
-    $_SESSION['bill-id'][$table_id] = $last_ID;
+    //luu lai bill_id cua table vao column bill_session cua desk
+    // $_SESSION['bill-id'][$table_id] = $last_ID;
+    $sql = "update desk set bill_session=$last_ID where desk_id=$table_id";
+    pdo_execute($sql);
     $_SESSION['order'][$table_id] = [];
     //Update status desk
     $sql = "update desk set status='đã đặt' where desk_id=$table_id";
@@ -35,7 +37,11 @@ function add_bill_update()
     $category_id = $_GET['category-id']??1;
     $amount = $_GET['amount'];
     $table_id = $_GET['desk-id'];
-    $bill_id = isset($_SESSION['bill-id'][$table_id]) ? $_SESSION['bill-id'][$table_id] : NULL;
+
+    $sql = "select bill_session from desk where desk_id=$table_id";
+    $bill_session = pdo_query_one($sql);
+    $bill_id = isset($bill_session['bill_session']) ? $bill_session['bill_session'] : NULL;
+
     $sql = "update bill set amount=amount+$amount where bill_id=$bill_id";
     pdo_execute($sql);
     foreach ($_SESSION['order'][$table_id] as $order) {
@@ -82,8 +88,10 @@ function done_bill()
     //Update status của desk
     $sql = "update desk set status='chưa dọn' where desk_id=$table_id";
     pdo_execute($sql);
-    $_SESSION['order'][$table_id] = [];
-    unset($_SESSION['bill-id'][$table_id]);
+    unset($_SESSION['order'][$table_id]);
+    // unset($_SESSION['bill-id'][$table_id]);
+    $sql = "update desk set bill_session=NULL where desk_id=$table_id";
+    pdo_execute($sql);
     //  echo '<pre>';
     // var_dump($_SESSION['order'][$table_id]);
     header("location:" . BASE_URL . 'staff');

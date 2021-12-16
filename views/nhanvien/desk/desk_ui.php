@@ -7,10 +7,11 @@
 
 <div class="list-desk container-fluid">
     <?php
-    foreach ($dsBan as $d) :
-        $bill_id = isset($_SESSION['bill-id'][$d['desk_id']]) ? '&bill-id=' . $_SESSION['bill-id'][$d['desk_id']] : NULL;
-    ?>
+    foreach ($dsBan as $d) :?>
         <?php
+        $sql = "select bill_session from desk where desk_id=".$d['desk_id'];
+        $bill_session = pdo_query_one($sql);
+        $bill_id = isset($bill_session['bill_session']) ? '&bill-id=' . $bill_session['bill_session'] : NULL;   
         if ($d['status'] == "đã đặt") {
             echo '<div class="box-desk-3 card text-center animate__animated animate__fadeIn animate__slower" style="width: 12rem;">';
         }
