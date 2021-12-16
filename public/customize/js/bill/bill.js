@@ -47,7 +47,7 @@ $('.btn-redesk').on('click', function() {
     $('.myInput').trigger('focus')
   })
   var model = document.querySelectorAll('.modal-details');
-  model.style.display = "none";
+  // model.style.display = "none";
   
   function open_modal() {
     model.style.display = "block";

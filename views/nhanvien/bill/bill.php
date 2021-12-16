@@ -1,5 +1,5 @@
 <a href="<?=BASE_URL."staff"?>">Quay lại trang chủ</a>
-<div class="order-bill col-4 offset-4 border border-danger p-3 mb-4">
+<div class="col-4 offset-4 border border-danger p-3 mb-4">
     <div class="text-center">
         <h1>GRAND Restaurant</h1>
         <p>Đ/C: Số 147 Phùng Hưng,Đồng Xuân,Hoàn Kiếm,Hà Nội</p>
@@ -15,7 +15,7 @@
             <h6>Ngày: <?=$info_bill['date']?></h6>
         </div>
     </div>
-    <div class="">
+    <div class="detail-bill">
         <h5>Tầng 1 - Bàn số: <?=$info_bill['desk_id']?></h5>
         <table>
             <thead>

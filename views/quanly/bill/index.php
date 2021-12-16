@@ -109,14 +109,13 @@
                     </td>
                     <td>
                         <!-- Button trigger modal -->
-                        <button type="button" onclick="open_modal()" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" onclick="open_modal()" class="btn btn-success" data-toggle="modal" data-target=".modal-details<?= $u['bill_id']?>">
                         Xem
                         </button>
 
                         <!-- Modal -->
-                        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"> -->
-
-                        <div class="modal-details" role="document">
+                        <div class="modal fade modal-details<?= $u['bill_id']?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Chi tiết hóa đơn</h5>
@@ -125,7 +124,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="order-bill border border-danger">
+                                    <div class="border border-danger p-3">
                                         <div class="text-center">
                                             <h1>GRAND Restaurant</h1>
                                             <p>Đ/C: Số 147 Phùng Hưng,Đồng Xuân,Hoàn Kiếm,Hà Nội</p>
@@ -141,7 +140,7 @@
                                             <h6>Ngày: <?=$u['date']?></h6>
                                         </div>
                                     </div>
-                                    <div class="">
+                                    <div class="detail-bill">
                                         <h5>Tầng 1 - Bàn số: <?=$u['desk_id']?></h5>
                                         <table>
                                             <thead>
@@ -167,6 +166,7 @@
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
                         <!-- ends modal -->
                     </td>
