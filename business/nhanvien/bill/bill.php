@@ -90,6 +90,7 @@ function done_bill()
     pdo_execute($sql);
     unset($_SESSION['order'][$table_id]);
     // unset($_SESSION['bill-id'][$table_id]);
+    //update bill_session cua desk
     $sql = "update desk set bill_session=NULL where desk_id=$table_id";
     pdo_execute($sql);
     //  echo '<pre>';

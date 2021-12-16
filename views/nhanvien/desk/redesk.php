@@ -5,22 +5,22 @@
     <?php endforeach ?>
 </div>
 
-<div class="list-desk" >
+<div class="list-desk container-fluid" >
     <?php
     foreach ($dsBan as $d) :
     ?>
         <?php
          if ($d['status'] == "đã đặt") {
-            echo '<div class="box-desk-3 card text-center" style="width: 18rem;">';
+            echo '<div class="box-desk-3 card text-center animate__animated animate__fadeIn animate__slower" style="width: 12rem;">';
         }
         if($d['status'] == "trống") {
-            echo '<div class="box-desk card text-center animate__animated animate__fadeIn animate__slower" style="width: 18rem;">';
+            echo '<div class="box-desk card text-center animate__animated animate__fadeIn animate__slower" style="width: 12rem;">';
         }
         if ($d['status'] == "chưa đặt") {
-            echo '<div class="box-desk-2 card text-center" style="width: 18rem;">';
+            echo '<div class="box-desk-2 card text-center" style="width: 12rem;">';
         }
         if ($d['status'] == "chưa dọn") {
-            echo '<div class="box-desk-4 card text-center" style="width: 18rem;">';
+            echo '<div class="box-desk-4 card text-center" style="width: 12rem;">';
         }
         ?>
         <a href="javascript:;" 
