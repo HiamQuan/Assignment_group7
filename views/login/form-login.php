@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
-    <?php include_once './views/nhanvien/layout/style.php'; ?>
+    <?php include_once './views/nhanvien/layout/style.php'; 
+    if(isset($_COOKIE['member_login']) && $_COOKIE['member_login'] !=""){
+        $a = $_COOKIE['member_login'];
+        $sql = "select * from user 
+        where user_name =  '$a' ";
+        $user = pdo_query_one($sql);
+    }
+    ?>
 </head>
 
 <body class="hold-transition login-page">
@@ -23,7 +30,7 @@
                 <p style="color: red;"><?= isset($_GET['err']) ? 'Tài khoản không tồn tại hoặc mật khẩu không chính xác' : ''; ?></p>
                 <form action="<?= BASE_URL . 'login/submit' ?>" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" name="user_name" class="form-control" placeholder="Username" autocomplete="off">
+                        <input type="text" name="user_name" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] !="" ? $user['user_name'] :  ""; ?>" class="form-control" placeholder="Username" autocomplete="off">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -31,7 +38,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] !="" ? $user['password'] :  ""; ?>">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -41,7 +48,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
+                                <input name="remember" type="checkbox" id="remember" <?php if(isset($_COOKIE["member_login"])) { ?> checked <?php } ?>>
                                 <label for="remember">
                                     Remember Me
                                 </label>

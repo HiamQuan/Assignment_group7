@@ -32,6 +32,14 @@ function submit_login()
         $user = pdo_query_one($sql);
         if ($user) {
             $_SESSION['login'] = $user;
+            if(!empty($_POST["remember"])) {
+				setcookie ("member_login",$_POST["user_name"],time()+ (10 * 365 * 24 * 60 * 60));
+                
+			} else {
+				if(isset($_COOKIE["member_login"])) {
+					setcookie ("member_login","");
+				}
+			}
             header('location: ' . BASE_URL . "login");
         } else {
             header('location: ' . BASE_URL . "login?err");
