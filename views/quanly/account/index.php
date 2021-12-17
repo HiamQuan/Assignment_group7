@@ -10,6 +10,7 @@
         <th>
             <a href="<?= ADMIN_URL . 'account/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>
         </th>
+        <th>Trạng thái</th>
     </thead>
     <tbody>
         <?php foreach ($dsuser as $u) : ?>
@@ -26,6 +27,24 @@
                     <a href="<?= ADMIN_URL . 'account/edit-form?id=' . $u['user_id'] ?>" class="btn btn-sm btn-info">Sửa</a>
                     <a href="javascript:;" data-url="<?= ADMIN_URL . 'account/delete?id=' . $u['user_id'] ?>" data-name="<?= $u['name'] ?>" class="btn btn-sm btn-danger btn_remove_account">Xóa</a>
                 </td>
+                <td>
+                        <form action="<?= ADMIN_URL . 'account/update-user'?>" method="post" class="d-flex">
+                            <select name="active" class="form-control mr-3">
+                                <?php
+                                    foreach(active as $key => $value) {
+                                        if($key == $u['active']){
+                                            echo '<option value="'.$key.'" selected>'.$value.'</option>';
+                                        }else{
+                                            echo '<option value="'.$key.'">'.$value.'</option>';
+                                        }
+                                    }
+                                ?>
+                            </select>
+                            <input type="hidden" name="user_id" value="<?= $u['user_id']?>">
+                            <button type="submit" name="btn-update-user" class="btn btn-primary">Save</button>
+                        </form>
+
+                    </td>
             </tr>
         <?php endforeach ?>
     </tbody>

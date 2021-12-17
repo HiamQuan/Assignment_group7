@@ -27,11 +27,19 @@ function submit_login()
 
         $sql = "select * from user 
         where user_name like '$username' 
-        and password like '$password'
+        and password like '$password' and active like '1';
         ";
         $user = pdo_query_one($sql);
         if ($user) {
             $_SESSION['login'] = $user;
+            if(!empty($_POST["remember"])) {
+				setcookie ("member_login",$_POST["user_name"],time()+ (3600 * 24 * 30));
+                
+			} else {
+				if(isset($_COOKIE["member_login"])) {
+					setcookie ("member_login","");
+				}
+			}
             header('location: ' . BASE_URL . "login");
         } else {
             header('location: ' . BASE_URL . "login?err");
