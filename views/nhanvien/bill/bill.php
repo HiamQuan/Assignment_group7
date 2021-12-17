@@ -79,6 +79,6 @@
         Chuyển bàn
     </button>
     <button type="submit" name="combine" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Gộp bàn
+        Ghép đơn
     </button>
 </form>
