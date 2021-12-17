@@ -29,10 +29,10 @@
                 </td>
                 <td>
                         <form action="<?= ADMIN_URL . 'account/update-user'?>" method="post" class="d-flex">
-                            <select name="activity" class="form-control mr-3">
+                            <select name="active" class="form-control mr-3">
                                 <?php
-                                    foreach(activity as $key => $value) {
-                                        if($key == $u['activity']){
+                                    foreach(active as $key => $value) {
+                                        if($key == $u['active']){
                                             echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                         }else{
                                             echo '<option value="'.$key.'">'.$value.'</option>';

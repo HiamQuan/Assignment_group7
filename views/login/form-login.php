@@ -19,8 +19,8 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card">
-            <div class="card card-outline card-danger">
+        <div class="form-login">
+            <div class="card card-outline">
                 <div class="card-header text-center">
                     <a href="http://localhost:81/Assignment_group7/admin" class="brand-link" style="text-align: center;">
                         <img src="http://localhost:81/Assignment_group7/public/upload/header/grandrestaurant_logo.png" alt="Grand Logo" class="img-fluid" style="opacity:1">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-body">
                     <p style="color: red;"><?= isset($_GET['err']) ? 'Tài khoản không tồn tại hoặc mật khẩu không chính xác' : ''; ?></p>
-                    <form action="<?= BASE_URL . 'login/submit' ?>" method="post">
+                    <form action="<?= BASE_URL . 'login/submit' ?>" method="post" >
                         <div class="input-group mb-5">
                             <input type="text" name="user_name" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] != "" ? $user['user_name'] :  ""; ?>" class="form-control" placeholder="Username" autocomplete="off">
                             <div class="input-group-append">

@@ -1,7 +1,7 @@
 <?php
- const activity = [
-    '0' => "Đã kích hoạt",
-    '1' => "Tạm khóa"
+ const active = [
+    '0' => "Tạm khóa",
+    '1' => "Đã kích hoạt"
 ];
 function user_index()
 {
@@ -99,8 +99,8 @@ function user_remove()
 function update_user() {
     if (isset($_POST['btn-update-user'])) {
         $user_id = $_POST['user_id'];
-        $activity = $_POST['activity'];
-        $sql = "update user set activity='$activity' where user_id=$user_id"; 
+        $active = $_POST['active'];
+        $sql = "update user set active='$active' where user_id=$user_id"; 
         pdo_execute($sql);
         header("location:". ADMIN_URL . 'account');
     }

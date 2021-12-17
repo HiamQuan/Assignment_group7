@@ -1,3 +1,6 @@
 .text-center {
-    background-color: brown;
+  background-color: brown;
+}
+.form-login {
+ max-width: 100%;
 }
