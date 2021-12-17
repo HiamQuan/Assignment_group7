@@ -27,7 +27,7 @@ function submit_login()
 
         $sql = "select * from user 
         where user_name like '$username' 
-        and password like '$password'
+        and password like '$password' and activity like '0';
         ";
         $user = pdo_query_one($sql);
         if ($user) {
