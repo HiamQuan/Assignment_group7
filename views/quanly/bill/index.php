@@ -9,7 +9,7 @@
                     </span>
                     <form action="<?= ADMIN_URL . 'bill'?>" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control form-control-ml" name="daterange" id="daterange" value="">
+                            <input type="text" class="form-control form-control-ml" id="daterange" name="daterange" value="">
                             <input type="text" id="startDate" name="startDate" value="<?= date("Y-m-d")?>" hidden>
                             <input type="text" id="endDate" name="endDate" value="<?= date("Y-m-d")?>" hidden>
                         </div>
