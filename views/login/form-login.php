@@ -21,7 +21,7 @@
         <!-- /.login-logo -->
         <div class="form-login">
             <div class="card card-outline">
-                <div class="card-header text-center">
+                <div class="card-header text-center form-header">
                     <a href="http://localhost:81/Assignment_group7/admin" class="brand-link" style="text-align: center;">
                         <img src="http://localhost:81/Assignment_group7/public/upload/header/grandrestaurant_logo.png" alt="Grand Logo" class="img-fluid" style="opacity:1">
                     </a>
