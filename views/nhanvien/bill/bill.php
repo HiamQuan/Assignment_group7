@@ -75,7 +75,10 @@
         </div>
 </div>
 <form action="<?=STAFF_URL.'redesk?location=1&redesk-id='.$table_id?>" method="post">
-    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="submit" name="redesk" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Chuyển bàn
+    </button>
+    <button type="submit" name="combine" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Gộp bàn
     </button>
 </form>

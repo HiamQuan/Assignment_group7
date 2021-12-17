@@ -174,6 +174,10 @@ switch ($url) {
         require_once "./business/nhanvien/desk/desk.php";
         save_relocation();
         break;
+    case 'staff/combine-save':
+        require_once "./business/nhanvien/desk/desk.php";
+        save_combine();
+        break;
     case 'staff/order/done-bill':
         require_once "./business/nhanvien/bill/bill.php";
         done_bill();

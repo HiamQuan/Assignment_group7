@@ -36,8 +36,28 @@ $('.btn-redesk').on('click', function() {
           cancelButtonText: `Đóng`,
       })
     })
-
-
+  $('.btn-combine').on('click', function() {
+    let redirectUrl = $(this).data('url');
+    let name = $(this).data('name');
+      Swal.fire({
+          title: `Bạn có chắc muốn gộp bill với bàn số ${name} không ?`,
+          showCancelButton: true,
+          confirmButtonText: 'Có',
+          cancelButtonText: `Hủy`,
+      }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+              window.location.href = redirectUrl;
+          }
+      })
+    })
+    $('.btn-combine-false').on('click', function() {
+      Swal.fire({
+          title: `Không thể gộp với bàn này !`,
+          showCancelButton: true,
+          cancelButtonText: `Đóng`,
+      })
+    })
   $(function() {
     $('input[name="daterange"]').daterangepicker({
     //   opens: 'left'
