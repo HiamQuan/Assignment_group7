@@ -90,7 +90,7 @@
                             <td>Số lượng: <?= $sl ?></td>
                             <td colspan='1'>Tạm tính: <?= $tongtien = $tongtien + $tongtien / 10 ?></td>
                             <td colspan="2">
-                                <a href="<?= STAFF_URL . "order/bill?table-id=$table_id&bill-id=$bill_id" ?>"><button class="btn-danger">Thanh toán</button></a>
+                                <a href="<?= STAFF_URL . "order/bill?table-id=$table_id".$bill_id ?>"><button class="btn-danger">Thanh toán</button></a>
                             </td>
 
                         </tr>

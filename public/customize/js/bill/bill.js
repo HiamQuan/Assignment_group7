@@ -29,6 +29,13 @@ $('.btn-redesk').on('click', function() {
         }
     })
   })
+  $('.btn-redesk-false').on('click', function() {
+      Swal.fire({
+          title: `Vui lòng chọn bàn còn trống !`,
+          showCancelButton: true,
+          cancelButtonText: `Đóng`,
+      })
+    })
 
 
   $(function() {
@@ -46,9 +53,4 @@ $('.btn-redesk').on('click', function() {
   $('.myModal').on('shown.bs.modal', function () {
     $('.myInput').trigger('focus')
   })
-  var model = document.querySelectorAll('.modal-details');
-  // model.style.display = "none";
-  
-  function open_modal() {
-    model.style.display = "block";
-  }
+
