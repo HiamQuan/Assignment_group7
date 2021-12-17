@@ -18,49 +18,50 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo">
-            <a href="http://localhost:81/Assignment_group7/admin" class="brand-link" style="text-align: center;">
-                <img src="http://localhost:81/Assignment_group7/public/upload/header/grandrestaurant_logo.png" alt="Grand Logo" class="img-fluid" style="opacity:1">
-            </a>
-        </div>
         <!-- /.login-logo -->
         <div class="card">
-            <div class="card-body login-card-body form">
-                <h1 style="text-align: center;">Login</h1>
-                <p style="color: red;"><?= isset($_GET['err']) ? 'Tài khoản không tồn tại hoặc mật khẩu không chính xác' : ''; ?></p>
-                <form action="<?= BASE_URL . 'login/submit' ?>" method="post">
-                    <div class="input-group mb-3">
-                        <input type="text" name="user_name" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] != "" ? $user['user_name'] :  ""; ?>" class="form-control" placeholder="Username" autocomplete="off">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-user"></span>
+            <div class="card card-outline card-danger">
+                <div class="card-header text-center">
+                    <a href="http://localhost:81/Assignment_group7/admin" class="brand-link" style="text-align: center;">
+                        <img src="http://localhost:81/Assignment_group7/public/upload/header/grandrestaurant_logo.png" alt="Grand Logo" class="img-fluid" style="opacity:1">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p style="color: red;"><?= isset($_GET['err']) ? 'Tài khoản không tồn tại hoặc mật khẩu không chính xác' : ''; ?></p>
+                    <form action="<?= BASE_URL . 'login/submit' ?>" method="post">
+                        <div class="input-group mb-5">
+                            <input type="text" name="user_name" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] != "" ? $user['user_name'] :  ""; ?>" class="form-control" placeholder="Username" autocomplete="off">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] != "" ? $user['password'] :  ""; ?>">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
+                        <div class="input-group mb-5">
+                            <input type="password" name="password" class="form-control" placeholder="Password" value="<?= isset($_COOKIE["member_login"]) && $_COOKIE['member_login'] != "" ? $user['password'] :  ""; ?>">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input name="remember" type="checkbox" id="remember" <?php if (isset($_COOKIE["member_login"])) { ?> checked <?php } ?>>
-                                <label for="remember">
-                                    Remember Me
-                                </label>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="icheck-primary">
+                                    <input name="remember" type="checkbox" id="remember" <?php if (isset($_COOKIE["member_login"])) { ?> checked <?php } ?>>
+                                    <label for="remember">
+                                        Remember Me
+                                    </label>
+                                </div>
                             </div>
+                            <!-- /.col -->
+                            <div class="col-4">
+                                <button type="submit" name="submit" class="btn btn-primary btn-block">Sign In</button>
+                            </div>
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" name="submit" class="btn btn-primary btn-block">Sign In</button>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
             <!-- /.login-card-body -->
         </div>
