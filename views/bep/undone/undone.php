@@ -19,7 +19,7 @@
       <td><?=$value['hour']?></td>
       <td><?=$value['desk_name']?></td>
       <td><?=$value['location']?></td>
-      <td class="done"><button type="button" class="btn btn-success"><a class="" href="<?= CHEF_URL . 'food/done?detail_id=' . $value['detail_id'] ?>">Hoàn thành</a></button></td>
+      <td class="done"><a class="" href="<?= CHEF_URL . 'food/done?detail_id=' . $value['detail_id'] ?>"><button type="button" class="btn btn-success">Hoàn thành</button></a></td>
     </tr>
     <?php endforeach ?>
 </table>  

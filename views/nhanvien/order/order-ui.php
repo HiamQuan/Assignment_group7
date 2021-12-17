@@ -164,55 +164,55 @@
                             $bill_id = isset($_GET['bill-id']) ? $_GET['bill-id'] : "";
                             echo '
                                     <td>
-                                        <button class="btn-danger">
-                                            <a href="javascript:;" 
-                                                data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '&category-id=' . $category_id . '" 
-                                                class="huy">
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '&category-id=' . $category_id . '" 
+                                            class="huy">
+                                            <button class="btn-danger">
                                                 Hủy
-                                            </a>
-                                        </button>
+                                            </button>
+                                        </a>
                                     </td>
                                     <td colspan="2">
-                                        <button class="btn-success">
-                                            <a href="javascript:;" 
-                                                data-url="' . STAFF_URL . 'order/add-bill-update?desk-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
-                                                class="dat_mon">
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/add-bill-update?desk-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
+                                            class="dat_mon">
+                                            <button class="btn-success">
                                                 Đặt thêm
-                                            </a>
-                                        </button>
+                                            </button>
+                                        </a>
                                     </td>
                                 ';
                         } else if ($table_status['status'] == 'chưa dọn') {
                             echo '
                                     <td colspan="3">
-                                        <button class="btn-success">
-                                            <a href="javascript:;" 
-                                                data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
-                                                class="done">
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
+                                            class="done">
+                                            <button class="btn-success">
                                                 Dọn xong
-                                            </a>
-                                        </button>
+                                            </button>
+                                        </a>
                                     </td>
                                 ';
                         } else {
                             echo '
                                     <td>
-                                        <button class="btn-danger">
-                                            <a href="javascript:;" 
-                                                data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
-                                                class="huy">
+                                        <a href="javascript:;" 
+                                            data-url="' . STAFF_URL . 'order/delete?table-id=' . $table_id . '" 
+                                            class="huy">
+                                            <button class="btn-danger">
                                                 Hủy
-                                            </a>
-                                        </button>
+                                            </button>
+                                        </a>
                                     </td>
                                     <td colspan="2">
-                                        <button class="btn-success">
-                                            <a href="javascript:;" 
+                                        <a href="javascript:;" 
                                             data-url="' . STAFF_URL . 'order/add-bill?table-id=' . $table_id . '&amount=' . $tongtien . '&category-id=' . $category_id . '" 
                                             class="dat_mon">
-                                            Đặt bàn
-                                            </a>
-                                        </button>
+                                            <button class="btn-success">
+                                                Đặt bàn
+                                            </button>
+                                        </a>
                                     </td>
                                 ';
                         }
