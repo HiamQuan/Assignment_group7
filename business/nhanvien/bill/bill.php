@@ -5,7 +5,7 @@ function add_bill()
     $category_id = $_GET['category-id'];
     $amount = $_GET['amount'];
     $table_id = $_GET['table-id'];
-    $user_id = 1;
+    $user_id = $_SESSION['login']['user_id'];
     $status = 'Chưa thanh toán';
     $sql = "insert into bill (date,amount,status,desk_id,user_id) values
                     (now(),'$amount','$status','$table_id','$user_id')";
