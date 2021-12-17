@@ -70,6 +70,10 @@ switch ($url) {
         require_once "./business/quanly/account.php";
         user_save_edit();
         break;
+    case 'admin/account/update-user':
+        require_once "./business/quanly/account.php";
+        update_user();
+        break;
     case 'admin/account/delete':
         require_once "./business/quanly/account.php";
         user_remove();

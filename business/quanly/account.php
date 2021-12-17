@@ -1,4 +1,8 @@
 <?php
+ const activity = [
+    '0' => "Đã kích hoạt",
+    '1' => "Tạm khóa"
+];
 function user_index()
 {
     $sql = "select * from user";
@@ -90,4 +94,14 @@ function user_remove()
     $sql = "delete from user where user_id = $id";
     executeQuery($sql);
     header("location: " . ADMIN_URL . 'account');
+}
+
+function update_user() {
+    if (isset($_POST['btn-update-user'])) {
+        $user_id = $_POST['user_id'];
+        $activity = $_POST['activity'];
+        $sql = "update user set activity='$activity' where user_id=$user_id"; 
+        pdo_execute($sql);
+        header("location:". ADMIN_URL . 'account');
+    }
 }
