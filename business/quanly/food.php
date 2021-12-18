@@ -1,4 +1,8 @@
 <?php
+const active = [
+    '0' => "Hết món",
+    '1' => "Còn món"
+];
 function list_food()
 {
     $sql = "select * from food";
@@ -94,4 +98,14 @@ function food_remove()
             DELETE FROM `food` WHERE `food_id` ='$id'";
     pdo_execute($sql);
     header("location: " . ADMIN_URL . 'food');
+}
+
+function update_food() {
+    if (isset($_POST['btn-update-food'])) {
+        $food_id = $_POST['food_id'];
+        $active = $_POST['active'];
+        $sql = "update food set active='$active' where food_id=$food_id"; 
+        pdo_execute($sql);
+        header("location:". ADMIN_URL . 'food');
+    }
 }
