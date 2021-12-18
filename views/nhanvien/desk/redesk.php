@@ -1,7 +1,11 @@
-<div class="location">
+<div class="location d-flex gap-2">
     <?php
     foreach ($location as $l) : ?>
-        <button class="btn btn-primary"><a href="<?= STAFF_URL . 'redesk?location=' . $l['location'] . '&redesk-id='.$_GET['redesk-id'] ?>">Tầng <?= $l['location'] ?></a></button>
+        <form action="<?=  STAFF_URL . 'redesk?location=' . $l['location'] . '&redesk-id='.$_GET['redesk-id'] ?>" method="post">
+        <button type="submit" name="redesk" class="btn btn-primary">
+            Tầng <?= $l['location'] ?>
+        </button>
+    </form>
     <?php endforeach ?>
 </div>
 
@@ -46,3 +50,4 @@
 </div>
 <?php endforeach ?>
 </div>
+<button class="btn btn-primary quaylai"><a href="<?= BASE_URL . "staff/order/bill?table-id=".$_GET['redesk-id']."&bill-id=$bill_id" ?>">Quay lại..</a></button>

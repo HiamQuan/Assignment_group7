@@ -74,11 +74,14 @@
             </div>
         </div>
 </div>
-<form action="<?=STAFF_URL.'redesk?location=1&redesk-id='.$table_id?>" method="post">
-    <button type="submit" name="redesk" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Chuyển bàn
-    </button>
-    <button type="submit" name="combine" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Ghép đơn
-    </button>
-</form>
+<div class="d-flex justify-content-between">
+    <button class="btn btn-primary quaylai"><a href="<?= BASE_URL . "staff/order?table-id=$table_id&bill-id=".$info_bill['bill_id'] ?>">Quay lại..</a></button>
+    <form action="<?=STAFF_URL.'redesk?location=1&redesk-id='.$table_id?>" method="post">
+        <button type="submit" name="redesk" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Chuyển bàn
+        </button>
+        <button type="submit" name="combine" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Ghép đơn
+        </button>
+    </form>
+</div>
