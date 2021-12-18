@@ -7,7 +7,7 @@
         <th>
             <a href="<?= ADMIN_URL . 'category/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>
         </th>
-        <th>Trạng thái</th>
+        <th>Tình Trạng</th>
     </thead>
     <tbody>
         <?php foreach ($list_category as $u) : ?>

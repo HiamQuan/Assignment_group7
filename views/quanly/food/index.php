@@ -9,7 +9,7 @@
         <th>
             <a href="<?= ADMIN_URL . 'food/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>
         </th>
-        <th>Trạng thái</th>
+        <th>Tình Trạng</th>
     </thead>
     <tbody>
         <?php foreach ($food as $f) : ?>

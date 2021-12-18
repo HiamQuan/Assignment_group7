@@ -1,4 +1,8 @@
 <?php
+const active = [
+    '0' => "Đã hỏng",
+    '1' => "Đang sử dụng"
+];
 function desk_index()
 {
     $sql = "select * from desk";
@@ -58,5 +62,14 @@ function desk_save_edit()
     $sql = "update desk set desk_name = '$desk_name', capacity = '$capacity', location = '$location' where desk_id = $desk_id ";
     pdo_execute($sql);
     header("location:" . ADMIN_URL . 'desk');
+}
+function update_desk() {
+    if (isset($_POST['btn-update-desk'])) {
+        $desk_id = $_POST['desk_id'];
+        $active = $_POST['active'];
+        $sql = "update desk set active='$active' where desk_id=$desk_id"; 
+        pdo_execute($sql);
+        header("location:". ADMIN_URL . 'desk');
+    }
 }
 ?>

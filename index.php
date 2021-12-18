@@ -49,6 +49,10 @@ switch ($url) {
         require_once "./business/quanly/desk.php";
         desk_save_edit();
         break;
+    case 'admin/desk/update-desk':
+        require_once "./business/quanly/desk.php";
+        update_desk();
+        break;
         // admin desk                
     case 'admin/account':
         require_once "./business/quanly/account.php";

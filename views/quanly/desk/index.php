@@ -8,6 +8,7 @@
         <th>Sức chứa</th>
         <th>Trạng thái</th>
         <th>Thao tác</th>
+        <th>Tình trạng</th>
     </thead>
     <tbody>
         <?php foreach ($desks as $d) : ?>
@@ -21,6 +22,23 @@
                     <a href="<?= ADMIN_URL . 'desk/edit-form?desk_id=' . $d['desk_id'] ?>" class="btn btn-sm btn-info">Sửa</a>
                     <a href="<?= ADMIN_URL . 'desk/delete?desk_id=' . $d['desk_id'] ?>" class="btn btn-sm btn-danger btn_remove_account">Xóa</a>
                 </td>
+                <th>
+                <form action="<?= ADMIN_URL . 'desk/update-desk' ?>" method="post" class="d-flex">
+                        <select name="active" class="form-control mr-3">
+                            <?php
+                            foreach (active as $key => $value) {
+                                if ($key == $d['active']) {
+                                    echo '<option value="' . $key . '" selected>' . $value . '</option>';
+                                } else {
+                                    echo '<option value="' . $key . '">' . $value . '</option>';
+                                }
+                            }
+                            ?>
+                        </select>
+                        <input type="hidden" name="desk_id" value="<?= $d['desk_id'] ?>">
+                        <button type="submit" name="btn-update-desk" class="btn btn-primary">Save</button>
+                    </form>
+                </th>
             </tr>
         <?php endforeach ?>
     </tbody>
