@@ -41,13 +41,20 @@ function load_relocation()
     $location_desk = pdo_query($sql);
     $sql = "select * from category";
     $category = pdo_query($sql);
+    
+    // Lay bill_id tu ban cu
+    $sql = "select bill_session from desk where desk_id=$redesk_id";
+    $bill_session = pdo_query_one($sql);
+    $bill_id = $bill_session['bill_session'] ?? NULL;
+
     if (isset($_POST['redesk'])) {
         staff_render(
             'desk/redesk.php',
             [   'redesk_id' => $redesk_id,
                 'location' => $location,
                 'dsBan' => $location_desk,
-                'category' => $category
+                'category' => $category,
+                'bill_id' => $bill_id
         ],[
             'bill/bill.js'
         ]
@@ -59,7 +66,8 @@ function load_relocation()
             [   'redesk_id' => $redesk_id,
                 'location' => $location,
                 'dsBan' => $location_desk,
-                'category' => $category
+                'category' => $category,
+                'bill_id' => $bill_id
         ],[
             'bill/bill.js'
         ]
