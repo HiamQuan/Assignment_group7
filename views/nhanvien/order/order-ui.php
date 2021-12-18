@@ -47,7 +47,8 @@
             </form>
             <?php foreach ($category as $cate) : ?>
                 <a href="<?= STAFF_URL . "order?table-id=" . $table_id . "&category-id=" . $cate['category_id'] . $bill_id ?>">
-                    <li><?= $cate['category_name'] ?></li>
+
+                <li><img src="<?= IMAGE_URL.'icon/'.$cate['icon']?>" alt="" class="img-fluid mr-2" style="max-width:20%;"><?= $cate['category_name'] ?></li>
                 </a>
             <?php endforeach ?>
         </ul>
