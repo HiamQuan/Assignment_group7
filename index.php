@@ -102,6 +102,10 @@ switch ($url) {
         require_once "./business/quanly/category.php";
         category_remove();
         break;
+    case 'admin/category/update-category':
+        require_once "./business/quanly/category.php";
+        update_category();
+        break;
     case 'admin/food':
         require_once "./business/quanly/food.php";
         list_food();
@@ -125,6 +129,10 @@ switch ($url) {
     case 'admin/food/delete':
         require_once "./business/quanly/food.php";
         food_remove();
+        break;
+    case 'admin/food/update-food':
+        require_once "./business/quanly/food.php";
+        update_food();
         break;
     case 'admin/bill':
         require_once "./business/quanly/bill.php";

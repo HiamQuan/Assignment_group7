@@ -1,4 +1,8 @@
 <?php
+const active = [
+    '0' => "Hết loại",
+    '1' => "Còn loại"
+];
 function list_category()
 {
     $sql = 'select*from category';
@@ -74,4 +78,14 @@ function category_remove()
     $sql = "delete from category where category_id = $id";
     executeQuery($sql);
     header("location: " . ADMIN_URL . 'category');
+}
+
+function update_category() {
+    if (isset($_POST['btn-update-category'])) {
+        $category_id = $_POST['category_id'];
+        $active = $_POST['active'];
+        $sql = "update category set active='$active' where category_id=$category_id"; 
+        pdo_execute($sql);
+        header("location:". ADMIN_URL . 'category');
+    }
 }
