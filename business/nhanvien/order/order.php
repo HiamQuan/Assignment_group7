@@ -3,15 +3,15 @@ function menu_render()
 {
     $table_id = $_GET['table-id'];
     $bill_id = isset($_GET['bill-id']) ? $_GET['bill-id'] : "";
-    $sql = "select * from category";
+    $sql = "select * from category where active=1";
     $category = pdo_query($sql);
     $category_id = $_GET['category-id'] ?? 1;
     if (isset($_POST['search'])) {
         $key = $_POST['key'];
-        $sql = "select * from food where food_name like '%$key%'";
+        $sql = "select * from food where food_name like '%$key%' and active=1";
         $list_foods = pdo_query($sql);
     } else {
-        $sql = "select * from food where category_id=$category_id";
+        $sql = "select * from food where category_id=$category_id and active=1";
         $list_foods = pdo_query($sql);
     }
     $sql = "select status from desk where desk_id=$table_id";

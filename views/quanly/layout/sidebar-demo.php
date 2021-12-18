@@ -12,7 +12,7 @@
                 <a class="" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <!-- RESULT -->
-            <li class="nav-item menu-open">
+            <li class="nav-item">
                 <a href="<?= ADMIN_URL . 'result' ?>" class="nav-link active">
                     <i class="fas fa-chart-area"></i>
                     <p>

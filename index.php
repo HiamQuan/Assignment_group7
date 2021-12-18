@@ -1,6 +1,7 @@
 <?php
 require_once "./common/global.php";
 require_once "./dao/pdo.php";
+require_once "./public/PHPExcel/Classes/PHPExcel.php";
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {

@@ -86,7 +86,7 @@
                     <th scope="row"><?= $u['bill_id'] ?></th>
                     <td><?= $u['date'] ?></td>
                     <td><?= $u['amount'] ?></td>
-                    <td><?= $u['desk_id'] ?></td>
+                    <td><?= $u['desk_id'].'(Tầng'.$u['location'].')'?></td>
                     <td><?= $u['name'] ?></td>
                     <!-- <td><?= $u['status'] ?></td> -->
                     <td>
