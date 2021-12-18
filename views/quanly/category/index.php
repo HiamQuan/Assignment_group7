@@ -1,4 +1,4 @@
-<h2>Danh sách tài khoản</h2>
+<h2>Danh mục</h2>
 <table class="table table-stripped">
     <thead>
         <th>ID</th>

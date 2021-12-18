@@ -1,7 +1,7 @@
 <?php
 require_once "./common/global.php";
 require_once "./dao/pdo.php";
-require_once "./public/PHPExcel/Classes/PHPExcel.php";
+require_once("./public/PHPExcel/Classes/PHPExcel.php");
 
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
@@ -135,6 +135,10 @@ switch ($url) {
         require_once "./business/quanly/bill.php";
         update_bill();
         break;
+    case 'admin/bill/export':
+        require_once "./business/quanly/bill.php";
+        excel_export();
+        break;
     case 'staff':
         require_once "./business/nhanvien/desk/desk.php";
         loadall_desk();
@@ -214,7 +218,7 @@ switch ($url) {
     case  'logout/submit':
         require_once "./business/login/login.php";
         submit_logout();
-        break;  
+        break;
     default:
         echo " Đường dẫn này chưa được định nghĩa";
         break;

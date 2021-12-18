@@ -174,4 +174,5 @@
             <?php endforeach ?>
         </tbody>
     </table>
+    <div class="excel-export"><a href="<?=ADMIN_URL.'bill/export'?>"><button class="btn btn-success">Xuất hóa đơn</button></a></div>
 </div>
