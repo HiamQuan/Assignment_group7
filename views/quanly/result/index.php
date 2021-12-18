@@ -1,3 +1,27 @@
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-6">
+        <div class="info-box">
+            <span class="info-box-icon bg-info"><i class="fas fa-dollar-sign"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Doanh thu ngày</span>
+                <span class="info-box-number"><?= $totalMoneyByDay ?></span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-6">
+        <div class="info-box">
+            <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Doanh thu tháng</span>
+                <span class="info-box-number"><?= $totalMoneyByMonth ?></span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+    </div>
 </div>
 <!-- Biểu đồ -->
 <div class="col-12 mt-12">

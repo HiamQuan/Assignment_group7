@@ -23,7 +23,7 @@
             $list_bills = pdo_query($sql);
         }
         
-        $sql = "select * from bill where date like '%$date%'";
+        $sql = "select * from bill where date like '%$date%' and bill.status='Đã thanh toán'";
         $list_bills_day = pdo_query($sql);
         $totalMoneyByDay = 0;
         foreach ($list_bills_day as $b) {
@@ -31,7 +31,7 @@
         }
         
         $dateMonth = Date("Y-m");
-        $sql = "select * from bill INNER JOIN user ON bill.user_id = user.user_id where date like '%$dateMonth%'";
+        $sql = "select * from bill INNER JOIN user ON bill.user_id = user.user_id where date like '%$dateMonth%' and bill.status='Đã thanh toán'";
         $list_bills_month = pdo_query($sql);
         $totalMoneyByMonth = 0;
         foreach ($list_bills_month as $b) {
