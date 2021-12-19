@@ -13,14 +13,14 @@ function bill_index()
         $endDate = date('Y-m-j', $newdate);
         $status = $_POST['status'];
         if ($status == "") {
-            $sql = "select bill.*,user.*,desk.* from user INNER JOIN bill ON user.user_id = bill.user_id JOIN desk on bill.desk_id=desk.desk_id where date between '$startDate' and '$endDate'";
+            $sql = "select *,bill.status  from user INNER JOIN bill ON user.user_id = bill.user_id JOIN desk on bill.desk_id=desk.desk_id where date between '$startDate' and '$endDate'";
             $list_bills = pdo_query($sql);
         } else {
-            $sql = "select bill.*,user.*,desk.* from user INNER JOIN bill ON user.user_id = bill.user_id JOIN desk on bill.desk_id=desk.desk_id where bill.status='$status' and date between '$startDate' and '$endDate'";
+            $sql = "select *,bill.status  from user INNER JOIN bill ON user.user_id = bill.user_id JOIN desk on bill.desk_id=desk.desk_id where bill.status='$status' and date between '$startDate' and '$endDate'";
             $list_bills = pdo_query($sql);
         }
     } else {
-        $sql = "select bill.*,user.*,desk.* from user INNER JOIN bill ON user.user_id = bill.user_id JOIN desk on bill.desk_id=desk.desk_id where date like '%$date%'";
+        $sql = "select *,bill.status from user INNER JOIN bill ON user.user_id = bill.user_id JOIN desk on bill.desk_id=desk.desk_id where date like '%$date%'";
         $list_bills = pdo_query($sql);
     }
 
