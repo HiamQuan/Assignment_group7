@@ -10,6 +10,9 @@
     <li class="nav-item d-none d-sm-inline-block">
       <a href="<?= BASE_URL . 'staff' ?>" class="nav-link">Order Screen</a>
     </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="<?= BASE_URL . 'chef' ?>" class="nav-link">Chef Screen</a>
+    </li>
   </ul>
 
   <!-- Right navbar links -->
