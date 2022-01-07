@@ -1,9 +1,15 @@
 <h2>Danh mục</h2>
 <table class="table table-stripped">
     <thead>
+<<<<<<< Updated upstream
         <th>ID</th>
         <th>Tên danh mục</th>
         <th>Icon</th>
+=======
+        <th>category_id</th>
+        <th>category_name</th>
+        <th>icon</th>
+>>>>>>> Stashed changes
         <th>
             <a href="<?= ADMIN_URL . 'category/add-form' ?>" class="btn btn-sm btn-success">Tạo mới</a>
         </th>
@@ -14,6 +20,10 @@
             <tr>
                 <td><?= $u['category_id'] ?></td>
                 <td><?= $u['category_name'] ?></td>
+<<<<<<< Updated upstream
+=======
+                <td><?= $u['icon'] ?></td>
+>>>>>>> Stashed changes
                 <td>
                     <img src="<?= PUBLIC_ASSETS . 'upload/icon/' . $u['icon'] ?>" width="100">
                 </td>
